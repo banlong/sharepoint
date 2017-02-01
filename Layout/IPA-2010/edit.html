@@ -773,6 +773,25 @@
         });
     }
 
+    //Update one field value. Can we update whole list??
+    function updateListItem() {
+        var clientContext = new SP.ClientContext.get_current()
+        var item = clientContext.get_web().get_lists().getById(_spPageContextInfo.pageListId).getItemById(id);
+        //set item value here
+        //item.set_item('Title', 'My Updated Title');
+
+        item.update();
+        clientContext.executeQueryAsync(Function.createDelegate(this, this.onQuerySucceeded), Function.createDelegate(this, this.onQueryFailed));
+
+        function onQuerySucceeded() {
+            alert('Item updated!');
+        }
+
+        function onQueryFailed(sender, args) {
+            alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
+        }
+    }
+
     function Main(){
         //var formmode = getCurrentFormMode();
         var formmode = "edit";
@@ -802,15 +821,7 @@
             console.log("Failed:");
         }
 
-        function onQuerySucceeded() {
 
-            alert('Item updated!');
-        }
-
-        function onQueryFailed(sender, args) {
-
-            alert('Request failed. ' + args.get_message() + '\n' + args.get_stackTrace());
-        }
 
 //        jQuery(".showindisplay1").hide();
 //        jQuery(".showindisplay2").hide();

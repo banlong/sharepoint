@@ -788,7 +788,21 @@
                 var fieldID =  this.id;
                 var idStr = "#" + fieldID;
                 var valStr = item[fieldID];
-                $(idStr).html(valStr);
+                if( fieldID=="From" ||
+                    fieldID=="NOI_x0020_Approval_x0020_Manager" ||
+                    fieldID=="Liaison" ||
+                    fieldID=="Attorney_x0020_of_x0020_Record"){
+                    var slashPostion = valStr.search("/");
+                    if(slashPostion > 3){
+                        var name = valStr.substr(3,slashPostion-3);
+                        $(idStr).html(name);
+                    }else{
+                        $(idStr).html(valStr);
+                    }
+
+                }else{
+                    $(idStr).html(valStr);
+                }
             
             });
     }
