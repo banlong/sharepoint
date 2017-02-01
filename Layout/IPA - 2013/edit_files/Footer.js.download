@@ -1,0 +1,31 @@
+
+$(document).ready(function()
+{
+   CustomFooter();
+   $('head').append('<link rel="stylesheet" type="text/css" href="/sites/O365/SiteAssets/DupontCSS/Print.css" media="print" >');
+})
+
+function CustomFooter() 
+{	
+	if( $("#footers").length ==  0)
+	{	
+		var footer= null;
+		var currentTime = new Date();
+		var year = currentTime.getFullYear();
+		$("#footers").removeAttr('style');
+		footer = "<style>#footer-content{ margin: 0 auto; margin-bottom:80px; width: 540px; text-align:center;} .ms-bodyareaframe {	padding: 8px; border: none; } .s4-titlerowhidetitle { display:block; } .s4-ribbonrowhidetitle { height:126px; } </style><div class='s4-notdlg noindex' id='footers' ><br><br><br><br><br><br><br><br><br><br><br><br><br><hr style='height: 2px; background-color: rgb(204, 204, 204);'><div class='noindex' id='footer-content' ><span><a href='http://www2.dupont.com/DuPont_Home/en_US/legal.html'>Legal Notices &amp; Terms of Use</a></span><span>&nbsp;&nbsp;|&nbsp;&nbsp;</span><span><a href='http://www.dupont.com/privacy.html'>Privacy Policy</a>&nbsp;&nbsp;&nbsp;</span><p>&nbsp;&nbsp;&nbsp;&nbsp;Copyright© "+year+" DuPont. All Rights Reserved. The DuPont Oval, DuPont™, The miracles of science™ and all products denoted with ™ or ® are trademarks or registered trademarks of DuPont and or its affiliates. Internet/Intranet usage via DuPont facilities is to be used primarily for DuPont business.<br/><br/><br/></p></div></div>"		
+	  	$(footer).insertAfter("#s4-bodyContainer");				
+		calcFooter();
+	}
+}
+
+function calcFooter()
+{
+	var docHeight = $(window).height();
+    var footerHeight = $('#footers').height();
+    var footerTop = $('#footers').position().top + footerHeight;
+
+	   if (footerTop < docHeight) {
+		$('#footers').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+	   }
+}

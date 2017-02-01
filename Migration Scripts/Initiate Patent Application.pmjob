@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransferJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="" Description="" Version="4.0.0.0">
+  <QuerySource xsi:type="NotesQuerySource">
+    <ConnectionString>database=C:\\Users\\nghie\\Desktop\\DPM PAMS v2.1\\dpmpamV21.nsf; server=local;</ConnectionString>
+  </QuerySource>
+  <SourceDefinition Name="DPM PAMS v2.1" Description="Initiate Patent Application" Templates="DPM PAMS v2.1" ListTypes="">
+    <QuerySpec xsi:type="NotesQuerySpec">
+      <From />
+      <Forms>Initiate Patent Application|Appl</Forms>
+      <Search />
+      <Formula />
+      <Column ColumnType="Item" Value="AdminAuthors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="AllContributors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="AppAdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="AppGdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="Application" ReturnType="String" Option="Multi" />
+      <Column ColumnType="RichText" Value="Approaches" Alias="ApproachesHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="Approaches" Alias="ApproachesText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Approaches" Alias="ApproachesMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="Approaches" Alias="ApproachesAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="Approaches" Alias="ApproachesEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="Approaches" Alias="ApproachesImages" Option="Multi" />
+      <Column ColumnType="Item" Value="AT_AL" ReturnType="String" />
+      <Column ColumnType="Item" Value="Attachments" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Attorney" ReturnType="String" />
+      <Column ColumnType="Item" Value="Attorney_" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="BasisPriority" ReturnType="String" />
+      <Column ColumnType="Item" Value="Business" ReturnType="String" />
+      <Column ColumnType="Item" Value="BusinessUnit" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="BusValue" ReturnType="String" />
+      <Column ColumnType="Item" Value="Categorization" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="City_1" ReturnType="String" />
+      <Column ColumnType="Item" Value="City_10" ReturnType="String" />
+      <Column ColumnType="Item" Value="City_2" ReturnType="String" />
+      <Column ColumnType="Item" Value="City_3" ReturnType="String" />
+      <Column ColumnType="Item" Value="City_4" ReturnType="String" />
+      <Column ColumnType="Item" Value="City_5" ReturnType="String" />
+      <Column ColumnType="Item" Value="City_6" ReturnType="String" />
+      <Column ColumnType="Item" Value="City_7" ReturnType="String" />
+      <Column ColumnType="Item" Value="City_8" ReturnType="String" />
+      <Column ColumnType="Item" Value="City_9" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Competitive" Alias="CompetitiveHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="Competitive" Alias="CompetitiveText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Competitive" Alias="CompetitiveMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="Competitive" Alias="CompetitiveAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="Competitive" Alias="CompetitiveEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="Competitive" Alias="CompetitiveImages" Option="Multi" />
+      <Column ColumnType="Item" Value="Confidential" ReturnType="String" />
+      <Column ColumnType="Item" Value="Contributing_Authors_" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="ContributingAuthor_1" ReturnType="String" />
+      <Column ColumnType="Item" Value="ContributingAuthor_10" ReturnType="String" />
+      <Column ColumnType="Item" Value="ContributingAuthor_2" ReturnType="String" />
+      <Column ColumnType="Item" Value="ContributingAuthor_3" ReturnType="String" />
+      <Column ColumnType="Item" Value="ContributingAuthor_4" ReturnType="String" />
+      <Column ColumnType="Item" Value="ContributingAuthor_5" ReturnType="String" />
+      <Column ColumnType="Item" Value="ContributingAuthor_6" ReturnType="String" />
+      <Column ColumnType="Item" Value="ContributingAuthor_7" ReturnType="String" />
+      <Column ColumnType="Item" Value="ContributingAuthor_8" ReturnType="String" />
+      <Column ColumnType="Item" Value="ContributingAuthor_9" ReturnType="String" />
+      <Column ColumnType="Item" Value="ContributingAuthors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="ContributingAuthors_Other" ReturnType="String" Option="Multi" />
+      <Column ColumnType="RichText" Value="CorrespAtt" Alias="CorrespattHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="CorrespAtt" Alias="CorrespattText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="CorrespAtt" Alias="CorrespattMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="CorrespAtt" Alias="CorrespattAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="CorrespAtt" Alias="CorrespattEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="CorrespAtt" Alias="CorrespattImages" Option="Multi" />
+      <Column ColumnType="Item" Value="dAppAdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="DateComposed" ReturnType="Date" />
+      <Column ColumnType="Item" Value="DateSubmitted" ReturnType="Date" />
+      <Column ColumnType="Item" Value="dAttorney" ReturnType="String" />
+      <Column ColumnType="Item" Value="dDroppedDate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="Descriptive_Section" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="dFANumber" ReturnType="String" />
+      <Column ColumnType="Item" Value="dFileAdate" ReturnType="Date" />
+      <Column ColumnType="RichText" Value="DiffPriorArt" Alias="DiffpriorartHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="DiffPriorArt" Alias="DiffpriorartText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="DiffPriorArt" Alias="DiffpriorartMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="DiffPriorArt" Alias="DiffpriorartAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="DiffPriorArt" Alias="DiffpriorartEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="DiffPriorArt" Alias="DiffpriorartImages" Option="Multi" />
+      <Column ColumnType="Item" Value="Disclosure" ReturnType="String" />
+      <Column ColumnType="Item" Value="Disclosure_2" ReturnType="String" />
+      <Column ColumnType="Item" Value="Disclosure_3" ReturnType="String" />
+      <Column ColumnType="Item" Value="DocAuthor" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="DocReader" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="dPatentLiaison" ReturnType="String" />
+      <Column ColumnType="Item" Value="DraftAttorney" ReturnType="String" />
+      <Column ColumnType="Item" Value="DraftContr" ReturnType="String" />
+      <Column ColumnType="Item" Value="DraftLiaison" ReturnType="String" />
+      <Column ColumnType="Item" Value="DroppedDate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="DropReason" ReturnType="String" />
+      <Column ColumnType="Item" Value="dsp_DateSubmitted" ReturnType="Date" />
+      <Column ColumnType="Item" Value="dsp_NOIAppGdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="dspContributingAuthor_1" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspContributingAuthor_10" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspContributingAuthor_2" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspContributingAuthor_3" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspContributingAuthor_4" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspContributingAuthor_5" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspContributingAuthor_6" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspContributingAuthor_7" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspContributingAuthor_8" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspContributingAuthor_9" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspContributingAuthors_Other" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspInventor_1" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspInventor_10" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspInventor_2" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspInventor_3" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspInventor_4" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspInventor_5" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspInventor_6" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspInventor_7" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspInventor_8" ReturnType="String" />
+      <Column ColumnType="Item" Value="dspInventor_9" ReturnType="String" />
+      <Column ColumnType="Item" Value="dSupervisor" ReturnType="String" />
+      <Column ColumnType="Item" Value="DuPont_Confidential" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Earliest_doc" Alias="Earliest_docHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="Earliest_doc" Alias="Earliest_docText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Earliest_doc" Alias="Earliest_docMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="Earliest_doc" Alias="Earliest_docAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="Earliest_doc" Alias="Earliest_docEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="Earliest_doc" Alias="Earliest_docImages" Option="Multi" />
+      <Column ColumnType="Item" Value="ExampleAccptDate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="ExampleAdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="ExampleAprdate" ReturnType="Date" />
+      <Column ColumnType="RichText" Value="ExampleAtt" Alias="ExampleattHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="ExampleAtt" Alias="ExampleattText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="ExampleAtt" Alias="ExampleattMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="ExampleAtt" Alias="ExampleattAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="ExampleAtt" Alias="ExampleattEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="ExampleAtt" Alias="ExampleattImages" Option="Multi" />
+      <Column ColumnType="Item" Value="ExampleCom" ReturnType="String" />
+      <Column ColumnType="Item" Value="ExampleCom_1" ReturnType="String" />
+      <Column ColumnType="Item" Value="ExampleGdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="ExamplesReq" ReturnType="Date" />
+      <Column ColumnType="Item" Value="FANumber" ReturnType="String" />
+      <Column ColumnType="Item" Value="FileAdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="FileGdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="FilingType" ReturnType="String" />
+      <Column ColumnType="Item" Value="Flag" ReturnType="String" />
+      <Column ColumnType="Item" Value="Flag_1" ReturnType="String" />
+      <Column ColumnType="Item" Value="Flag_2" ReturnType="String" />
+      <Column ColumnType="Item" Value="Flag_3" ReturnType="String" />
+      <Column ColumnType="Item" Value="Flag_4" ReturnType="String" />
+      <Column ColumnType="Item" Value="Flag_5" ReturnType="String" />
+      <Column ColumnType="Item" Value="Flag_6" ReturnType="String" />
+      <Column ColumnType="Item" Value="FlagEx" ReturnType="String" />
+      <Column ColumnType="Item" Value="From" ReturnType="String" />
+      <Column ColumnType="Item" Value="FullName_1" ReturnType="String" />
+      <Column ColumnType="Item" Value="FullName_10" ReturnType="String" />
+      <Column ColumnType="Item" Value="FullName_2" ReturnType="String" />
+      <Column ColumnType="Item" Value="FullName_3" ReturnType="String" />
+      <Column ColumnType="Item" Value="FullName_4" ReturnType="String" />
+      <Column ColumnType="Item" Value="FullName_5" ReturnType="String" />
+      <Column ColumnType="Item" Value="FullName_6" ReturnType="String" />
+      <Column ColumnType="Item" Value="FullName_7" ReturnType="String" />
+      <Column ColumnType="Item" Value="FullName_8" ReturnType="String" />
+      <Column ColumnType="Item" Value="FullName_9" ReturnType="String" />
+      <Column ColumnType="Item" Value="IntSearchAdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="Inventor_1" ReturnType="String" />
+      <Column ColumnType="Item" Value="Inventor_10" ReturnType="String" />
+      <Column ColumnType="Item" Value="Inventor_2" ReturnType="String" />
+      <Column ColumnType="Item" Value="Inventor_3" ReturnType="String" />
+      <Column ColumnType="Item" Value="Inventor_4" ReturnType="String" />
+      <Column ColumnType="Item" Value="Inventor_5" ReturnType="String" />
+      <Column ColumnType="Item" Value="Inventor_6" ReturnType="String" />
+      <Column ColumnType="Item" Value="Inventor_7" ReturnType="String" />
+      <Column ColumnType="Item" Value="Inventor_8" ReturnType="String" />
+      <Column ColumnType="Item" Value="Inventor_9" ReturnType="String" />
+      <Column ColumnType="Item" Value="Inventors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="kwd_FilingRecom" ReturnType="String" />
+      <Column ColumnType="Item" Value="ltxt_PastAuthors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="ltxt_PastEditDates" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Mail" ReturnType="String" />
+      <Column ColumnType="RichText" Value="MainClaim" Alias="MainclaimHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="MainClaim" Alias="MainclaimText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="MainClaim" Alias="MainclaimMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="MainClaim" Alias="MainclaimAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="MainClaim" Alias="MainclaimEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="MainClaim" Alias="MainclaimImages" Option="Multi" />
+      <Column ColumnType="Item" Value="MemberName" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="NOI" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="NOIAdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="NOIAppGdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="NOInoyApprCom" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Notes" Alias="NotesHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="Notes" Alias="NotesText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Notes" Alias="NotesMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="Notes" Alias="NotesAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="Notes" Alias="NotesEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="Notes" Alias="NotesImages" Option="Multi" />
+      <Column ColumnType="Item" Value="num_TimesModified" ReturnType="Number" />
+      <Column ColumnType="RichText" Value="Other" Alias="OtherHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="Other" Alias="OtherText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Other" Alias="OtherMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="Other" Alias="OtherAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="Other" Alias="OtherEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="Other" Alias="OtherImages" Option="Multi" />
+      <Column ColumnType="RichText" Value="Other_parties" Alias="Other_partiesHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="Other_parties" Alias="Other_partiesText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Other_parties" Alias="Other_partiesMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="Other_parties" Alias="Other_partiesAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="Other_parties" Alias="Other_partiesEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="Other_parties" Alias="Other_partiesImages" Option="Multi" />
+      <Column ColumnType="RichText" Value="Other_parties_1" Alias="Other_parties_1Html" Option="Html" />
+      <Column ColumnType="RichText" Value="Other_parties_1" Alias="Other_parties_1Text" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Other_parties_1" Alias="Other_parties_1Mime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="Other_parties_1" Alias="Other_parties_1Attachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="Other_parties_1" Alias="Other_parties_1EmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="Other_parties_1" Alias="Other_parties_1Images" Option="Multi" />
+      <Column ColumnType="RichText" Value="OtherClaims" Alias="OtherclaimsHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="OtherClaims" Alias="OtherclaimsText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="OtherClaims" Alias="OtherclaimsMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="OtherClaims" Alias="OtherclaimsAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="OtherClaims" Alias="OtherclaimsEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="OtherClaims" Alias="OtherclaimsImages" Option="Multi" />
+      <Column ColumnType="RichText" Value="Others_Solution" Alias="Others_solutionHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="Others_Solution" Alias="Others_solutionText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Others_Solution" Alias="Others_solutionMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="Others_Solution" Alias="Others_solutionAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="Others_Solution" Alias="Others_solutionEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="Others_Solution" Alias="Others_solutionImages" Option="Multi" />
+      <Column ColumnType="RichText" Value="PatAppAtt" Alias="PatappattHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="PatAppAtt" Alias="PatappattText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="PatAppAtt" Alias="PatappattMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="PatAppAtt" Alias="PatappattAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="PatAppAtt" Alias="PatappattEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="PatAppAtt" Alias="PatappattImages" Option="Multi" />
+      <Column ColumnType="Item" Value="PatDate" ReturnType="Date" />
+      <Column ColumnType="RichText" Value="PatDoc" Alias="PatdocHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="PatDoc" Alias="PatdocText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="PatDoc" Alias="PatdocMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="PatDoc" Alias="PatdocAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="PatDoc" Alias="PatdocEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="PatDoc" Alias="PatdocImages" Option="Multi" />
+      <Column ColumnType="Item" Value="PatentLiaison" ReturnType="String" />
+      <Column ColumnType="Item" Value="PatNum" ReturnType="String" />
+      <Column ColumnType="Item" Value="PatNumber_1" ReturnType="String" />
+      <Column ColumnType="Item" Value="PatOther" ReturnType="String" />
+      <Column ColumnType="Item" Value="Priority" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Problem" Alias="ProblemHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="Problem" Alias="ProblemText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Problem" Alias="ProblemMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="Problem" Alias="ProblemAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="Problem" Alias="ProblemEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="Problem" Alias="ProblemImages" Option="Multi" />
+      <Column ColumnType="Item" Value="Product" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Project" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Projected_use_date" ReturnType="Date" />
+      <Column ColumnType="RichText" Value="ProposedForeignCountries" Alias="ProposedforeigncountriesHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="ProposedForeignCountries" Alias="ProposedforeigncountriesText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="ProposedForeignCountries" Alias="ProposedforeigncountriesMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="ProposedForeignCountries" Alias="ProposedforeigncountriesAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="ProposedForeignCountries" Alias="ProposedforeigncountriesEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="ProposedForeignCountries" Alias="ProposedforeigncountriesImages" Option="Multi" />
+      <Column ColumnType="RichText" Value="RelPatent" Alias="RelpatentHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="RelPatent" Alias="RelpatentText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="RelPatent" Alias="RelpatentMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="RelPatent" Alias="RelpatentAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="RelPatent" Alias="RelpatentEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="RelPatent" Alias="RelpatentImages" Option="Multi" />
+      <Column ColumnType="Item" Value="saveOptions" ReturnType="String" />
+      <Column ColumnType="Item" Value="SBU" ReturnType="String" />
+      <Column ColumnType="Item" Value="SearchCompleteGDate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="SearchIntAdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="SearchIntGDate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="Sec_AttLiaEditors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Sec_ContrbAuthEditors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Sec_ContrCatEditors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Sec_ContribInfo" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Sec_ContrNOIDetailEditors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Sec_ExamplesEditors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Sec_NOIApproverEditors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Sec_PatAppDevEditors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Sec_PatDocMgmtEditors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Segment" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Status" ReturnType="String" />
+      <Column ColumnType="Item" Value="Street_1" ReturnType="String" />
+      <Column ColumnType="Item" Value="Street_10" ReturnType="String" />
+      <Column ColumnType="Item" Value="Street_2" ReturnType="String" />
+      <Column ColumnType="Item" Value="Street_3" ReturnType="String" />
+      <Column ColumnType="Item" Value="Street_4" ReturnType="String" />
+      <Column ColumnType="Item" Value="Street_5" ReturnType="String" />
+      <Column ColumnType="Item" Value="Street_6" ReturnType="String" />
+      <Column ColumnType="Item" Value="Street_7" ReturnType="String" />
+      <Column ColumnType="Item" Value="Street_8" ReturnType="String" />
+      <Column ColumnType="Item" Value="Street_9" ReturnType="String" />
+      <Column ColumnType="RichText" Value="SumofInv" Alias="SumofinvHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="SumofInv" Alias="SumofinvText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="SumofInv" Alias="SumofinvMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="SumofInv" Alias="SumofinvAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="SumofInv" Alias="SumofinvEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="SumofInv" Alias="SumofinvImages" Option="Multi" />
+      <Column ColumnType="Item" Value="Supervisor" ReturnType="String" />
+      <Column ColumnType="Item" Value="Supervisor_" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="SupervisorDocReader" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="TeamNotified" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="TeamNotifiedGDate" ReturnType="Date" />
+      <Column ColumnType="RichText" Value="ThirdParty" Alias="ThirdpartyHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="ThirdParty" Alias="ThirdpartyText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="ThirdParty" Alias="ThirdpartyMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="ThirdParty" Alias="ThirdpartyAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="ThirdParty" Alias="ThirdpartyEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="ThirdParty" Alias="ThirdpartyImages" Option="Multi" />
+      <Column ColumnType="Item" Value="Title" ReturnType="String" />
+      <Column ColumnType="Item" Value="TransferredSBU" ReturnType="String" />
+      <Column ColumnType="Item" Value="TransferSBUDate" ReturnType="String" />
+      <Column ColumnType="Item" Value="txt_DocDesc" ReturnType="String" />
+      <Column ColumnType="Item" Value="txt_docReaderResetflg" ReturnType="String" />
+      <Column ColumnType="Item" Value="txt_EarlyAccessFlag" ReturnType="String" />
+      <Column ColumnType="Item" Value="txt_FieldName" ReturnType="String" />
+      <Column ColumnType="Item" Value="Type" ReturnType="String" Option="Multi" />
+      <Column ColumnType="RichText" Value="Utility" Alias="UtilityHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="Utility" Alias="UtilityText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="Utility" Alias="UtilityMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="Utility" Alias="UtilityAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="Utility" Alias="UtilityEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="Utility" Alias="UtilityImages" Option="Multi" />
+      <Column ColumnType="AttachmentLinks" Value="$NULL" Alias="OtherAttachmentLinks" Option="Html" />
+    </QuerySpec>
+  </SourceDefinition>
+  <SharePointConnection>
+    <Web>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/</Web>
+    <List>Initiate Patent Application</List>
+  </SharePointConnection>
+  <JobOptions>
+    <AutoCreateFields>true</AutoCreateFields>
+    <DuplicateDocumentHandling>CreateNewVersion</DuplicateDocumentHandling>
+    <PreserveIdentities>true</PreserveIdentities>
+    <PreserveDates>true</PreserveDates>
+    <MaxRecords>1</MaxRecords>
+    <SkipRecords>100</SkipRecords>
+    <QueryOptions xsi:type="NotesRuntimeQueryOptions">
+      <DeleteMigratedDocuments>false</DeleteMigratedDocuments>
+      <ExtractRecurrencePatterns>false</ExtractRecurrencePatterns>
+      <ExtractDocSecurity>false</ExtractDocSecurity>
+    </QueryOptions>
+    <UserMappingOptions>
+      <MappingFailureSubstitution>DefaultIdentity</MappingFailureSubstitution>
+      <UseMappingFailureSubstitutionForUserFields>true</UseMappingFailureSubstitutionForUserFields>
+      <DefaultUserName>dupontnet\sb1654</DefaultUserName>
+    </UserMappingOptions>
+    <LinkConversionOptions />
+  </JobOptions>
+  <SecurityMapping Enabled="false">
+    <AccessLevelMappings>
+      <AccessLevelMapping NotesAccessLevel="Reader" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Author" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Editor" SharePointPermissionLevel="Contribute" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Designer" SharePointPermissionLevel="Design" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Manager" SharePointPermissionLevel="Full Control" SharePointGroup="{Owners}" />
+      <AccessLevelMapping NotesAccessLevel="Can Create" />
+      <AccessLevelMapping NotesAccessLevel="Can Delete" />
+    </AccessLevelMappings>
+    <MapACLUsers>false</MapACLUsers>
+    <MapACLGroups>false</MapACLGroups>
+    <MapACLRoles />
+  </SecurityMapping>
+  <SharePointTargetDefinition Name="DPM PAMS v2.1" Description="Initiate Patent Application" Templates="" SharePointTemplates="Custom List">
+    <ExtractIcons>false</ExtractIcons>
+    <IsDocLib>false</IsDocLib>
+    <IsDiscussion>false</IsDiscussion>
+    <IsEvents>false</IsEvents>
+    <AllowAttachments>false</AllowAttachments>
+    <Field Name="Status" Type="Text" NotesItems="Status" />
+    <Field Name="Docket Number" Type="Text" NotesItems="FANumber" IsTitleField="true" />
+    <Field Name="Title of NOI" Type="Note" NotesItems="Title" />
+    <Field Name="Business" Type="Text" NotesItems="Business" />
+    <Field Name="SBU" Type="Text" NotesItems="SBU" />
+    <Field Name="Pattern Type" Type="Text" NotesItems="Type" />
+    <Field Name="Business Unit" Type="Text" NotesItems="BusinessUnit" />
+    <Field Name="Segment" Type="Text" NotesItems="Segment" />
+    <Field Name="Application" Type="Text" NotesItems="Application" />
+    <Field Name="Product" Type="Text" NotesItems="Product" />
+    <Field Name="Project" Type="Text" NotesItems="Project" />
+    <Field Name="NOI Approval Manager" Type="Text" NotesItems="Supervisor" />
+    <Field Name="Problem" Type="Note" NotesItems="ProblemHtml" AllowMultiple="true" />
+    <Field Name="Approaches" Type="Note" NotesItems="ApproachesHtml;OtherAttachmentLinks" AllowMultiple="true" />
+    <Field Name="Others Solution" Type="Note" NotesItems="Others_solutionHtml" AllowMultiple="true" />
+    <Field Name="Utility" Type="Note" NotesItems="UtilityHtml" AllowMultiple="true" />
+    <Field Name="Competitive" Type="Note" NotesItems="CompetitiveHtml" AllowMultiple="true" />
+    <Field Name="Earliest Document" Type="Note" NotesItems="Earliest_docHtml" AllowMultiple="true" />
+    <Field Name="Disclosure" Type="Text" NotesItems="Disclosure" MultiLine="true" />
+    <Field Name="Other" Type="Note" NotesItems="OtherHtml" AllowMultiple="true" />
+    <Field Name="Other Parties 1" Type="Note" NotesItems="Other_parties_1Html" AllowMultiple="true" />
+    <Field Name="Disclosure 2" Type="Text" NotesItems="Disclosure_2" MultiLine="true" />
+    <Field Name="Other Parties" Type="Note" NotesItems="Other_partiesHtml" AllowMultiple="true" />
+    <Field Name="Disclosure 3" Type="Text" NotesItems="Disclosure_3" MultiLine="true" />
+    <Field Name="Thirdparty" Type="Note" NotesItems="ThirdpartyHtml" AllowMultiple="true" />
+    <Field Name="Confidential" Type="Text" NotesItems="Confidential" MultiLine="true" />
+    <Field Name="DuPont Confidential" Type="Text" NotesItems="DuPont_Confidential" MultiLine="true" />
+    <Field Name="Contributing Author 1" Type="Text" NotesItems="dspContributingAuthor_1" />
+    <Field Name="Contributing Author 2" Type="Text" NotesItems="dspContributingAuthor_2" />
+    <Field Name="Contributing Author 3" Type="Text" NotesItems="dspContributingAuthor_3" />
+    <Field Name="Contributing Author 4" Type="Text" NotesItems="dspContributingAuthor_4" />
+    <Field Name="Contributing Author 5" Type="Text" NotesItems="dspContributingAuthor_5" />
+    <Field Name="Contributing Author 6" Type="Text" NotesItems="dspContributingAuthor_6" />
+    <Field Name="Contributing Author 7" Type="Text" NotesItems="dspContributingAuthor_7" />
+    <Field Name="Contributing Author 8" Type="Text" NotesItems="dspContributingAuthor_8" />
+    <Field Name="Contributing Author 9" Type="Text" NotesItems="dspContributingAuthor_9" />
+    <Field Name="Contributing Author 10" Type="Text" NotesItems="dspContributingAuthor_10" />
+    <Field Name="Contributing Authors Other" Type="Text" NotesItems="dspContributingAuthors_Other" />
+    <Field Name="Filing Recommendation" Type="Text" NotesItems="kwd_FilingRecom" />
+    <Field Name="Proposed Foreign Countries" Type="Note" NotesItems="ProposedforeigncountriesHtml" AllowMultiple="true" />
+    <Field Name="Business Value" Type="Text" NotesItems="BusValue" />
+    <Field Name="Reasons NOI Not Approved" Type="Text" NotesItems="NOInoyApprCom" />
+    <Field Name="AT_AL" Type="Text" NotesItems="AT_AL" />
+    <Field Name="Priority" Type="Text" NotesItems="Priority" />
+    <Field Name="Basis for Priority" Type="Note" NotesItems="BasisPriority" />
+    <Field Name="Related Docket" Type="Text" NotesItems="PatOther" />
+    <Field Name="Related Patent Number" Type="Text" NotesItems="PatNumber_1" />
+    <Field Name="Filing Type" Type="Text" NotesItems="FilingType" />
+    <Field Name="Attorney of Record" Type="Note" NotesItems="Attorney" />
+    <Field Name="Liaison" Type="Note" NotesItems="PatentLiaison" />
+    <Field Name="Reason NOI Details Need Editing" Type="Text" NotesItems="ExampleCom_1" />
+    <Field Name="Reason Examples Need Editing" Type="Text" NotesItems="ExampleCom" />
+    <Field Name="TransferredSBU" Type="Text" NotesItems="TransferredSBU" />
+    <Field Name="Inventor Name (DuPont) 1" Type="Text" NotesItems="dspInventor_1" />
+    <Field Name="Full Name (Inventor 1)" Type="Text" NotesItems="FullName_1" />
+    <Field Name="Street (Inventor 1)" Type="Text" NotesItems="Street_1" />
+    <Field Name="City, State, Zip Code, Country (Inventor 1)" Type="Text" NotesItems="City_1" />
+    <Field Name="Inventor Name (DuPont) 2" Type="Text" NotesItems="dspInventor_2" />
+    <Field Name="Full Name (Inventor 2)" Type="Text" NotesItems="FullName_2" />
+    <Field Name="Street (Inventor 2)" Type="Text" NotesItems="Street_2" />
+    <Field Name="City, State, Zip Code, Country (Inventor 2)" Type="Text" NotesItems="City_2" />
+    <Field Name="Inventor Name (DuPont) 3" Type="Text" NotesItems="dspInventor_3" />
+    <Field Name="Full Name (Inventor 3)" Type="Text" NotesItems="FullName_3" />
+    <Field Name="Street (Inventor 3)" Type="Text" NotesItems="Street_3" />
+    <Field Name="City, State, Zip Code, Country (Inventor 3)" Type="Text" NotesItems="City_3" />
+    <Field Name="Inventor Name (DuPont) 4" Type="Text" NotesItems="dspInventor_4" />
+    <Field Name="Full Name (Inventor 4)" Type="Text" NotesItems="FullName_4" />
+    <Field Name="Street (Inventor 4)" Type="Text" NotesItems="Street_4" />
+    <Field Name="City, State, Zip Code, Country (Inventor 4)" Type="Text" NotesItems="City_4" />
+    <Field Name="Inventor Name (DuPont) 5" Type="Text" NotesItems="dspInventor_5" />
+    <Field Name="Full Name (Inventor 5)" Type="Text" NotesItems="FullName_5" />
+    <Field Name="Street (Inventor 5)" Type="Text" NotesItems="Street_5" />
+    <Field Name="City, State, Zip Code, Country (Inventor 5)" Type="Text" NotesItems="City_5" />
+    <Field Name="Inventor Name (DuPont) 6" Type="Text" NotesItems="dspInventor_6" />
+    <Field Name="Full Name (Inventor 6)" Type="Text" NotesItems="FullName_6" />
+    <Field Name="Street (Inventor 6)" Type="Text" NotesItems="Street_6" />
+    <Field Name="City, State, Zip Code, Country (Inventor 6)" Type="Text" NotesItems="City_6" />
+    <Field Name="Inventor Name (DuPont) 7" Type="Text" NotesItems="dspInventor_7" />
+    <Field Name="Full Name (Inventor 7)" Type="Text" NotesItems="FullName_7" />
+    <Field Name="Street (Inventor 7)" Type="Text" NotesItems="Street_7" />
+    <Field Name="City, State, Zip Code, Country (Inventor 7)" Type="Text" NotesItems="City_7" />
+    <Field Name="Inventor Name (DuPont) 8" Type="Text" NotesItems="dspInventor_8" />
+    <Field Name="Full Name (Inventor 8)" Type="Text" NotesItems="FullName_8" />
+    <Field Name="Street (Inventor 8)" Type="Text" NotesItems="Street_8" />
+    <Field Name="City, State, Zip Code, Country (Inventor 8)" Type="Text" NotesItems="City_8" />
+    <Field Name="Inventor Name (DuPont) 9" Type="Text" NotesItems="dspInventor_9" />
+    <Field Name="Full Name (Inventor 9)" Type="Text" NotesItems="FullName_9" />
+    <Field Name="Street (Inventor 9)" Type="Text" NotesItems="Street_9" />
+    <Field Name="City, State, Zip Code, Country (Inventor 9)" Type="Text" NotesItems="City_9" />
+    <Field Name="Inventor Name (DuPont) 10" Type="Text" NotesItems="dspInventor_10" />
+    <Field Name="Full Name (Inventor 10)" Type="Text" NotesItems="FullName_10" />
+    <Field Name="Street (Inventor 10)" Type="Text" NotesItems="Street_10" />
+    <Field Name="City, State, Zip Code, Country (Inventor 10)" Type="Text" NotesItems="City_10" />
+    <Field Name="Summary of Invention" Type="Note" NotesItems="SumofinvHtml" AllowMultiple="true" />
+    <Field Name="Related Patent Applications/Patents" Type="Note" NotesItems="RelpatentHtml" AllowMultiple="true" />
+    <Field Name="Difference With Prior Art" Type="Note" NotesItems="DiffpriorartHtml" AllowMultiple="true" />
+    <Field Name="Main Claim" Type="Note" NotesItems="MainclaimHtml" AllowMultiple="true" />
+    <Field Name="Other Claims" Type="Note" NotesItems="OtherclaimsHtml" AllowMultiple="true" />
+    <Field Name="Examples/Drawings" Type="Note" NotesItems="ExampleattHtml" AllowMultiple="true" />
+    <Field Name="Patent Application" Type="Note" NotesItems="PatappattHtml" AllowMultiple="true" />
+    <Field Name="Correspondence" Type="Note" NotesItems="CorrespattHtml" AllowMultiple="true" />
+    <Field Name="Draft to Contributor" Type="Text" NotesItems="DraftContr" />
+    <Field Name="Draft to Liaison" Type="Text" NotesItems="DraftLiaison" />
+    <Field Name="Draft to Attorney" Type="Text" NotesItems="DraftAttorney" />
+    <Field Name="DropReason" Type="Text" NotesItems="DropReason" />
+    <Field Name="Notes" Type="Note" NotesItems="NotesHtml" AllowMultiple="true" />
+    <Field Name="NOI Submitted Date" Type="Text" NotesItems="dsp_DateSubmitted" />
+    <Field Name="NOI Approved Goal Date" Type="Text" NotesItems="dsp_NOIAppGdate" />
+    <Field Name="NOI Approved Date" Type="Text" NotesItems="NOIAdate" />
+    <Field Name="Team Notified Goal Date" Type="Text" NotesItems="TeamNotifiedGDate" />
+    <Field Name="Team Notified Date" Type="Text" NotesItems="TeamNotified" />
+    <Field Name="Search Initiated Goal Date" Type="Text" NotesItems="SearchIntGDate" />
+    <Field Name="Search Initiated Actual Date" Type="Text" NotesItems="SearchIntAdate" />
+    <Field Name="Search Completed Goal Date" Type="Text" NotesItems="SearchCompleteGDate" />
+    <Field Name="Search Completed Date" Type="Text" NotesItems="IntSearchAdate" />
+    <Field Name="Examples Requested Date" Type="Text" NotesItems="ExamplesReq" />
+    <Field Name="Examples Submitted Goal Date" Type="Text" NotesItems="ExampleGdate" />
+    <Field Name="Examples Submitted Date" Type="Text" NotesItems="ExampleAdate" />
+    <Field Name="Examples Accepted Goal Date" Type="Text" NotesItems="ExampleAccptDate" />
+    <Field Name="Examples Accepted Date" Type="Text" NotesItems="ExampleAprdate" />
+    <Field Name="Application Completed Goal Date" Type="Text" NotesItems="AppGdate" />
+    <Field Name="Application Completed Date" Type="Text" NotesItems="AppAdate" />
+    <Field Name="Transfer SBU Date" Type="Text" NotesItems="TransferSBUDate" />
+    <Field Name="Dropped Date" Type="Text" NotesItems="DroppedDate" />
+    <Field Name="US Patent Issued Date" Type="Text" NotesItems="PatDate" />
+    <Field Name="US Patent Number" Type="Text" NotesItems="PatNum" />
+    <Field Name="US Patent Document" Type="Note" NotesItems="PatdocHtml" AllowMultiple="true" />
+    <Field Name="Administrative Authors" Type="Text" NotesItems="AdminAuthors" />
+    <Field Name="Supervisor Readers" Type="Text" NotesItems="SupervisorDocReader" />
+    <Field Name="Document Reader" Type="Text" NotesItems="DocReader" />
+    <Field Name="Document Author" Type="Text" NotesItems="DocAuthor" />
+    <Field Name="Inventors" Type="Text" NotesItems="Inventors" />
+    <Field Name="Contributing Authors" Type="Text" NotesItems="ContributingAuthors" />
+    <Field Name="All Contributors" Type="Text" NotesItems="AllContributors" />
+    <Field Name="Application Status" Type="Text" NotesItems="Sec_ContrCatEditors" />
+    <Field Name="ApproachesText" Type="Text" NotesItems="ApproachesText" MultiLine="true" />
+    <Field Name="Attachments" Type="Attachments" NotesItems="ApproachesAttachments; ApproachesImages; CompetitiveAttachments; CompetitiveEmbeddedObjects; CompetitiveImages; CorrespattAttachments; CorrespattEmbeddedObjects; CorrespattImages; DiffpriorartAttachments; DiffpriorartEmbeddedObjects; DiffpriorartImages; Earliest_docAttachments; Earliest_docEmbeddedObjects; Earliest_docImages; ExampleattAttachments; ExampleattEmbeddedObjects; ExampleattImages; MainclaimAttachments; MainclaimEmbeddedObjects; MainclaimImages; NotesAttachments; NotesEmbeddedObjects; NotesImages; OtherAttachments; OtherEmbeddedObjects; OtherImages; Other_partiesAttachments; Other_partiesEmbeddedObjects; Other_partiesImages; Other_parties_1Attachments; Other_parties_1EmbeddedObjects; Other_parties_1Images; OtherclaimsAttachments; OtherclaimsEmbeddedObjects; OtherclaimsImages; Others_solutionAttachments; Others_solutionEmbeddedObjects; Others_solutionImages; PatappattAttachments; PatappattEmbeddedObjects; PatappattImages; PatdocAttachments; PatdocEmbeddedObjects; PatdocImages; ProblemAttachments; ProblemEmbeddedObjects; ProblemImages; ProposedforeigncountriesAttachments; ProposedforeigncountriesEmbeddedObjects; ProposedforeigncountriesImages; RelpatentAttachments; RelpatentEmbeddedObjects; RelpatentImages; SumofinvAttachments; SumofinvEmbeddedObjects; SumofinvImages; ThirdpartyAttachments; ThirdpartyEmbeddedObjects; ThirdpartyImages; UtilityAttachments; UtilityEmbeddedObjects; UtilityImages" AllowMultiple="true" />
+    <Field Name="Categorization" Type="Text" NotesItems="Categorization" />
+    <Field Name="Competitive Text" Type="Text" NotesItems="CompetitiveText" MultiLine="true" />
+    <Field Name="CorrespattText" Type="Text" NotesItems="CorrespattText" MultiLine="true" />
+    <Field Name="DateComposed" Type="Text" NotesItems="DateComposed" />
+    <Field Name="DateSubmitted" Type="Text" NotesItems="DateSubmitted" />
+    <Field Name="dAttorney" Type="Text" NotesItems="dAttorney" />
+    <Field Name="dDocket Number" Type="Text" NotesItems="FANumber" />
+    <Field Name="Descriptive Section" Type="Text" NotesItems="Descriptive_Section" />
+    <Field Name="File Approved Date" Type="Text" NotesItems="dFileAdate" />
+    <Field Name="DiffpriorartText" Type="Text" NotesItems="DiffpriorartText" MultiLine="true" />
+    <Field Name="Patent Liaison" Type="Text" NotesItems="dPatentLiaison" />
+    <Field Name="Earliest Document Text" Type="Text" NotesItems="Earliest_docText" MultiLine="true" />
+    <Field Name="ExampleattText" Type="Text" NotesItems="ExampleattText" MultiLine="true" />
+    <Field Name="FlagEx" Type="Text" NotesItems="FlagEx" />
+    <Field Name="Folder" Type="Folder" />
+    <Field Name="From" Type="Note" NotesItems="From" />
+    <Field Name="Group B NOI Approval Manager" Type="Text" NotesItems="dSupervisor" />
+    <Field Name="Mail" Type="Text" NotesItems="Mail" />
+    <Field Name="MainclaimText" Type="Text" NotesItems="MainclaimText" MultiLine="true" />
+    <Field Name="MemberName" Type="Text" NotesItems="MemberName" />
+    <Field Name="NOI" Type="Text" NotesItems="NOI" />
+    <Field Name="NotesText" Type="Note" NotesItems="NotesText" />
+    <Field Name="NotesType" Type="Text" NotesItems="Type" />
+    <Field Name="num_TimesModified" Type="Number" NotesItems="num_TimesModified" />
+    <Field Name="Other Parties 1 Text" Type="Note" NotesItems="Other_parties_1Text" />
+    <Field Name="Other Parties Text" Type="Note" NotesItems="Other_partiesText" />
+    <Field Name="OtherclaimsText" Type="Text" NotesItems="OtherclaimsText" MultiLine="true" />
+    <Field Name="Others Solution Text" Type="Text" NotesItems="Others_solutionText" MultiLine="true" />
+    <Field Name="OtherText" Type="Note" NotesItems="OtherText" MultiLine="true" />
+    <Field Name="PatappattText" Type="Text" NotesItems="PatappattText" MultiLine="true" />
+    <Field Name="PatdocText" Type="Text" NotesItems="PatdocText" />
+    <Field Name="ProblemText" Type="Text" NotesItems="ProblemText" MultiLine="true" />
+    <Field Name="Proposed First Commercial Use Date" Type="Text" NotesItems="Projected_use_date" />
+    <Field Name="Proposed Foreign Countries Text" Type="Text" NotesItems="ProposedforeigncountriesText" MultiLine="true" />
+    <Field Name="RelpatentText" Type="Text" NotesItems="RelpatentText" />
+    <Field Name="saveOptions" Type="Text" NotesItems="saveOptions" />
+    <Field Name="Sec_AttLiaEditors" Type="Text" NotesItems="Sec_AttLiaEditors" />
+    <Field Name="Sec_ContrbAuthEditors" Type="Text" NotesItems="Sec_ContrbAuthEditors" />
+    <Field Name="Sec_ContribInfo" Type="Text" NotesItems="Sec_ContribInfo" />
+    <Field Name="Sec_ContrNOIDetailEditors" Type="Text" NotesItems="Sec_ContrNOIDetailEditors" />
+    <Field Name="Sec_ExamplesEditors" Type="Text" NotesItems="Sec_ExamplesEditors" />
+    <Field Name="Sec_NOIApproverEditors" Type="Text" NotesItems="Sec_NOIApproverEditors" MultiLine="true" />
+    <Field Name="Sec_PatAppDevEditors" Type="Text" NotesItems="Sec_PatAppDevEditors" />
+    <Field Name="Sec_PatDocMgmtEditors" Type="Text" NotesItems="Sec_PatDocMgmtEditors" />
+    <Field Name="Summary of Invention Text" Type="Text" NotesItems="SumofinvText" MultiLine="true" />
+    <Field Name="Supervisor" Type="Text" NotesItems="Supervisor_" />
+    <Field Name="Thirdparty Text" Type="Text" NotesItems="ThirdpartyText" MultiLine="true" />
+    <Field Name="Utility Text" Type="Text" NotesItems="UtilityText" MultiLine="true" />
+    <Field Name="Docket #" Type="Calculated" Formula="=IF([Docket Number]=&quot;&quot;, &quot;Not assigned&quot;, [Docket Number])" />
+    <Field Name="AT_AL VAL" Type="Calculated" Formula="= IF(AT_AL = &quot;&quot;, &quot;NA&quot;, AT_AL)" />
+    <Field Name="Goal Filing Date" Type="Text" NotesItems="FileGdate" Formula="=[FileGdate]" />
+    <Field Name="Actual Filing Date" Type="Text" />
+    <Field Name="Priority Level" Type="Calculated" Formula="=IF([Priority]=&quot;High&quot;, &quot;A&quot;, IF([Priority]=&quot;Medium&quot;, &quot;B&quot;, IF([Priority]=&quot;Low&quot;, &quot;C&quot;, IF([Priority]=&quot;Hold&quot;, &quot;D&quot;, IF([Priority]=&quot;Drop&quot;, &quot;E&quot;, &quot;F&quot;)))))" />
+    <Field Name="Filling Types" Type="Calculated" Formula="=IF([Filing Type]=&quot;&quot;, &quot;No Filling Type&quot;, [Filing Type])" />
+    <Field Name="Composed Year" Type="Calculated" Formula="=TEXT(YEAR(DATEVALUE([DateComposed])), &quot;yyyy&quot;)" />
+    <Field Name="Patten Year" Type="Calculated" Formula="=TEXT(YEAR(DATEVALUE([US Patent Issued Date])), &quot;yyyy&quot;)" />
+    <Field Name="Business Value Level" Type="Calculated" Formula="=IF([Business Value]=&quot;&lt; $1mm&quot;, &quot;A&quot;, IF([Business Value]=&quot;$1mm to $5mm&quot;, &quot;B&quot;, IF([Business Value]=&quot;$5mm to $20mm&quot;, &quot;C&quot;, IF([Business Value]=&quot;$20mm to $40mm&quot;, &quot;D&quot;, &quot;E&quot;))))" />
+    <Field Name="Platform" Type="Text" />
+    <ViewsOverwriteExisting>true</ViewsOverwriteExisting>
+    <View Name="By Status" IsDefault="true">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>Priority</Column>
+      <Column>NOI Submitted Date</Column>
+      <Column>Goal Filing Date</Column>
+      <Column>Author</Column>
+      <Column>Patent Liaison</Column>
+      <Column>Attorney of Record</Column>
+      <OrderColumn1Name />
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name />
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Status</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>true</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By AT\AL" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>Business Value</Column>
+      <Column>Priority</Column>
+      <Column>Status</Column>
+      <Column>Street (Inventor 10)</Column>
+      <Column>Patent Liaison</Column>
+      <Column>NOI Submitted Date</Column>
+      <Column>Goal Filing Date</Column>
+      <Column>Attorney of Record</Column>
+      <OrderColumn1Name>Docket #</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name>Business Value</OrderColumn2Name>
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>AT_AL VAL</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name>Document Author</GroupByColumn2Name>
+      <GroupByColumn2Ascending>true</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By Attorney" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>Goal Filing Date</Column>
+      <Column>Priority</Column>
+      <Column>Filing Recommendation</Column>
+      <Column>Status</Column>
+      <Column>Author</Column>
+      <Column>Liaison</Column>
+      <OrderColumn1Name>Docket #</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name />
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name />
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By Author" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>Business Value</Column>
+      <Column>Priority</Column>
+      <Column>Status</Column>
+      <Column>NOI Submitted Date</Column>
+      <Column>Goal Filing Date</Column>
+      <Column>Liaison</Column>
+      <Column>Attorney of Record</Column>
+      <OrderColumn1Name>Docket #</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name>Business Value</OrderColumn2Name>
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Author</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By Business/SBU" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>Priority</Column>
+      <Column>Status</Column>
+      <Column>DateSubmitted</Column>
+      <Column>Goal Filing Date</Column>
+      <Column>Author</Column>
+      <Column>Liaison</Column>
+      <Column>Attorney of Record</Column>
+      <OrderColumn1Name>Docket #</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name>Priority Level</OrderColumn2Name>
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Business</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By Contributor" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>Business Value</Column>
+      <Column>Priority</Column>
+      <Column>Status</Column>
+      <Column>NOI Submitted Date</Column>
+      <Column>Goal Filing Date</Column>
+      <Column>Author</Column>
+      <Column>Patent Liaison</Column>
+      <Column>Attorney of Record</Column>
+      <OrderColumn1Name>Docket #</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name>Business Value</OrderColumn2Name>
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>All Contributors</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By Docket #" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>Business</Column>
+      <Column>Business Value</Column>
+      <Column>Status</Column>
+      <Column>NOI Submitted Date</Column>
+      <Column>Goal Filing Date</Column>
+      <Column>Author</Column>
+      <Column>Patent Liaison</Column>
+      <Column>Attorney of Record</Column>
+      <OrderColumn1Name>Docket #</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name>Business Value</OrderColumn2Name>
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name />
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By Filing Type" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>Priority</Column>
+      <Column>Status</Column>
+      <Column>NOI Submitted Date</Column>
+      <Column>Goal Filing Date</Column>
+      <Column>Author</Column>
+      <Column>Patent Liaison</Column>
+      <Column>Attorney of Record</Column>
+      <OrderColumn1Name>Docket #</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name />
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Filling Types</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By Foreign Filing" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Status</Column>
+      <Column>Title of NOI</Column>
+      <OrderColumn1Name>Docket #</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name />
+      <OrderColumn2Ascending>false</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Composed Year</GroupByColumn1Name>
+      <GroupByColumn1Ascending>false</GroupByColumn1Ascending>
+      <GroupByColumn2Name>Filing Recommendation</GroupByColumn2Name>
+      <GroupByColumn2Ascending>true</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By Goal Date" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Status</Column>
+      <Column>NOI Submitted Date</Column>
+      <Column>NOI Approved Date</Column>
+      <Column>Team Notified Date</Column>
+      <Column>Search Initiated Actual Date</Column>
+      <Column>Search Completed Date</Column>
+      <Column>Examples Requested Date</Column>
+      <Column>Examples Accepted Date</Column>
+      <Column>Goal Filing Date</Column>
+      <Column>Actual Filing Date</Column>
+      <OrderColumn1Name>Docket #</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name>NOI Submitted Date</OrderColumn2Name>
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>NOI Approved Goal Date</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By Manager" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>Business Value</Column>
+      <Column>Priority</Column>
+      <Column>Status</Column>
+      <Column>NOI Submitted Date</Column>
+      <Column>Goal Filing Date</Column>
+      <Column>Author</Column>
+      <Column>Liaison</Column>
+      <Column>Attorney of Record</Column>
+      <OrderColumn1Name>Docket #</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name>Business Value</OrderColumn2Name>
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Group B NOI Approval Manager</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By Patent Issued" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>US Patent Number</Column>
+      <Column>Title of NOI</Column>
+      <Column>Business</Column>
+      <Column>Author</Column>
+      <OrderColumn1Name>US Patent Number</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name>Docket #</OrderColumn2Name>
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Patten Year</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By Patent Liaison" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>Business Value</Column>
+      <Column>Priority</Column>
+      <Column>Filing Recommendation</Column>
+      <Column>Status</Column>
+      <Column>NOI Submitted Date</Column>
+      <Column>Goal Filing Date</Column>
+      <Column>Author</Column>
+      <Column>Patent Liaison</Column>
+      <Column>Attorney of Record</Column>
+      <OrderColumn1Name>Docket #</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name>Business Value</OrderColumn2Name>
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Patent Liaison</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name>Status</GroupByColumn2Name>
+      <GroupByColumn2Ascending>true</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="By Priority" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>Product</Column>
+      <Column>Business Value</Column>
+      <Column>Status</Column>
+      <Column>NOI Submitted Date</Column>
+      <Column>Goal Filing Date</Column>
+      <Column>Author</Column>
+      <Column>Patent Liaison</Column>
+      <Column>Attorney of Record</Column>
+      <OrderColumn1Name>Priority Level</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name>Business Value Level</OrderColumn2Name>
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Priority</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="Dropped Applications By Docket #" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>Dropped Date</Column>
+      <Column>Author</Column>
+      <Column>Patent Liaison</Column>
+      <Column>Attorney of Record</Column>
+      <OrderColumn1Name />
+      <OrderColumn1Ascending>false</OrderColumn1Ascending>
+      <OrderColumn2Name />
+      <OrderColumn2Ascending>false</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Docket #</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>true</IsFiltered>
+      <ViewFilterColumn ColumnName="Status">
+        <ColumnOperation>IsEqualTo</ColumnOperation>
+        <Value>Dropped</Value>
+        <IsAnd>false</IsAnd>
+      </ViewFilterColumn>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="Filed Applications By Docket #" IsDefault="false">
+      <Column>Title (linked to item)</Column>
+      <Column>Author</Column>
+      <Column>Title of NOI</Column>
+      <Column>Patent Liaison</Column>
+      <Column>Attorney of Record</Column>
+      <Column>File Approved Date</Column>
+      <OrderColumn1Name>Author</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name />
+      <OrderColumn2Ascending>false</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Actual Filing Date</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>true</IsFiltered>
+      <ViewFilterColumn ColumnName="Status">
+        <ColumnOperation>IsEqualTo</ColumnOperation>
+        <Value>"Application Filed"</Value>
+        <IsAnd>false</IsAnd>
+      </ViewFilterColumn>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+  </SharePointTargetDefinition>
+  <Mapping Destination="Administrative Authors" SourceValue="AdminAuthors" />
+  <Mapping Destination="All Contributors" SourceValue="AllContributors" />
+  <Mapping Destination="Application" SourceValue="Application" />
+  <Mapping Destination="Attachments" SourceValue="ApproachesAttachments" />
+  <Mapping Destination="Attachments" SourceValue="ApproachesEmbeddedObjects" />
+  <Mapping Destination="Approaches" SourceValue="ApproachesHtml" />
+  <Mapping Destination="Attachments" SourceValue="ApproachesImages" />
+  <Mapping Destination="ApproachesText" SourceValue="ApproachesText" />
+  <Mapping Destination="AT_AL" SourceValue="AT_AL" />
+  <Mapping Destination="Attorney of Record" SourceValue="Attorney" />
+  <Mapping Destination="Basis for Priority" SourceValue="BasisPriority" />
+  <Mapping Destination="Business Unit" SourceValue="BusinessUnit" />
+  <Mapping Destination="Business Value" SourceValue="BusValue" />
+  <Mapping Destination="Categorization" SourceValue="Categorization" />
+  <Mapping Destination="City, State, Zip Code, Country (Inventor 1)" SourceValue="City_1" />
+  <Mapping Destination="City, State, Zip Code, Country (Inventor 10)" SourceValue="City_10" />
+  <Mapping Destination="City, State, Zip Code, Country (Inventor 2)" SourceValue="City_2" />
+  <Mapping Destination="City, State, Zip Code, Country (Inventor 3)" SourceValue="City_3" />
+  <Mapping Destination="City, State, Zip Code, Country (Inventor 4)" SourceValue="City_4" />
+  <Mapping Destination="City, State, Zip Code, Country (Inventor 5)" SourceValue="City_5" />
+  <Mapping Destination="City, State, Zip Code, Country (Inventor 6)" SourceValue="City_6" />
+  <Mapping Destination="City, State, Zip Code, Country (Inventor 7)" SourceValue="City_7" />
+  <Mapping Destination="City, State, Zip Code, Country (Inventor 8)" SourceValue="City_8" />
+  <Mapping Destination="City, State, Zip Code, Country (Inventor 9)" SourceValue="City_9" />
+  <Mapping Destination="Attachments" SourceValue="CompetitiveAttachments" />
+  <Mapping Destination="Attachments" SourceValue="CompetitiveEmbeddedObjects" />
+  <Mapping Destination="Competitive" SourceValue="CompetitiveHtml" />
+  <Mapping Destination="Attachments" SourceValue="CompetitiveImages" />
+  <Mapping Destination="Competitive Text" SourceValue="CompetitiveText" />
+  <Mapping Destination="Confidential" SourceValue="Confidential" />
+  <Mapping Destination="Contributing Authors" SourceValue="ContributingAuthors" />
+  <Mapping Destination="Attachments" SourceValue="CorrespattAttachments" />
+  <Mapping Destination="Attachments" SourceValue="CorrespattEmbeddedObjects" />
+  <Mapping Destination="Correspondence" SourceValue="CorrespattHtml" />
+  <Mapping Destination="Attachments" SourceValue="CorrespattImages" />
+  <Mapping Destination="CorrespattText" SourceValue="CorrespattText" />
+  <Mapping Destination="DateComposed" SourceValue="DateComposed" />
+  <Mapping Destination="DateSubmitted" SourceValue="DateSubmitted" />
+  <Mapping Destination="dAttorney" SourceValue="dAttorney" />
+  <Mapping Destination="Docket Number" SourceValue="dFANumber" />
+  <Mapping Destination="Attachments" SourceValue="DiffpriorartAttachments" />
+  <Mapping Destination="Attachments" SourceValue="DiffpriorartEmbeddedObjects" />
+  <Mapping Destination="Difference With Prior Art" SourceValue="DiffpriorartHtml" />
+  <Mapping Destination="Attachments" SourceValue="DiffpriorartImages" />
+  <Mapping Destination="DiffpriorartText" SourceValue="DiffpriorartText" />
+  <Mapping Destination="Disclosure" SourceValue="Disclosure" />
+  <Mapping Destination="Document Author" SourceValue="DocAuthor" />
+  <Mapping Destination="Document Reader" SourceValue="DocReader" />
+  <Mapping Destination="Draft to Attorney" SourceValue="DraftAttorney" />
+  <Mapping Destination="Draft to Contributor" SourceValue="DraftContr" />
+  <Mapping Destination="Draft to Liaison" SourceValue="DraftLiaison" />
+  <Mapping Destination="DropReason" SourceValue="DropReason" />
+  <Mapping Destination="Group B NOI Approval Manager" SourceValue="dSupervisor" />
+  <Mapping Destination="DuPont Confidential" SourceValue="DuPont_Confidential" />
+  <Mapping Destination="Attachments" SourceValue="Earliest_docAttachments" />
+  <Mapping Destination="Attachments" SourceValue="Earliest_docEmbeddedObjects" />
+  <Mapping Destination="Earliest Document" SourceValue="Earliest_docHtml" />
+  <Mapping Destination="Attachments" SourceValue="Earliest_docImages" />
+  <Mapping Destination="Earliest Document Text" SourceValue="Earliest_docText" />
+  <Mapping Destination="Attachments" SourceValue="ExampleattAttachments" />
+  <Mapping Destination="Attachments" SourceValue="ExampleattEmbeddedObjects" />
+  <Mapping Destination="Examples/Drawings" SourceValue="ExampleattHtml" />
+  <Mapping Destination="Attachments" SourceValue="ExampleattImages" />
+  <Mapping Destination="ExampleattText" SourceValue="ExampleattText" />
+  <Mapping Destination="Reason Examples Need Editing" SourceValue="ExampleCom" />
+  <Mapping Destination="Reason NOI Details Need Editing" SourceValue="ExampleCom_1" />
+  <Mapping Destination="dDocket Number" SourceValue="FANumber" />
+  <Mapping Destination="Filing Type" SourceValue="FilingType" />
+  <Mapping Destination="FlagEx" SourceValue="FlagEx" />
+  <Mapping Destination="From" SourceValue="From" />
+  <Mapping Destination="Full Name (Inventor 1)" SourceValue="FullName_1" />
+  <Mapping Destination="Full Name (Inventor 10)" SourceValue="FullName_10" />
+  <Mapping Destination="Full Name (Inventor 2)" SourceValue="FullName_2" />
+  <Mapping Destination="Full Name (Inventor 3)" SourceValue="FullName_3" />
+  <Mapping Destination="Full Name (Inventor 4)" SourceValue="FullName_4" />
+  <Mapping Destination="Full Name (Inventor 5)" SourceValue="FullName_5" />
+  <Mapping Destination="Full Name (Inventor 6)" SourceValue="FullName_6" />
+  <Mapping Destination="Full Name (Inventor 7)" SourceValue="FullName_7" />
+  <Mapping Destination="Full Name (Inventor 8)" SourceValue="FullName_8" />
+  <Mapping Destination="Full Name (Inventor 9)" SourceValue="FullName_9" />
+  <Mapping Destination="Inventor Name (DuPont) 1" SourceValue="Inventor_1" />
+  <Mapping Destination="Inventor Name (DuPont) 10" SourceValue="Inventor_10" />
+  <Mapping Destination="Inventor Name (DuPont) 2" SourceValue="Inventor_2" />
+  <Mapping Destination="Inventor Name (DuPont) 3" SourceValue="Inventor_3" />
+  <Mapping Destination="Inventor Name (DuPont) 4" SourceValue="Inventor_4" />
+  <Mapping Destination="Inventor Name (DuPont) 5" SourceValue="Inventor_5" />
+  <Mapping Destination="Inventor Name (DuPont) 6" SourceValue="Inventor_6" />
+  <Mapping Destination="Inventor Name (DuPont) 7" SourceValue="Inventor_7" />
+  <Mapping Destination="Inventor Name (DuPont) 8" SourceValue="Inventor_8" />
+  <Mapping Destination="Inventor Name (DuPont) 9" SourceValue="Inventor_9" />
+  <Mapping Destination="Inventors" SourceValue="Inventors" />
+  <Mapping Destination="Filing Recommendation" SourceValue="kwd_FilingRecom" />
+  <Mapping Destination="Mail" SourceValue="Mail" />
+  <Mapping Destination="Attachments" SourceValue="MainclaimAttachments" />
+  <Mapping Destination="Attachments" SourceValue="MainclaimEmbeddedObjects" />
+  <Mapping Destination="Main Claim" SourceValue="MainclaimHtml" />
+  <Mapping Destination="Attachments" SourceValue="MainclaimImages" />
+  <Mapping Destination="MainclaimText" SourceValue="MainclaimText" />
+  <Mapping Destination="MemberName" SourceValue="MemberName" />
+  <Mapping Destination="NOI" SourceValue="NOI" />
+  <Mapping Destination="Reasons NOI Not Approved" SourceValue="NOInoyApprCom" />
+  <Mapping Destination="Attachments" SourceValue="NotesAttachments" />
+  <Mapping Destination="Attachments" SourceValue="NotesEmbeddedObjects" />
+  <Mapping Destination="Notes" SourceValue="NotesHtml" />
+  <Mapping Destination="Attachments" SourceValue="NotesImages" />
+  <Mapping Destination="NotesText" SourceValue="NotesText" />
+  <Mapping Destination="num_TimesModified" SourceValue="num_TimesModified" />
+  <Mapping Destination="Attachments" SourceValue="Other_parties_1Attachments" />
+  <Mapping Destination="Attachments" SourceValue="Other_parties_1EmbeddedObjects" />
+  <Mapping Destination="Attachments" SourceValue="Other_parties_1Images" />
+  <Mapping Destination="Attachments" SourceValue="Other_partiesAttachments" />
+  <Mapping Destination="Attachments" SourceValue="Other_partiesEmbeddedObjects" />
+  <Mapping Destination="Attachments" SourceValue="Other_partiesImages" />
+  <Mapping Destination="Approaches" SourceValue="OtherAttachmentLinks" />
+  <Mapping Destination="Attachments" SourceValue="OtherAttachments" />
+  <Mapping Destination="Attachments" SourceValue="OtherclaimsAttachments" />
+  <Mapping Destination="Attachments" SourceValue="OtherclaimsEmbeddedObjects" />
+  <Mapping Destination="Other Claims" SourceValue="OtherclaimsHtml" />
+  <Mapping Destination="Attachments" SourceValue="OtherclaimsImages" />
+  <Mapping Destination="OtherclaimsText" SourceValue="OtherclaimsText" />
+  <Mapping Destination="Attachments" SourceValue="OtherEmbeddedObjects" />
+  <Mapping Destination="Other" SourceValue="OtherHtml" />
+  <Mapping Destination="Attachments" SourceValue="OtherImages" />
+  <Mapping Destination="Attachments" SourceValue="Others_solutionAttachments" />
+  <Mapping Destination="Attachments" SourceValue="Others_solutionEmbeddedObjects" />
+  <Mapping Destination="Others Solution" SourceValue="Others_solutionHtml" />
+  <Mapping Destination="Attachments" SourceValue="Others_solutionImages" />
+  <Mapping Destination="Others Solution Text" SourceValue="Others_solutionText" />
+  <Mapping Destination="OtherText" SourceValue="OtherText" />
+  <Mapping Destination="Attachments" SourceValue="PatappattAttachments" />
+  <Mapping Destination="Attachments" SourceValue="PatappattEmbeddedObjects" />
+  <Mapping Destination="Patent Application" SourceValue="PatappattHtml" />
+  <Mapping Destination="Attachments" SourceValue="PatappattImages" />
+  <Mapping Destination="PatappattText" SourceValue="PatappattText" />
+  <Mapping Destination="Attachments" SourceValue="PatdocAttachments" />
+  <Mapping Destination="Attachments" SourceValue="PatdocEmbeddedObjects" />
+  <Mapping Destination="Attachments" SourceValue="PatdocImages" />
+  <Mapping Destination="PatdocText" SourceValue="PatdocText" />
+  <Mapping Destination="Liaison" SourceValue="PatentLiaison" />
+  <Mapping Destination="Related Patent Number" SourceValue="PatNumber_1" />
+  <Mapping Destination="Related Docket" SourceValue="PatOther" />
+  <Mapping Destination="Priority" SourceValue="Priority" />
+  <Mapping Destination="Attachments" SourceValue="ProblemAttachments" />
+  <Mapping Destination="Attachments" SourceValue="ProblemEmbeddedObjects" />
+  <Mapping Destination="Problem" SourceValue="ProblemHtml" />
+  <Mapping Destination="Attachments" SourceValue="ProblemImages" />
+  <Mapping Destination="ProblemText" SourceValue="ProblemText" />
+  <Mapping Destination="Product" SourceValue="Product" />
+  <Mapping Destination="Project" SourceValue="Project" />
+  <Mapping Destination="Proposed First Commercial Use Date" SourceValue="Projected_use_date" />
+  <Mapping Destination="Attachments" SourceValue="ProposedforeigncountriesAttachments" />
+  <Mapping Destination="Attachments" SourceValue="ProposedforeigncountriesEmbeddedObjects" />
+  <Mapping Destination="Proposed Foreign Countries" SourceValue="ProposedforeigncountriesHtml" />
+  <Mapping Destination="Attachments" SourceValue="ProposedforeigncountriesImages" />
+  <Mapping Destination="Proposed Foreign Countries Text" SourceValue="ProposedforeigncountriesText" />
+  <Mapping Destination="Attachments" SourceValue="RelpatentAttachments" />
+  <Mapping Destination="Attachments" SourceValue="RelpatentEmbeddedObjects" />
+  <Mapping Destination="Related Patent Applications/Patents" SourceValue="RelpatentHtml" />
+  <Mapping Destination="Attachments" SourceValue="RelpatentImages" />
+  <Mapping Destination="RelpatentText" SourceValue="RelpatentText" />
+  <Mapping Destination="saveOptions" SourceValue="saveOptions" />
+  <Mapping Destination="SBU" SourceValue="SBU" />
+  <Mapping Destination="Sec_AttLiaEditors" SourceValue="Sec_AttLiaEditors" />
+  <Mapping Destination="Sec_ContrbAuthEditors" SourceValue="Sec_ContrbAuthEditors" />
+  <Mapping Destination="Application Status" SourceValue="Sec_ContrCatEditors" />
+  <Mapping Destination="Sec_ContribInfo" SourceValue="Sec_ContribInfo" />
+  <Mapping Destination="Sec_ContrNOIDetailEditors" SourceValue="Sec_ContrNOIDetailEditors" />
+  <Mapping Destination="Sec_ExamplesEditors" SourceValue="Sec_ExamplesEditors" />
+  <Mapping Destination="Sec_NOIApproverEditors" SourceValue="Sec_NOIApproverEditors" />
+  <Mapping Destination="Sec_PatAppDevEditors" SourceValue="Sec_PatAppDevEditors" />
+  <Mapping Destination="Sec_PatDocMgmtEditors" SourceValue="Sec_PatDocMgmtEditors" />
+  <Mapping Destination="Segment" SourceValue="Segment" />
+  <Mapping Destination="Status" SourceValue="Status" />
+  <Mapping Destination="Street (Inventor 1)" SourceValue="Street_1" />
+  <Mapping Destination="Street (Inventor 10)" SourceValue="Street_10" />
+  <Mapping Destination="Street (Inventor 2)" SourceValue="Street_2" />
+  <Mapping Destination="Street (Inventor 3)" SourceValue="Street_3" />
+  <Mapping Destination="Street (Inventor 4)" SourceValue="Street_4" />
+  <Mapping Destination="Street (Inventor 5)" SourceValue="Street_5" />
+  <Mapping Destination="Street (Inventor 6)" SourceValue="Street_6" />
+  <Mapping Destination="Street (Inventor 7)" SourceValue="Street_7" />
+  <Mapping Destination="Street (Inventor 8)" SourceValue="Street_8" />
+  <Mapping Destination="Street (Inventor 9)" SourceValue="Street_9" />
+  <Mapping Destination="Attachments" SourceValue="SumofinvAttachments" />
+  <Mapping Destination="Attachments" SourceValue="SumofinvEmbeddedObjects" />
+  <Mapping Destination="Summary of Invention" SourceValue="SumofinvHtml" />
+  <Mapping Destination="Attachments" SourceValue="SumofinvImages" />
+  <Mapping Destination="Summary of Invention Text" SourceValue="SumofinvText" />
+  <Mapping Destination="NOI Approval Manager" SourceValue="Supervisor" />
+  <Mapping Destination="Supervisor Readers" SourceValue="SupervisorDocReader" />
+  <Mapping Destination="Attachments" SourceValue="ThirdpartyAttachments" />
+  <Mapping Destination="Attachments" SourceValue="ThirdpartyEmbeddedObjects" />
+  <Mapping Destination="Thirdparty" SourceValue="ThirdpartyHtml" />
+  <Mapping Destination="Attachments" SourceValue="ThirdpartyImages" />
+  <Mapping Destination="Thirdparty Text" SourceValue="ThirdpartyText" />
+  <Mapping Destination="Title of NOI" SourceValue="Title" />
+  <Mapping Destination="TransferredSBU" SourceValue="TransferredSBU" />
+  <Mapping Destination="NotesType" SourceValue="Type" />
+  <Mapping Destination="Attachments" SourceValue="UtilityAttachments" />
+  <Mapping Destination="Attachments" SourceValue="UtilityEmbeddedObjects" />
+  <Mapping Destination="Utility" SourceValue="UtilityHtml" />
+  <Mapping Destination="Attachments" SourceValue="UtilityImages" />
+  <Mapping Destination="Utility Text" SourceValue="UtilityText" />
+  <Mapping Destination="Business" SourceValue="Business" />
+  <Mapping Destination="Pattern Type" SourceValue="Type" />
+  <Mapping Destination="NOI Submitted Date" SourceValue="dsp_DateSubmitted" />
+  <Mapping Destination="NOI Approved Goal Date" SourceValue="dsp_NOIAppGdate" />
+  <Mapping Destination="NOI Approved Date" SourceValue="NOIAdate" />
+  <Mapping Destination="Team Notified Goal Date" SourceValue="TeamNotifiedGDate" />
+  <Mapping Destination="Team Notified Date" SourceValue="TeamNotified" />
+  <Mapping Destination="Search Initiated Goal Date" SourceValue="SearchIntGDate" />
+  <Mapping Destination="Search Initiated Actual Date" SourceValue="SearchIntAdate" />
+  <Mapping Destination="Search Completed Goal Date" SourceValue="SearchCompleteGDate" />
+  <Mapping Destination="Search Completed Date" SourceValue="IntSearchAdate" />
+  <Mapping Destination="Examples Requested Date" SourceValue="ExamplesReq" />
+  <Mapping Destination="Examples Submitted Goal Date" SourceValue="ExampleGdate" />
+  <Mapping Destination="Examples Submitted Date" SourceValue="ExampleAdate" />
+  <Mapping Destination="Examples Accepted Goal Date" SourceValue="ExampleAccptDate" />
+  <Mapping Destination="Examples Accepted Date" SourceValue="ExampleAprdate" />
+  <Mapping Destination="Application Completed Goal Date" SourceValue="AppGdate" />
+  <Mapping Destination="Application Completed Date" SourceValue="AppAdate" />
+  <Mapping Destination="Dropped Date" SourceValue="DroppedDate" />
+  <Mapping Destination="US Patent Issued Date" SourceValue="PatDate" />
+  <Mapping Destination="US Patent Number" SourceValue="PatNum" />
+  <Mapping Destination="US Patent Document" SourceValue="PatdocHtml" />
+  <Mapping Destination="Other Parties 1" SourceValue="Other_parties_1Html" />
+  <Mapping Destination="Disclosure 2" SourceValue="Disclosure_2" />
+  <Mapping Destination="Disclosure 3" SourceValue="Disclosure_3" />
+  <Mapping Destination="Contributing Author 1" SourceValue="dspContributingAuthor_1" />
+  <Mapping Destination="Contributing Author 2" SourceValue="dspContributingAuthor_2" />
+  <Mapping Destination="Contributing Author 3" SourceValue="dspContributingAuthor_3" />
+  <Mapping Destination="Contributing Author 4" SourceValue="dspContributingAuthor_4" />
+  <Mapping Destination="Contributing Author 5" SourceValue="dspContributingAuthor_5" />
+  <Mapping Destination="Contributing Author 6" SourceValue="dspContributingAuthor_6" />
+  <Mapping Destination="Contributing Author 7" SourceValue="dspContributingAuthor_7" />
+  <Mapping Destination="Contributing Author 8" SourceValue="dspContributingAuthor_8" />
+  <Mapping Destination="Contributing Author 9" SourceValue="dspContributingAuthor_9" />
+  <Mapping Destination="Contributing Author 10" SourceValue="dspContributingAuthor_10" />
+  <Mapping Destination="Contributing Authors Other" SourceValue="dspContributingAuthors_Other" />
+  <Mapping Destination="Descriptive Section" SourceValue="Descriptive_Section" />
+  <Mapping Destination="File Approved Date" SourceValue="dFileAdate" />
+  <Mapping Destination="Patent Liaison" SourceValue="dPatentLiaison" />
+  <Mapping Destination="Other Parties" SourceValue="Other_partiesHtml" />
+  <Mapping Destination="Other Parties 1 Text" SourceValue="Other_parties_1Text" />
+  <Mapping Destination="Other Parties Text" SourceValue="Other_partiesText" />
+  <Mapping Destination="Supervisor" SourceValue="Supervisor_" />
+  <Mapping Destination="Goal Filing Date" SourceValue="FileGdate" />
+  <Mapping Destination="Transfer SBU Date" SourceValue="TransferSBUDate" />
+  <Mapping Destination="Actual Filing Date" SourceValue="FileAdate" />
+</TransferJob>

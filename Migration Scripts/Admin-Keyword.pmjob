@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransferJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="" Description="" Version="4.0.0.0">
+  <QuerySource xsi:type="NotesQuerySource">
+    <ConnectionString>database=C:\\Users\\nghie\\Desktop\\DPM PAMS v2.1\\dpmpamV21.nsf; server=local;</ConnectionString>
+  </QuerySource>
+  <SourceDefinition Name="DPM PAMS v2.1" Description="Admin/Keyword" Templates="DPM PAMS v2.1" ListTypes="">
+    <QuerySpec xsi:type="NotesQuerySpec">
+      <From />
+      <Forms>Admin \ Keyword|Keyword</Forms>
+      <Search />
+      <Formula />
+      <Column ColumnType="Item" Value="CreatedBy" ReturnType="String" />
+      <Column ColumnType="Item" Value="Creator" ReturnType="String" />
+      <Column ColumnType="Item" Value="DateComposed" ReturnType="Date" />
+      <Column ColumnType="Item" Value="DocAuthor" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Keyword" ReturnType="String" />
+      <Column ColumnType="Item" Value="Keyword_1" ReturnType="String" />
+      <Column ColumnType="Item" Value="KeywordComments" ReturnType="String" />
+      <Column ColumnType="Item" Value="KeywordType" ReturnType="String" />
+      <Column ColumnType="Item" Value="Platform" ReturnType="String" />
+      <Column ColumnType="Item" Value="SBU" ReturnType="String" />
+      <Column ColumnType="Item" Value="tim_EDate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="txt_DocDesc" ReturnType="String" />
+      <Column ColumnType="Item" Value="txt_EditBy" ReturnType="String" />
+    </QuerySpec>
+  </SourceDefinition>
+  <SharePointConnection>
+    <Web>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/</Web>
+    <List>Admin/Keyword</List>
+  </SharePointConnection>
+  <JobOptions>
+    <AutoCreateList>true</AutoCreateList>
+    <AddListToQuickLaunch>true</AddListToQuickLaunch>
+    <AutoCreateFields>true</AutoCreateFields>
+    <ClearListData>true</ClearListData>
+    <PreserveIdentities>true</PreserveIdentities>
+    <PreserveDates>true</PreserveDates>
+    <QueryOptions xsi:type="NotesRuntimeQueryOptions">
+      <DeleteMigratedDocuments>false</DeleteMigratedDocuments>
+      <ExtractRecurrencePatterns>false</ExtractRecurrencePatterns>
+      <ExtractDocSecurity>false</ExtractDocSecurity>
+    </QueryOptions>
+    <UserMappingOptions>
+      <MappingFailureSubstitution>DefaultIdentity</MappingFailureSubstitution>
+      <UseMappingFailureSubstitutionForUserFields>true</UseMappingFailureSubstitutionForUserFields>
+      <DefaultUserName>dupontnet\sb1654</DefaultUserName>
+    </UserMappingOptions>
+    <LinkConversionOptions />
+  </JobOptions>
+  <SecurityMapping Enabled="false">
+    <AccessLevelMappings>
+      <AccessLevelMapping NotesAccessLevel="Reader" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Author" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Editor" SharePointPermissionLevel="Contribute" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Designer" SharePointPermissionLevel="Design" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Manager" SharePointPermissionLevel="Full Control" SharePointGroup="{Owners}" />
+      <AccessLevelMapping NotesAccessLevel="Can Create" />
+      <AccessLevelMapping NotesAccessLevel="Can Delete" />
+    </AccessLevelMappings>
+    <MapACLUsers>false</MapACLUsers>
+    <MapACLGroups>false</MapACLGroups>
+    <MapACLRoles />
+  </SecurityMapping>
+  <SharePointTargetDefinition Name="DPM PAMS v2.1" Description="Admin/Keyword" Templates="" SharePointTemplates="Custom List">
+    <ExtractIcons>false</ExtractIcons>
+    <IsDocLib>false</IsDocLib>
+    <IsDiscussion>false</IsDiscussion>
+    <IsEvents>false</IsEvents>
+    <AllowAttachments>false</AllowAttachments>
+    <Field Name="Keyword Name" Type="Text" NotesItems="KeywordType" />
+    <Field Name="Keyword SBU" Type="Text" NotesItems="SBU" />
+    <Field Name="Platform" Type="Text" NotesItems="Platform" />
+    <Field Name="Keyword" Type="Text" NotesItems="Keyword" IsTitleField="true" />
+    <Field Name="Name" Type="Text" NotesItems="Keyword_1" />
+    <Field Name="Keyword Comments" Type="Text" NotesItems="KeywordComments" />
+    <Field Name="DocAuthor" Type="Text" NotesItems="DocAuthor" />
+    <Field Name="Creator" Type="Text" NotesItems="Creator" />
+    <Field Name="Folder" Type="Folder" />
+    <Field Name="Group" Type="Calculated" Formula="=IF(LOWER([Keyword Name])=&quot;business&quot;,[Keyword Name],[Keyword Name]&amp;&quot;-&quot;&amp;[Keyword SBU])" />
+    <Field Name="Names" Type="Calculated" Formula="=IF(NOT([Keyword]= &quot;&quot;), [Keyword], [Name])" />
+    <Field Name="Title" Type="Text" NotesItems="Subject;Title" />
+    <ViewsOverwriteExisting>false</ViewsOverwriteExisting>
+    <View Name="By Keywords" IsDefault="true">
+      <Column>Title (linked to item)</Column>
+      <Column>Keyword Comments</Column>
+      <OrderColumn1Name>Names</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name />
+      <OrderColumn2Ascending>false</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Group</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+  </SharePointTargetDefinition>
+  <Mapping Destination="Creator" SourceValue="Creator" />
+  <Mapping Destination="DocAuthor" SourceValue="DocAuthor" />
+  <Mapping Destination="Keyword" SourceValue="Keyword" />
+  <Mapping Destination="Platform" SourceValue="Platform" />
+  <Mapping Destination="Keyword Comments" SourceValue="KeywordComments" />
+  <Mapping Destination="Keyword Name" SourceValue="KeywordType" />
+  <Mapping Destination="Keyword SBU" SourceValue="SBU" />
+  <Mapping Destination="Name" SourceValue="Keyword_1" />
+</TransferJob>

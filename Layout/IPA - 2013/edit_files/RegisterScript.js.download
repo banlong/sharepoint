@@ -1,0 +1,55 @@
+	
+
+function validateSitesWithoutJquery(){
+  var currentSite = document.location.href.toString().toLowerCase();
+  return (currentSite.indexOf('/teams/teams_capdocumentos/')==-1&&currentSite.indexOf('/teams/ap_nh_danisco/')==-1&&currentSite.indexOf('/teams/labr_urgent_payment_request/')==-1);
+}
+	
+function loadScript(src, f) {
+  var head = document.getElementsByTagName("head")[0];
+  var script = document.createElement("script");
+  script.src = src;
+  var done = false;
+  script.onload = script.onreadystatechange = function() { 
+    // attach to both events for cross browser finish detection:
+    if ( !done && (!this.readyState ||
+      this.readyState == "loaded" || this.readyState == "complete") ) {
+      done = true;
+      if (typeof f == 'function') f();
+      // cleans up a little memory:
+      script.onload = script.onreadystatechange = null;
+      head.removeChild(script);
+    }
+  };
+  if(src.indexOf('jquery-1.7.2.js')>-1){
+    if(validateSitesWithoutJquery()){
+      head.appendChild(script); 
+	}	
+  }
+  else{
+	  head.appendChild(script); 
+	}
+}
+
+// example:
+
+    
+	loadScript('https://dupont.sharepoint.com/sites/O365/SiteAssets/MasterpageJavascript/jquery-1.7.2.js', function () {
+	loadScript1("https://dupont.sharepoint.com/sites/O365/SiteAssets/MasterpageJavascript/jquery.SPServices-2014.02.js");
+    loadScript1("https://dupont.sharepoint.com/sites/O365/SiteAssets/MasterpageJavascript/JqueryInjection.js?a=rtyy");
+    loadScript1("https://dupont.sharepoint.com/sites/O365/SiteAssets/MasterpageJavascript/Footer.js?a=9098");
+ });
+	
+function loadScript1(src) {
+  var head = document.getElementsByTagName("head")[0];
+  var script = document.createElement("script");
+  script.src = src;
+  var done = false;
+  
+  head.appendChild(script);
+}
+	
+	
+	
+
+

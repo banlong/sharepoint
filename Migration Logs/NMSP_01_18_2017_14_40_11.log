@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<log>
+  <entry date="2017-01-18T22:40:11.3113292Z" severity="General" stage="General">
+    <context>Agent</context>
+    <message>NMSP, Version=6.3.1.1191, Culture=neutral, PublicKeyToken=47a476656d73eed4</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.3237887Z" severity="General" stage="General">
+    <context>User</context>
+    <message>nghie</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.3242896Z" severity="General" stage="General">
+    <context>Machine</context>
+    <message>DESKTOP-6KT7VNU (Microsoft Windows NT 6.2.9200.0)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.3242896Z" severity="General" stage="General">
+    <context>Job Name</context>
+    <message>Admin-Developer Keyword</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.32531Z" severity="General" stage="General">
+    <context>Job</context>
+    <message>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;TransferJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Admin-Developer Keyword" Description="" Version="4.0.0.0"&gt;
+  &lt;QuerySource xsi:type="NotesQuerySource"&gt;
+    &lt;ConnectionString&gt;database=C:\\Users\\nghie\\Desktop\\DPM PAMS v2.1\\dpmpamV21.nsf; server=local;&lt;/ConnectionString&gt;
+  &lt;/QuerySource&gt;
+  &lt;SourceDefinition Name="DPM PAMS v2.1" Description="Admin\ Developer Keyword" Templates="DPM PAMS v2.1" ListTypes=""&gt;
+    &lt;QuerySpec xsi:type="NotesQuerySpec"&gt;
+      &lt;From /&gt;
+      &lt;Forms&gt;Admin \ Developer Keyword|DevKey&lt;/Forms&gt;
+      &lt;Search /&gt;
+      &lt;Formula /&gt;
+      &lt;Column ColumnType="Item" Value="AuthorUse" ReturnType="String" /&gt;
+      &lt;Column ColumnType="Item" Value="CreatedBy" ReturnType="String" /&gt;
+      &lt;Column ColumnType="Item" Value="Creator" ReturnType="String" /&gt;
+      &lt;Column ColumnType="Item" Value="DateComposed" ReturnType="Date" /&gt;
+      &lt;Column ColumnType="Item" Value="DevKeyword" ReturnType="String" Option="Multi" /&gt;
+      &lt;Column ColumnType="Item" Value="DevKeywordDescr" ReturnType="String" /&gt;
+      &lt;Column ColumnType="Item" Value="DevKeywordType" ReturnType="String" /&gt;
+      &lt;Column ColumnType="Item" Value="DevRoleKeyword" ReturnType="String" Option="Multi" /&gt;
+      &lt;Column ColumnType="Item" Value="DocAuthor" ReturnType="String" Option="Multi" /&gt;
+      &lt;Column ColumnType="Item" Value="ReaderUse" ReturnType="String" /&gt;
+      &lt;Column ColumnType="Item" Value="StatusUse" ReturnType="String" Option="Multi" /&gt;
+      &lt;Column ColumnType="Item" Value="tim_EDate" ReturnType="Date" /&gt;
+      &lt;Column ColumnType="Item" Value="txt_DocDesc" ReturnType="String" /&gt;
+      &lt;Column ColumnType="Item" Value="txt_EditBy" ReturnType="String" /&gt;
+    &lt;/QuerySpec&gt;
+  &lt;/SourceDefinition&gt;
+  &lt;SharePointConnection&gt;
+    &lt;Web&gt;https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/&lt;/Web&gt;
+    &lt;List&gt;Admin\Developer Keyword&lt;/List&gt;
+  &lt;/SharePointConnection&gt;
+  &lt;JobOptions&gt;
+    &lt;AutoCreateList&gt;true&lt;/AutoCreateList&gt;
+    &lt;AddListToQuickLaunch&gt;true&lt;/AddListToQuickLaunch&gt;
+    &lt;AutoCreateFields&gt;true&lt;/AutoCreateFields&gt;
+    &lt;PreserveIdentities&gt;true&lt;/PreserveIdentities&gt;
+    &lt;PreserveDates&gt;true&lt;/PreserveDates&gt;
+    &lt;MaxRecords&gt;1&lt;/MaxRecords&gt;
+    &lt;QueryOptions xsi:type="NotesRuntimeQueryOptions"&gt;
+      &lt;DeleteMigratedDocuments&gt;false&lt;/DeleteMigratedDocuments&gt;
+      &lt;ExtractRecurrencePatterns&gt;false&lt;/ExtractRecurrencePatterns&gt;
+      &lt;ExtractDocSecurity&gt;false&lt;/ExtractDocSecurity&gt;
+    &lt;/QueryOptions&gt;
+    &lt;UserMappingOptions&gt;
+      &lt;MappingFailureSubstitution&gt;DefaultIdentity&lt;/MappingFailureSubstitution&gt;
+      &lt;UseMappingFailureSubstitutionForUserFields&gt;true&lt;/UseMappingFailureSubstitutionForUserFields&gt;
+      &lt;DefaultUserName&gt;PAULA.BEYER.HIETPAS@dupont.com&lt;/DefaultUserName&gt;
+    &lt;/UserMappingOptions&gt;
+    &lt;LinkConversionOptions /&gt;
+  &lt;/JobOptions&gt;
+  &lt;SecurityMapping Enabled="false"&gt;
+    &lt;AccessLevelMappings&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Reader" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" /&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Author" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" /&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Editor" SharePointPermissionLevel="Contribute" SharePointGroup="{Members}" /&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Designer" SharePointPermissionLevel="Design" SharePointGroup="{Members}" /&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Manager" SharePointPermissionLevel="Full Control" SharePointGroup="{Owners}" /&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Can Create" /&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Can Delete" /&gt;
+    &lt;/AccessLevelMappings&gt;
+    &lt;MapACLUsers&gt;false&lt;/MapACLUsers&gt;
+    &lt;MapACLGroups&gt;false&lt;/MapACLGroups&gt;
+    &lt;MapACLRoles /&gt;
+  &lt;/SecurityMapping&gt;
+  &lt;SharePointTargetDefinition Name="DPM PAMS v2.1" Description="Admin\ Developer Keyword" Templates="" SharePointTemplates="Custom List"&gt;
+    &lt;ExtractIcons&gt;false&lt;/ExtractIcons&gt;
+    &lt;IsDocLib&gt;false&lt;/IsDocLib&gt;
+    &lt;IsDiscussion&gt;false&lt;/IsDiscussion&gt;
+    &lt;IsEvents&gt;false&lt;/IsEvents&gt;
+    &lt;AllowAttachments&gt;false&lt;/AllowAttachments&gt;
+    &lt;Field Name="Document Description" Type="Text" NotesItems="txt_DocDesc" /&gt;
+    &lt;Field Name="Developer Keyword Type" Type="Text" NotesItems="DevKeywordType" /&gt;
+    &lt;Field Name="Developer Keyword(s)" Type="Text" NotesItems="DevKeyword" IsTitleField="true" /&gt;
+    &lt;Field Name="Developer Role Keyword(s)" Type="Text" NotesItems="DevRoleKeyword" /&gt;
+    &lt;Field Name="Authors Fields Use" Type="Text" NotesItems="AuthorUse" /&gt;
+    &lt;Field Name="Readers Field Use" Type="Text" NotesItems="ReaderUse" /&gt;
+    &lt;Field Name="Status Used" Type="Text" NotesItems="StatusUse" /&gt;
+    &lt;Field Name="Description" Type="Text" NotesItems="DevKeywordDescr" /&gt;
+    &lt;Field Name="DocAuthor" Type="Text" NotesItems="DocAuthor" /&gt;
+    &lt;Field Name="Folder" Type="Folder" /&gt;
+    &lt;Field Name="Title" Type="Text" NotesItems="Subject;Title" /&gt;
+    &lt;ViewsOverwriteExisting&gt;false&lt;/ViewsOverwriteExisting&gt;
+    &lt;View Name="Admin\Developer" IsDefault="true"&gt;
+      &lt;Column&gt;Title (linked to item)&lt;/Column&gt;
+      &lt;Column&gt;Developer Keyword Type&lt;/Column&gt;
+      &lt;Column&gt;Developer Role Keyword(s)&lt;/Column&gt;
+      &lt;Column&gt;Status Used&lt;/Column&gt;
+      &lt;Column&gt;Authors Fields Use&lt;/Column&gt;
+      &lt;Column&gt;Readers Field Use&lt;/Column&gt;
+      &lt;Column&gt;Description&lt;/Column&gt;
+      &lt;OrderColumn1Name&gt;Developer Keyword Type&lt;/OrderColumn1Name&gt;
+      &lt;OrderColumn1Ascending&gt;true&lt;/OrderColumn1Ascending&gt;
+      &lt;OrderColumn2Name&gt;Developer Keyword(s)&lt;/OrderColumn2Name&gt;
+      &lt;OrderColumn2Ascending&gt;true&lt;/OrderColumn2Ascending&gt;
+      &lt;SortOnlyBySpecifiedCriteria&gt;false&lt;/SortOnlyBySpecifiedCriteria&gt;
+      &lt;GroupByColumn1Name /&gt;
+      &lt;GroupByColumn1Ascending&gt;false&lt;/GroupByColumn1Ascending&gt;
+      &lt;GroupByColumn2Name /&gt;
+      &lt;GroupByColumn2Ascending&gt;false&lt;/GroupByColumn2Ascending&gt;
+      &lt;ExpandGroups&gt;false&lt;/ExpandGroups&gt;
+      &lt;GroupsPerPage&gt;100&lt;/GroupsPerPage&gt;
+      &lt;IsFiltered&gt;false&lt;/IsFiltered&gt;
+      &lt;ShowItemsInsideTheirFolders&gt;true&lt;/ShowItemsInsideTheirFolders&gt;
+      &lt;FolderOption&gt;InAllFolders&lt;/FolderOption&gt;
+      &lt;NumberItemsToDisplay&gt;100&lt;/NumberItemsToDisplay&gt;
+      &lt;DisplayItemsInBatches&gt;true&lt;/DisplayItemsInBatches&gt;
+      &lt;FolderContentType /&gt;
+    &lt;/View&gt;
+  &lt;/SharePointTargetDefinition&gt;
+  &lt;Mapping Destination="Authors Fields Use" SourceValue="AuthorUse" /&gt;
+  &lt;Mapping Destination="Developer Keyword(s)" SourceValue="DevKeyword" /&gt;
+  &lt;Mapping Destination="Description" SourceValue="DevKeywordDescr" /&gt;
+  &lt;Mapping Destination="Developer Keyword Type" SourceValue="DevKeywordType" /&gt;
+  &lt;Mapping Destination="Developer Role Keyword(s)" SourceValue="DevRoleKeyword" /&gt;
+  &lt;Mapping Destination="DocAuthor" SourceValue="DocAuthor" /&gt;
+  &lt;Mapping Destination="Readers Field Use" SourceValue="ReaderUse" /&gt;
+  &lt;Mapping Destination="Status Used" SourceValue="StatusUse" /&gt;
+  &lt;Mapping Destination="Document Description" SourceValue="txt_DocDesc" /&gt;
+&lt;/TransferJob&gt;</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.3278143Z" severity="General" stage="General">
+    <context>Global Options</context>
+    <message>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;m_maxGroupSize&gt;100&lt;/m_maxGroupSize&gt;
+  &lt;DatabaseDispositions&gt;
+    &lt;Disposition Name="" DispositionType="Undecided" /&gt;
+    &lt;Disposition Name="Migrate to standard SharePoint targets" DispositionType="Migrate to SharePoint" /&gt;
+    &lt;Disposition Name="Migrate to customized SharePoint targets" DispositionType="Migrate to SharePoint" /&gt;
+    &lt;Disposition Name="Migrate to developed SharePoint targets" DispositionType="Migrate to SharePoint" /&gt;
+    &lt;Disposition Name="Leave in place" DispositionType="Leave in place" /&gt;
+    &lt;Disposition Name="End-of-life" DispositionType="Delete" /&gt;
+    &lt;Disposition Name="Delete" DispositionType="Delete" /&gt;
+  &lt;/DatabaseDispositions&gt;
+  &lt;LogFilesPath&gt;D:\FPT\QUEST-FILES\Log Files&lt;/LogFilesPath&gt;
+  &lt;DesignCopyPath&gt;C:\ProgramData\Quest Software\Notes Migrator For SharePoint\6.0\Design Copies&lt;/DesignCopyPath&gt;
+  &lt;IdentityMappingOptions&gt;
+    &lt;IdentityMappingType&gt;Users&lt;/IdentityMappingType&gt;
+    &lt;NotesIdPassword&gt;kq8cfRVf71FkIjZYrwYt6g==&lt;/NotesIdPassword&gt;
+    &lt;LookupCache /&gt;
+    &lt;MappingFile /&gt;
+    &lt;NotesDatabase&gt;
+      &lt;DatabasePath&gt;UserMapping.nsf&lt;/DatabasePath&gt;
+    &lt;/NotesDatabase&gt;
+    &lt;DominoDirectory&gt;
+      &lt;FromNotesNameView&gt;$Users&lt;/FromNotesNameView&gt;
+      &lt;FromNotesNameItem&gt;WindowsName&lt;/FromNotesNameItem&gt;
+      &lt;FromDomainNameView&gt;ByWindowsLogin&lt;/FromDomainNameView&gt;
+      &lt;FromDomainNameItem&gt;FullName&lt;/FromDomainNameItem&gt;
+    &lt;/DominoDirectory&gt;
+    &lt;Adsi&gt;
+      &lt;AdsiLoginPassword&gt;4GE1ctUMvPk=&lt;/AdsiLoginPassword&gt;
+      &lt;AdsiFromDomainNameQuery&gt;(&amp;amp;(ObjectClass=Person)(distinguishedName={0}))&lt;/AdsiFromDomainNameQuery&gt;
+      &lt;AdsiFromNotesNameQuery&gt;(&amp;amp;(ObjectClass=Person)(distinguishedName={0}))&lt;/AdsiFromNotesNameQuery&gt;
+    &lt;/Adsi&gt;
+  &lt;/IdentityMappingOptions&gt;
+  &lt;GroupIdentityMappingOptions&gt;
+    &lt;IdentityMappingType&gt;Groups&lt;/IdentityMappingType&gt;
+    &lt;NotesIdPassword&gt;kq8cfRVf71FkIjZYrwYt6g==&lt;/NotesIdPassword&gt;
+    &lt;LookupCache /&gt;
+    &lt;MappingFile&gt;
+      &lt;Path&gt;GroupMapping.xml&lt;/Path&gt;
+    &lt;/MappingFile&gt;
+    &lt;NotesDatabase&gt;
+      &lt;DatabasePath&gt;GroupMapping.nsf&lt;/DatabasePath&gt;
+    &lt;/NotesDatabase&gt;
+    &lt;DominoDirectory&gt;
+      &lt;FromNotesNameView&gt;$Groups&lt;/FromNotesNameView&gt;
+      &lt;FromNotesNameItem&gt;WindowsName&lt;/FromNotesNameItem&gt;
+      &lt;FromDomainNameView&gt;ByWindowsGroup&lt;/FromDomainNameView&gt;
+      &lt;FromDomainNameItem&gt;ListName&lt;/FromDomainNameItem&gt;
+    &lt;/DominoDirectory&gt;
+    &lt;Adsi&gt;
+      &lt;AdsiLoginPassword&gt;4GE1ctUMvPk=&lt;/AdsiLoginPassword&gt;
+      &lt;AdsiFromDomainNameQuery&gt;(&amp;amp;(ObjectClass=Group)(distinguishedName={0}))&lt;/AdsiFromDomainNameQuery&gt;
+      &lt;AdsiFromNotesNameQuery&gt;(&amp;amp;(ObjectClass=Group)(distinguishedName={0}))&lt;/AdsiFromNotesNameQuery&gt;
+    &lt;/Adsi&gt;
+  &lt;/GroupIdentityMappingOptions&gt;
+  &lt;LinkTrackingOptions /&gt;
+  &lt;ReportingOptions /&gt;
+  &lt;BlockedExtensions&gt;ade|adp|app|asa|ashx|asmx|asp|bas|bat|cdx|cer|chm|class|cmd|cnt|com|config|cpl|crt|csh|der|dll|exe|fxp|gadget|hlp|hpj|hta|htr|htw|ida|idc|idq|ins|isp|its|jse|ksh|lnk|mad|maf|mag|mam|maq|mar|mas|mat|mau|mav|maw|mda|mdb|mde|mdt|mdw|mdz|msc|msh|msh1|msh1xml|msh2|msh2xml|mshxml|msi|msp|mst|ops|pcd|pif|prf|prg|printer|ps1|ps1xml|ps2|ps2xml|psc1|psc2|pst|reg|rem|scf|scr|sct|shb|shs|shtm|shtml|soap|stm|url|vb|vbe|vbs|ws|wsc|wsf|wsh&lt;/BlockedExtensions&gt;
+  &lt;SharePointEnvironments&gt;
+    &lt;SharePointEnvironment Name="Default" IsDefault="true" EnvironmentType="RemoteWebServicesClassicModeAuthentication"&gt;
+      &lt;Settings xsi:type="ClientWebServicesEnvironmentSettings"&gt;
+        &lt;CredentialsExpirationInterval&gt;0&lt;/CredentialsExpirationInterval&gt;
+      &lt;/Settings&gt;
+    &lt;/SharePointEnvironment&gt;
+  &lt;/SharePointEnvironments&gt;
+  &lt;ScanCatalogs&gt;false&lt;/ScanCatalogs&gt;
+  &lt;ScanServers&gt;false&lt;/ScanServers&gt;
+  &lt;MasterCatalog&gt;
+    &lt;CatalogServer /&gt;
+    &lt;CatalogPath&gt;QuestRepository.nsf&lt;/CatalogPath&gt;
+  &lt;/MasterCatalog&gt;
+  &lt;ReadOnlyRepository&gt;false&lt;/ReadOnlyRepository&gt;
+  &lt;CatalogUpdateMachine /&gt;
+  &lt;CatalogDatabases /&gt;
+  &lt;ScanLocations /&gt;
+  &lt;ExcludeServers /&gt;
+  &lt;ExcludeTemplates /&gt;
+  &lt;ExcludeClasses /&gt;
+  &lt;ExcludeCategories /&gt;
+  &lt;ExcludeFiles /&gt;
+  &lt;ExcludeFolders /&gt;
+  &lt;ExcludeUserNames /&gt;
+  &lt;PreferredNotesServers /&gt;
+  &lt;PreferredQuickPlaceServers /&gt;
+  &lt;PreferredQuickrServers /&gt;
+  &lt;PreferredDominoDocServers /&gt;
+  &lt;DefaultDirectoryServer /&gt;
+  &lt;MaxGroupSize&gt;100&lt;/MaxGroupSize&gt;
+  &lt;PreferredDirectoryServers /&gt;
+  &lt;EnableLinkTranslations&gt;false&lt;/EnableLinkTranslations&gt;
+  &lt;LinkTranslations /&gt;
+  &lt;CustomReportingDays&gt;0&lt;/CustomReportingDays&gt;
+  &lt;MaxAnalysisTimeMinutes&gt;20&lt;/MaxAnalysisTimeMinutes&gt;
+  &lt;ResponsibilityAssignmentNames /&gt;
+  &lt;ComplexityDEIWeight&gt;5&lt;/ComplexityDEIWeight&gt;
+  &lt;ComplexityDEIAverage&gt;true&lt;/ComplexityDEIAverage&gt;
+  &lt;ComplexityDataWeight&gt;3&lt;/ComplexityDataWeight&gt;
+  &lt;ComplexityDesignWeight&gt;0&lt;/ComplexityDesignWeight&gt;
+  &lt;ComplexityDesignDelta&gt;true&lt;/ComplexityDesignDelta&gt;
+  &lt;EffortUnitsLabel&gt;hours&lt;/EffortUnitsLabel&gt;
+  &lt;SetDataAnalyzed&gt;true&lt;/SetDataAnalyzed&gt;
+  &lt;SetDesignAnalyzed&gt;true&lt;/SetDesignAnalyzed&gt;
+  &lt;SetTargetsIdentified&gt;true&lt;/SetTargetsIdentified&gt;
+  &lt;SetJobsAssigned&gt;true&lt;/SetJobsAssigned&gt;
+  &lt;SetContentMigrated&gt;true&lt;/SetContentMigrated&gt;
+  &lt;ShowSetupWizardOnStartup&gt;true&lt;/ShowSetupWizardOnStartup&gt;
+&lt;/Options&gt;</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.3297849Z" severity="General" stage="General">
+    <context>User Options</context>
+    <message>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;UserOptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;AllowClearList&gt;true&lt;/AllowClearList&gt;
+  &lt;DefaultUserMappingFailureSubstitution&gt;DefaultIdentity&lt;/DefaultUserMappingFailureSubstitution&gt;
+  &lt;DefaultUserMappingUserName&gt;PAULA.BEYER.HIETPAS@dupont.com&lt;/DefaultUserMappingUserName&gt;
+  &lt;SharePointCredentialsForEnvironments&gt;
+    &lt;SharePointCredentialsForEnvironment environment="Default"&gt;
+      &lt;SharePointCredentials&gt;
+        &lt;UseWindowsAuthentication&gt;false&lt;/UseWindowsAuthentication&gt;
+        &lt;LogonName&gt;dupontnet\gw3274n&lt;/LogonName&gt;
+        &lt;Password&gt;18YdID5AhjnE2uloTm11tTLiEmF/B7f8&lt;/Password&gt;
+        &lt;CookiesAcquired&gt;2017-01-10T14:52:26.7982001-08:00&lt;/CookiesAcquired&gt;
+      &lt;/SharePointCredentials&gt;
+    &lt;/SharePointCredentialsForEnvironment&gt;
+  &lt;/SharePointCredentialsForEnvironments&gt;
+  &lt;NotesQueryOptions&gt;
+    &lt;IniFile /&gt;
+    &lt;Password&gt;kq8cfRVf71FkIjZYrwYt6g==&lt;/Password&gt;
+    &lt;StrictDataExtraction&gt;false&lt;/StrictDataExtraction&gt;
+    &lt;CacheSize&gt;0&lt;/CacheSize&gt;
+    &lt;DefaultNotesServer /&gt;
+    &lt;DefaultQuickPlaceServer /&gt;
+    &lt;DefaultQuickrServer /&gt;
+    &lt;DefaultDominoDocServer /&gt;
+  &lt;/NotesQueryOptions&gt;
+  &lt;AtomQueryOptions&gt;
+    &lt;User /&gt;
+    &lt;Password /&gt;
+    &lt;CacheSize&gt;0&lt;/CacheSize&gt;
+    &lt;ConnectionsProfileServiceUrl /&gt;
+    &lt;ConnectionsDiscoveryAddress /&gt;
+  &lt;/AtomQueryOptions&gt;
+  &lt;CustomViews /&gt;
+  &lt;ServerNodes /&gt;
+  &lt;DispositionNodes /&gt;
+  &lt;TechnicalClassNodes /&gt;
+  &lt;BusinessClassNodes /&gt;
+&lt;/UserOptions&gt;</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.3343202Z" severity="General" stage="General">
+    <context>License</context>
+    <message>[Notes Migrator for SharePoint]
+Product name=Notes Migrator for SharePoint
+Edition=Premier
+License=126-233-810
+Version=6.x
+License Type=Ongoing
+AboutText=Product: Notes Migrator for SharePoint%0D%0AVersion: 6.x%0D%0A%0D%0ALicense Number: 126-233-810%0D%0A%0D%0AEdition: Premier%0D%0A%0D%0ADatabases: 900%0D%0A%0D%0ALicense Type: Ongoing%0D%0A%0D%0A
+Databases=900
+Signature=B8952D63EFE9FADD6714B86C93B567BBE8F3D367B49BAD10D773121259BA980C2DC2442A89703D54EAE0BA9784611E5B916832338F7E63D8F395022BF091274F
+Installation Time=1484083714
+Product Installation Time=1561090288</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.334788Z" severity="General" stage="General">
+    <context>SharePoint Environment</context>
+    <message>Using SharePointEnvironment 'Default'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.339789Z" severity="Informational" stage="General">
+    <context>Reading Source data</context>
+    <message />
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.3407862Z" severity="Informational" stage="Query">
+    <context>QueryNotesData</context>
+    <message>Begin query</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.3512865Z" severity="Informational" stage="General">
+    <context>Notes Build</context>
+    <message>805.03</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.3523212Z" severity="Informational" stage="General">
+    <context>Notes User</context>
+    <message>Ngo Nghiep/Contractor/AE/DuPont</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.3622858Z" severity="Informational" stage="Query">
+    <context>QueryNotesData</context>
+    <message>Begin query</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:11.3877854Z" severity="Informational" stage="General">
+    <context>Writing SharePoint data</context>
+    <message />
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:40:32.4858263Z" severity="Informational" stage="Write">
+    <context>Accessing SharePoint Web</context>
+    <message>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:41:04.7266233Z" severity="Informational" stage="Modify">
+    <context>List Created</context>
+    <message>Name=Admin\Developer Keyword</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:41:10.3166523Z" severity="Informational" stage="Modify">
+    <context>Updating Title Field</context>
+    <message>Updating the display name of the SharePoint Title field to 'Developer Keyword(s)'.</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:42:01.6335445Z" severity="Informational" stage="Write">
+    <context>Accessing SharePoint List</context>
+    <message>Admin\Developer Keyword</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:42:19.6274356Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column Document Description (Document_x0020_Description) of type Text</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:42:35.6278054Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column Developer Keyword Type (Developer_x0020_Keyword_x0020_Ty) of type Text</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:43:02.6385151Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column Developer Role Keyword(s) (Developer_x0020_Role_x0020_Keywo) of type Text</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:43:25.9735106Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column Authors Fields Use (Authors_x0020_Fields_x0020_Use) of type Text</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:43:35.6186024Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column Readers Field Use (Readers_x0020_Field_x0020_Use) of type Text</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:43:55.6382299Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column Status Used (Status_x0020_Used) of type Text</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:44:09.6267747Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column Description of type Text</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:44:30.6223472Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column DocAuthor of type Text</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T22:44:40.6473029Z" severity="Critical" stage="General">
+    <message>Error provisioning view 'Admin\Developer': List does not exist.
+
+The page you selected contains a list that does not exist.  It may have been deleted by another user.</message>
+    <stackTrace>System.Exception: Error provisioning view 'Admin\Developer': List does not exist.
+
+The page you selected contains a list that does not exist.  It may have been deleted by another user. ---&gt; Microsoft.SharePoint.Client.ServerException: List does not exist.
+
+The page you selected contains a list that does not exist.  It may have been deleted by another user.
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponseStream(Stream responseStream)
+   at Microsoft.SharePoint.Client.ClientRequest.ProcessResponse()
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQueryToServer(ChunkStringBuilder sb)
+   at Microsoft.SharePoint.Client.ClientRequest.ExecuteQuery()
+   at Microsoft.SharePoint.Client.ClientRuntimeContext.ExecuteQuery()
+   at Microsoft.SharePoint.Client.ClientContext.ExecuteQuery()
+   at Quest.NSP.SharePoint.ClientSPViewFieldCollection.WriteFieldCollection()
+   at Quest.NSP.SharePoint.ClientSPViewFieldCollection.DeleteAll()
+   at Quest.NSP.SharePoint.SharePointListWriter.ViewSetupColumns(SharePointView viewConfig, ISPView newView)
+   at Quest.NSP.SharePoint.SharePointListWriter.ProvisionViews(ISPList spList)
+   --- End of inner exception stack trace ---
+   at Quest.NSP.SharePoint.SharePointListWriter.ProvisionViews(ISPList spList)
+   at Quest.NSP.SharePoint.SharePointListWriter.Write(ISPList spList)
+   at Quest.NSP.SharePoint.SharePointJobWriter.ProcessJob()
+   at Quest.NSP.SharePoint.SharePointLoad.WriteSharePointList(TransferJob job, IDataReader reader, XmlDocument databaseInfo, SharePointLoadContext sharePointLoadContext, Boolean checkServerSideLinkTrackingOptions, IFeedback progress, Int32 numItems, UInt32 recordLimit)
+   at Quest.NSP.Migrator.JobProcessor.WriteDataToSharePoint(Control owner)
+(client workingSet = 125M)</stackTrace>
+  </entry>
+  <summary date="2017-01-18T22:40:11.3077863Z">
+    <job name="Admin-Developer Keyword" />
+    <source type="Notes" location="database=C:\\Users\\nghie\\Desktop\\DPM PAMS v2.1\\dpmpamV21.nsf; server=local;" />
+    <target webUrl="https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/" list="Admin\Developer Keyword" />
+    <results documentsRead="0" documentsWritten="0" errorCount="1" warningCount="0" />
+  </summary>
+</log>

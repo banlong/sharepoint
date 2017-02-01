@@ -1,0 +1,1026 @@
+//Variable declaration
+var context = null;
+var web = null;
+var currentUser = null;
+var user;
+var list = null;
+var divId = null;
+var props;
+var externalloguser=null;
+var currentUserTerms = null;
+var itemcol;
+var itemcolApp;
+var countDisoAdded = 0;
+var webProperties;
+var userProfileProperties;
+var disolevel = "";
+var isExternalShare = "";
+var workflows = null;
+var majorVersionFullApprovalWF;
+var majorVersionShortApprovalWF;
+var reviewWF;
+var DISOLEVEL_PUBLIC = "public";
+var DISOLEVEL_INTERNAL = "internal use only";
+var DISOLEVEL_SPECIAL_CONTROL = "special control";
+var DISOLEVEL_CONFIDENTIAL = "confidential";
+var DISO_GREEN = "diso-green.png";
+var DISO_ORANGE = "diso-orange.png";
+var DISO_RED = "diso-red.png";
+var DISO_YELLOW = "diso-yellow.png";
+var DISO_CONTROL = "Diso Control";
+var portalUrl = '/sites/O365';
+var DISO_TRAFFICSUITELINK_URL = "https://threatlevel.dupont.com/threatlevel.html";
+var DISO_TRAFFICSUITELINK_IMAGE = "https://threatlevel.dupont.com/images/light.gif";
+var disoCount=0;
+
+
+$(function () {   
+
+        	SP.SOD.executeFunc('sp.js', 'SP.ClientContext' ,function() {
+        	    getWorkflowId();
+        	    AddBanner();
+		   });  
+			
+	      SP.SOD.executeFunc('sp.js', 'SP.ClientContext' ,function(){
+		  
+		  SP.SOD.executeFunc('userprofile', 'SP.UserProfiles.PeopleManager', function() {		    
+            externalUser();			
+          });
+		  
+			  if($("#imgDISOTraficID").length == 0 && disoCount == 0)
+			  {	
+			   disoCount=1;	  
+			   getWebProperties();
+			  }
+			   var ctx = window.location.href;
+			   
+			   if (ctx.indexOf('/_layouts/15/newsbweb.aspx') > -1) 
+			   {				
+				var siteURL = _spPageContextInfo.webAbsoluteUrl;
+				window.location.href = siteURL + "/_layouts/15/appredirect.aspx?client_id=i%3A0i%2Et%7Cms%2Esp%2Eext%7Ce4608522-4e34-4c0b-a2ff-e26672f50207%406c5697cc-1ece-4c48-8e3b-7c379c02aab6&redirect_uri=https%3A%2F%2Fdupontcollab-subsite%2Eazurewebsites%2Enet%2FPages%2FDefault%2Easpx%3F%7BStandardTokens%7D";
+			   }
+			   
+			   if (ctx.indexOf('/sites/O365/SitePages/Collaboration.aspx') > -1) 
+			   {
+				var div = document.getElementById('sideNavBox');
+				$(div).hide();
+			   }
+		  
+		   $('img[alt="CT_Association"]').closest('div[class^="ms-vl-apptile"]').hide();
+		   $('img[alt="SubSite"]').closest('div[class^="ms-vl-apptile"]').hide();
+		   
+		   AutoPopulation();
+		   Custom_WorkflowButtons();
+		   Disable_SendtoinDoc();
+		   ProvidedHostedSubsite();
+		   RegisterListAddedRER();   
+		
+			if (ctx.indexOf('?svi=1') > -1) {
+				var str = ctx;
+				alert("The Document Site is being created. Please wait..!!");
+				str = str.replace("/default.aspx?svi=1", "");
+				var strUrl = str;			  
+				window.location.href = strUrl;			}
+			
+			if ((ctx.indexOf('default.aspx') > -1) || (ctx.indexOf('start.aspx#/') > -1))
+			{
+              var link = document.getElementById('gettingStartWebpart');
+              if(link != null)
+              {
+	               var language = $('#gettingStartWebpart').attr('lang');
+	               customiseHomepage(language);
+			  }
+			}
+
+		});	
+		
+		
+});
+
+
+function AddBanner()
+{
+    
+    
+    
+    var clientContext = new SP.ClientContext(portalUrl);
+    var otherWeb = clientContext.get_web();
+    var Olist = otherWeb.get_lists().getByTitle("SiteBanners");
+    clientContext.load(Olist);
+    var camlQuery = new SP.CamlQuery();
+    camlQuery.set_viewXml("<View>" +
+								"<Query>" +
+								   "<Where>" +
+									  "<Eq>" +
+											"<FieldRef Name='Title' />" +
+											"<Value Type='Text'>Portal</Value>" +
+										 "</Eq>" +										 
+								   "</Where>" +
+								"</Query>" +
+							  "</View>");
+    this.itemcol = Olist.getItems(camlQuery);
+    clientContext.load(itemcol);
+    clientContext.executeQueryAsync(OnsuccessBanner, onQueryFailed);    
+}
+
+
+function OnsuccessBanner()
+{
+    var listItemInfo = '';
+
+    var listItemEnumerator = itemcol.getEnumerator();
+    var contentfield = "";
+    while (listItemEnumerator.moveNext()) {
+        var oListItem = listItemEnumerator.get_current();
+        contentfield= oListItem.get_item('NotificationMessage');
+    }
+    var Content = '<div id="pageStatusBar" aria-live="polite" aria-relevant="all" class="ms-status-yellow" style="display: block;"><span id="status_1" class="ms-status-status" role="alert" tabindex="0"><span id="status_1_hiddenPriMsg" class="ms-accessible">Important Status</span><span class="ms-status-iconSpan"><img class="ms-status-iconImg" src="/_layouts/15/images/spcommon.png"></span><span class="ms-bold ms-status-title">Information:</span><span class="ms-status-body" id="status_1_body">' + contentfield + '</span><br></span></div>';
+
+    var pathname = window.location.pathname; // Returns path only
+    if (pathname.indexOf("/sites/O365/") != -1) {
+
+        $("#DeltaPageStatusBar").append(Content);
+    }
+
+}
+  
+function customiseHomepage(language)
+{
+    var purl=portalUrl+"/_vti_bin/Lists.asmx";
+    var soapPacket = 
+    "<soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/'>"+
+    "<soapenv:Body>"+
+    "<GetListItems xmlns='http://schemas.microsoft.com/sharepoint/soap/'>"+
+     "<listName>Webpart Configuration</listName>"+
+     "<query><Query><Where><Eq><FieldRef Name='LPack' /><Value Type='Text'>"+language+"</Value></Eq></Where></Query></query>"+     
+     "<viewFields>"+
+      "<ViewFields>"+        
+         "<FieldRef Name='HTML_x0020_Content' />"+        
+      "</ViewFields>"+
+     "</viewFields>"+
+    "</GetListItems>"+
+   "</soapenv:Body>"+
+  "</soapenv:Envelope>";
+        jQuery.ajax({
+            url: purl,
+            type: "POST",
+            dataType: "xml",
+            data: soapPacket,
+            complete: processResultWebpart,
+            contentType: "text/xml; charset=\"utf-8\""
+        });
+}  
+
+
+function processResultWebpart(xData, status)
+{
+    var htmlContent;
+	var getZRows1=getZRows(xData.responseXML);
+    $(getZRows1).each(function () 
+    {
+      	htmlContent= $(this).attr("ows_HTML_x0020_Content");
+        $('#gettingStartWebpart').html(htmlContent);
+    });					
+}
+
+  
+  
+
+  
+function externalUser()
+{	
+		var clientcontext = new SP.ClientContext.get_current();
+		web= clientcontext.get_web(); 
+        var peoplemanager = new SP.UserProfiles.PeopleManager(clientcontext);
+        userprofileproperties = peoplemanager.getMyProperties();
+		externalloguser= web.get_currentUser(); 
+        clientcontext.load(userprofileproperties);
+		clientcontext.load(externalloguser);
+		clientcontext.executeQueryAsync(onsuccessexternaluser,onQueryFailed);	
+}
+
+function onsuccessexternaluser()
+{	
+	try
+	{	
+		
+		var siteURl= _spPageContextInfo.webAbsoluteUrl;
+		var emailid =_spPageContextInfo.userLoginName;
+		var accountname = externalloguser.get_loginName();
+		if (accountname != "")
+		{
+			if(accountname.indexOf('#ext#') > -1)	
+			{
+				  if(siteURl==window.location.protocol + "//" + window.location.host + portalUrl)
+				  {
+					window.location.replace(siteURl +"/_layouts/15/AccessDenied.aspx");
+				  }
+				  else
+				  {
+					FetchCurrentUserProperties();
+				  }
+			}						
+		}
+	}
+	catch(err)
+	{
+	
+	}
+}
+
+function FetchCurrentUserProperties()
+{
+	
+	var clientContext = new SP.ClientContext(portalUrl);
+    var otherWeb = clientContext.get_web();
+    var Olist = otherWeb.get_lists().getByTitle("ExternalUsersList");
+	var loginUserId=_spPageContextInfo.userLoginName;
+	var siteURl= _spPageContextInfo.webAbsoluteUrl;
+	clientContext.load(Olist);	
+	var camlQuery = new SP.CamlQuery();
+	camlQuery.set_viewXml(   "<View>"+
+								"<Query>"+
+								   "<Where>"+
+									  "<And>"+
+										 "<Eq>"+
+											"<FieldRef Name='User_x0020_emil_x0020_Id' />"+
+											"<Value Type='Text'>"+loginUserId+"</Value>"+
+										 "</Eq>"+
+										 "<Eq>"+
+											"<FieldRef Name='Site_x0020_Collection_x0020_Acce' />"+
+											"<Value Type='Text'>"+siteURl+"</Value>"+
+										 "</Eq>"+
+									  "</And>"+
+								   "</Where>"+
+								"</Query>"+
+							  "</View>");
+	this.itemcol= Olist.getItems(camlQuery);	
+	clientContext.load(itemcol);
+    clientContext.executeQueryAsync(OnsuccessUser,onQueryFailed);
+	
+} 
+
+function OnsuccessUser()
+{
+		try
+		{	 
+			 var ListItemsEnumerator = itemcol.getEnumerator();
+			 var listItemuser = ListItemsEnumerator.get_current();
+			
+			     if(itemcol.get_count() > 0)			    
+				 {
+				 }
+				 else
+				 {
+					termSetPopUpWindow();				
+				 }
+			 
+		}
+		catch(err)
+		{
+		}
+}
+
+function termSetPopUpWindow()
+{
+    var element = document.createElement('div');
+	element.innerHTML =			
+			'<div style="OVERFLOW-X: auto !important; OVERFLOW-Y: auto !important">'+
+			'<div style="font-size: 2.0em; position: relative; top:0; color:#6e6e6e; text-transform: uppercase; letter-spacing: normal;">'+
+			'<label>LEGAL NOTICES & TERMS OF USE</label>'+
+			'</div>'+
+			'<div></div>'+
+			'<div>'+
+			'<div style="font-size:12px;	width:85%;padding: 23px 0 30px 0;">'+
+			'<div style="font-size:12px;line height: 18px;margin-bottom: 15px; width:100%;">'+
+			'<p>Welcome. DuPont offers this website to you subject to the following terms and conditions ("Terms"). The Terms apply to this website located at www.dupont.com and all other DuPont websites around the world (collectively, the "Site"). The Site (including its content, design, structure, and look-and-feel) is the property of E. I. du Pont de Nemours and Company and protected by copyright, trademark, and other intellectual property and unfair competition laws. <b>By using the Site, you agree to these Terms. If you do not agree with any of these Terms, do not use the Site.</b> If you have any questions about these Terms, please contact&nbsp;<a style="color:#ba313b" href="/corporate-links/contact-dupont.html">CORPORATE INFORMATION CENTER</a>.</p>'+
+			'<p><b>Privacy</b></p>'+
+			'<p>Use of this Site is also subject to DuPont"s <a style="color:#ba313b" href="/privacy.html" target="_blank">Privacy Statement</a>, which is incorporated herein by reference. You also acknowledge and agree that transmission of information over the Internet is never completely private or secure, and there is the possibility that information you send or receive from the Site may be intercepted by others, even if there is a notice that a particular transmission is encrypted.</p>'+
+			'<p><b>Terms of Use Revisions</b></p>'+
+			'<p>DuPont may revise these Terms at any time without notice by updating this posting. Your continued use of the Site after such modifications have been made will constitute your acceptance of such revised Terms.</p>'+
+			'<p><b>General Use Restrictions</b></p>'+
+			'<p>DuPont or third parties granting rights to DuPont hold all right, title, and interest in and to the materials on this site, which are the copyrighted work of DuPont or such third parties . DuPont grants you a limited, personal, non-exclusive and non-transferable license to use and display the materials on this Site only on your personal computer or mobile device, and only for purposes of your interaction with this Site. Except as stated herein, you have no right to copy, download, display, perform, reproduce, distribute, modify, edit, alter, or enhance any of the materials on this Site in any manner. This limited license terminates automatically, without notice to you, if you breach any of these Terms. Upon termination, you must immediately delete and destroy any downloaded and printed materials. You have no right, title, or interest (and no copyright, trademark, or other intellectual property right) in or to this Site or any materials on this Site.</p>'+
+			'<p>You agree not to "frame" or "mirror" this Site, or any material contained on or accessible from this Site, on any other server or Internet-based device without the advance written authorization of DuPont. You also agree not to use any "page-scrape" or other automatic device, algorithm, or program, or any similar manual process, to access, copy, or monitor any portion of this Site or the materials on this Site, to reproduce or circumvent the navigational structure of this Site, or to obtain any materials on this Site other than as intended by DuPont and made available through this Site.</p>'+
+			'<p>You may not:</p>'+
+			'<ol>'+
+			'<li>Attempt by hacking, password mining, or any other illegitimate means to gain access to,</li>'+
+			'<li>Test, scan, or probe the vulnerability of, or</li>'+
+			'<li>Trace, seek to trace, reverse lookup, or reveal any information about another user of this Site, any feature or content on this Site, or any other DuPont system, network, or server.</li>'+
+			'</ol>'+
+			'<p>You may not use this Site for a purpose that is unlawful or violates these Terms, or to solicit activity that is illegal or infringes the rights of DuPont or others.</p>'+
+			'<p>DuPont does not routinely monitor your postings or other activity on the Site, but reserves the right so to do. However, if DuPont becomes aware of inappropriate use of the Site or any of its Services, DuPont will respond in any way that DuPont, at its sole discretion, deems appropriate. You acknowledge that DuPont will have the right to report to law enforcement authorities any actions that may be considered illegal, as well as any reports it receives of such conduct. When requested, DuPont will cooperate fully with law enforcement agencies in any investigation of alleged illegal activity on the Internet.</p>'+
+			'<p><b>Availability</b></p>'+
+			'<p>DuPont has several websites offering products, services, content, and various other functionalities (collectively the "Services") to specific regions worldwide. The Services offered in one region may differ from those in other regions due to availability, local or regional laws, regulatory status, shipment and other considerations. DuPont does not make any warranty or representation that a user in one region may obtain the Services in another region, and DuPont may cancel a user"s order or redirect a user to the site for that user"s region if a user attempts to order Services offered on a site in another region.</p>'+
+			'<p>Information DuPont publishes on the World Wide Web may contain references or cross-references to DuPont products, programs and services that are not announced or available in your region. Such references do not imply that DuPont intends to announce such products, programs or services in your region. Consult your local DuPont business contact for information regarding the products, programs and services that may be available to you.</p>'+
+			'<p><b>Accounts and Security</b></p>'+
+			'<p>Some Services offered through this Site may require that you register and establish a user name and password. You are responsible for maintaining the confidentiality of your user name, password, and other account information, as well as for any activity that occurs under your account as a consequence of your failure to keep this information confidential. You agree to inform DuPont immediately of any unauthorized use of your account or password, or any other breach of your account security. You may be liable to DuPont or others for unauthorized use of your account or password or as a consequence of your failing to keep your account information confidential.</p>'+
+			'<p><b>Links</b></p>'+
+			'<p><i>From DuPont to Third-Party Websites</i></p>'+
+			'<p>This Site may be linked to other sites on the World Wide Web that are not under the control of or maintained by DuPont. Such links do not constitute an endorsement by DuPont of any such sites. You acknowledge that DuPont is providing these links to you only as a convenience, and you agree that DuPont is not responsible for the content or links displayed on such sites to which you may be linked. You further agree that DuPont has no liability, obligation, or responsibility for any correspondence, promotion, or purchase between you and the owner or operator of any such site.</p>'+
+			'<p><i>From Third-Party Websites to DuPont</i></p>'+
+			'<p>You may link to DuPont websites so long as:</p>'+
+			'<ul>'+
+			'<li>You do not create frames or border environments around any page or materials on a DuPont website or use other techniques that alter in any way the visual presentation or appearance of any content within a DuPont website;</li>'+
+			'<li>You do not create comparisons of DuPont products or services with competitive products or services;</li>'+
+			'<li>You do not replicate any materials from a DuPont website or any DuPont logo or trademark;</li>'+
+			'<li>You do not misrepresent your relationship with DuPont;</li>'+
+			'<li>You do not imply that DuPont approves or endorses the linking party, the linking party"s website, or the linking party"s service or product offerings in any way;</li>'+
+			'<li>You do not present false or misleading impressions about DuPont or otherwise damage the goodwill associated with the DuPont name and trademarks;</li>'+
+			'<li>The linked site does not contain content that could be construed as abusive, threatening, harassing, profane or offensive, excessively violent, or which violates or encourages others to violate any applicable law; and</li>'+
+			'<li>The linked site does not contain content that could be construed as obscene, pornographic, or sexually explicit.</li>'+
+			'</ul>'+
+			'<p>As a further condition to being permitted to link to DuPont websites, the linking party agrees that DuPont may at any time, at its sole discretion, terminate permission to link to DuPont websites. In such event, the linking party agrees to immediately remove all links to DuPont websites.</p>'+
+			'<p><b>By linking to a DuPont website, the linking party agrees to defend, indemnify and hold DuPont and its officers, directors, employees, affiliates, agents, licensors, and business partners harmless from and against any and all losses, costs, damages, liabilities, and expenses including (without limitation) attorney"s fees and costs of defense, arising from any such link. DuPont shall have no liability for any indirect, exemplary, incidental, punitive, special, or consequential damages with regard to the linking or use of such link. DuPont makes no warranties of any kind, express or implied, with respect to such links.</b></p>'+
+			'<p><b>Disclaimer of Warranties</b></p>'+
+			'<p>Your use of this Site is at your own risk. This Site may include inaccuracies or errors that may affect the quality of the materials on the Site. The materials have not been independently verified or authenticated in whole or in part by DuPont. DuPont does not warrant the accuracy or timeliness of the materials. DuPont has no liability for any errors or omissions in the materials, whether provided by DuPont or third parties.</p>'+
+			'<p>THIS SITE IS PROVIDED TO YOU ON AN "AS IS" AND "WHERE-IS" BASIS, WITHOUT ANY WARRANTY OF ANY KIND. DUPONT, FOR ITSELF AND ANY THIRD PARTY PROVIDING MATERIALS, SERVICES, OR CONTENT TO THIS WEBSITE, MAKE NO REPRESENTATIONS OR WARRANTIES IN CONNECTION WITH THE SITE, INCLUDING BUT NOT LIMITED TO THE QUALITY, SUITABILITY, TRUTH, ACCURACY OR COMPLETENESS OF ANY MATERIAL, INFORMATION, PRODUCT, OR SERVICE CONTAINED ON THE SITE. ALL CONDITIONS, REPRESENTATIONS AND WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT OF THIRD PARTY RIGHTS, ARE HEREBY DISCLAIMED. DUPONT WILL NOT BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DAMAGES OF ANY KIND, INCLUDING BUT NOT LIMITED TO, DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, ARISING FROM OR CONNECTED WITH THE SITE, INCLUDING (BUT NOT LIMITED TO) YOUR USE OF THIS SITE OR YOUR INABILITY TO USE THE SITE, EVEN IF DUPONT HAS PREVIOUSLY BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>'+
+			'<p><i>Exception for EU citizens:</i> IF YOU ARE RESIDENT IN THE EUROPEAN UNION, DUPONT DOES NOT EXCLUDE OR LIMIT ITS LIABILITY FOR DEATH OR PERSONAL INJURY RESULTING FROM NEGLIGENCE.</p>'+
+			'<p><b>Inaccuracies or Errors</b></p>'+
+			'<p>The descriptions, pictures, and other representations of products on this Site may contain inaccuracies and errors. DuPont does not make any warranty or representation with respect to the accuracy or completeness of any such information.</p>'+
+			'<p>Furthermore, the prices and availability of products on this Site may change without notice to you at any time at DuPont"s sole discretion.</p>'+
+			'<p>DuPont shall have the right to refuse or cancel any orders placed for products listed with incorrect prices. DuPont shall have the right to refuse or cancel any such orders, whether or not the order has been confirmed and your credit card charged. If your credit card has already been charged for the purchase and your order is canceled, DuPont shall promptly issue a credit to your credit card account in the amount of the charge.</p>'+
+			'<p><b>Local Laws; Export Control</b></p>'+
+			'<p>DuPont controls and operates this Site from the United States of America. The materials and Services on this Site are subject in all respects to laws and regulations of the United States of America as shall from time to time govern the license and delivery of technology and products abroad, including the U.S. Export Control Regulations, and any successor legislation or regulations issued by the U.S. Department of Commerce, International Trade Administration, or Office of Export Licensing. Diversion of such materials contrary to United States law is prohibited. Neither the materials, nor any information acquired through the use of the Site, may be acquired for, shipped, transferred, or re-exported, directly or indirectly, to proscribed or embargoed countries or their nationals, nor may they be used for nuclear activities, chemical or biological weapons, or missile projects, unless specifically authorized by the United States Government for such purposes. You shall comply strictly with all United States export laws and assume sole responsibility for obtaining licenses to export or re-export as may be required.</p>'+
+			'<p>If you use this Site from outside the United States of America, you are also responsible for compliance with applicable local laws, including local export and import regulations.</p>'+
+			'<p><b>Trademarks</b></p>'+
+			'<p>The DuPont Oval logo, DuPont", The miracles of science" and all products denoted with" or " are trademarks or registered trademarks of E. I. du Pont de Nemours and Company or its affiliates. DuPont trademarks may not be used in connection with any product or service that is not a DuPont product or service.</p>'+
+			'<p><b>Unsolicited Ideas</b></p>'+
+			'<p>While DuPont is always interested in ideas and suggestions, we have found that frequently an idea or suggestion submitted to us is already available from other sources, including publications or the work of our own staff.&nbsp; This can lead to confusion concerning the origin of the idea or suggestion.&nbsp; For this reason we prefer that only patented inventions be disclosed to us.&nbsp; If you nevertheless submit your ideas to DuPont, and notwithstanding anything you may say or write in connection with a submission, unless DuPont enters&nbsp; a separate written agreement covering a submission, any submission to DuPont or its affiliates, including ideas for new products or technologies, improvements or enhancements to existing products or technologies, processes, materials, marketing or promotional plans, or new product names, shall be made under the following terms and conditions:</p>'+
+			'<ul>'+
+			'<li>DuPont shall be under no obligation to keep the submission secret or receive it on a confidential basis;</li>'+
+			'<li>DuPont shall be under no obligation to review the submission or respond to the submitter;</li>'+
+			'<li>Any intellectual property protection for the submission shall be solely based on patent or copyright protection;</li>'+
+			'<li>DuPont shall be the sole judge as to what payment, if any, is made for the submission;</li>'+
+			'<li>The submitter warrants that it is authorized to make the submission and that the submission does not violate any obligation that the submitter has to a present or former employer or to any other party.</li>'+
+			'</ul>'+
+			'<p><b>Product and Site Comments</b></p>'+
+			'<p>DuPont welcomes your comments about this Site and DuPont"s existing products so long as they are consistent with the above paragraph. You may provide your comments <a style="color:#ba313b" href="/corporate-links/contact-dupont.html">here</a> or at other designated places on this Site. Any comments you provide are non-confidential, and DuPont may use them without restriction.</p>'+
+			'<p><b>Applicable Law</b></p>'+
+			'<p>Except for any mandatory application of local law, any action related to these Terms shall be governed by the law of the State of Delaware, United States of America, without regard to the choice or conflicts of law provisions of any jurisdiction. You agree to submit to the jurisdiction of the courts located in the State of Delaware for the resolution of all disputes arising from or related to these Terms and/or your use of the Site.</p>'+
+			'<p><b>Unauthorized Activities</b></p>'+
+			'<p>Submissions to this Site or unauthorized use of any materials contained on this site may violate copyright laws, trademark laws, the laws of privacy and publicity, certain communications statutes and regulations, and other applicable laws and regulations. You alone are responsible for your actions or the actions of any person using your user name and/or password. <b>As such, you shall defend, indemnify and hold DuPont and its officers, directors, employees, affiliates, agents, licensors, and business partners harmless from and against any and all losses, costs, damages, liabilities, and expenses, including (without limitation) attorney"s fees and costs of defense," incurred in relation to, arising from, or for the purpose of avoiding, any claim or demand from a third party that your use of the site or the use of the site by any person using your user name and/or password (including without limitation your participation in the posting areas or your submissions) violates any applicable law or regulation, or the rights of any third party.</b></p>'+
+			'<div style="padding-top:2%;"></div>'+
+			'<div style="width:50%;float:right">'+
+			'<input type="button" onclick="SetCurrentUserProperties();SP.UI.ModalDialog.commonModalDialogClose(SP.UI.DialogResult.OK)" value="Accept" />'+   
+			'</div></div></div></div>' ;
+	
+	SP.UI.ModalDialog.showModalDialog({
+    html: element,	
+	title: "Please accept the terms and conditions",
+    allowMaximize: false,
+    showClose: false,
+    autoSize: true,
+	});
+}
+
+
+function SetCurrentUserProperties()
+{
+	try
+	{
+		var loginUserId=_spPageContextInfo.userId;	
+		var loginUserName=_spPageContextInfo.userLoginName;
+		var siteURl= _spPageContextInfo.webAbsoluteUrl;
+		var clientContext = new SP.ClientContext(portalUrl);
+		var otherWeb = clientContext.get_web();
+		var olist = otherWeb.get_lists().getByTitle("ExternalUsersList");
+		var itemCreateInfo = new SP.ListItemCreationInformation();
+		this.oListItem = olist.addItem(itemCreateInfo);
+		var assignedToUser = new SP.FieldUserValue();
+		assignedToUser.set_lookupId(loginUserId);
+		oListItem.set_item('Accepted_x0020_Terms_x0020_and_x',true);
+		oListItem.set_item('Site_x0020_Collection_x0020_Acce',siteURl);
+		oListItem.set_item('User_x0020_emil_x0020_Id',loginUserName);
+		oListItem.update();
+		clientContext.executeQueryAsync(function(){    	
+				console.log("properties updated");
+				window.location.href=window.location.href;
+				}, 
+				function(sender,args){
+				console.log(args.get_message());
+				});
+	}
+	catch(err)
+	{
+	}
+}
+  
+  
+
+//Fetching the property bag values.
+function getWebProperties() {
+
+    var clientContext = new SP.ClientContext.get_current();
+    webProperties = clientContext.get_site().get_rootWeb().get_allProperties();
+    clientContext.load(webProperties);
+    clientContext.executeQueryAsync(getWebPropertiesSucceeded,onQueryFailed);
+}
+
+//On successfull fetching of property bag values.
+function getWebPropertiesSucceeded() {
+
+    try
+    {
+        var myPropBag = webProperties;
+        disolevel = myPropBag.get_fieldValues()["DisoLevel"];
+		
+		isExternalShare = myPropBag.get_fieldValues()["ExtSharing"];
+        divId = $(".o365cs-rsp-tn-hideIfAffordanceOff"); 
+        GetDisoICon();
+    }
+    catch (err)
+    {
+
+    }
+}
+
+//On failed of ajax call
+function onQueryFailed(sender,args) 
+{
+		console.log(args.get_message());
+}
+
+function getWorkflowId()
+{
+	try	
+		{
+		var ctx = window.location.href;
+		var workingAreaDLTitle = "Working%20Area";
+		
+			if (ctx.indexOf(workingAreaDLTitle) > -1)
+			{			
+			   var clientContext = new SP.ClientContext.get_current();
+			   workflows = clientContext.get_web().get_lists().getByTitle("Working Area").get_workflowAssociations();
+			   clientContext.load(workflows);
+			   clientContext.executeQueryAsync(onQuerySucceededWFId, onQueryFailedID);				
+			}
+		}
+			
+	catch (err) {}
+}
+
+function onQuerySucceededWFId(sender, args) 
+	{
+		try
+		{
+		var enumerator = workflows.getEnumerator();
+		while(enumerator.moveNext())
+			{
+				var workflow = enumerator.get_current();
+				if(workflow.get_name() == "Major Version - Full Approval")			
+				{
+					majorVersionFullApprovalWF=workflow.get_id();
+				}
+				else if(workflow.get_name() == "Major Version - Short Approval")
+				{
+					majorVersionShortApprovalWF=workflow.get_id();
+				}
+				else if(workflow.get_name() == "Review Workflow")
+				{
+					reviewWF=workflow.get_id();
+				}
+				else
+				{
+					workflows= null;
+				}					
+			}
+			Add_Workflow();
+		}
+	
+		catch (err) {}
+	}
+
+function onQueryFailedID(sender, args) {
+console.log(args.get_message());
+};
+
+
+
+function Custom_WorkflowButtons() 
+{
+	try	{
+		var ctx = window.location.href;
+		var workingAreaDLTitle = "Working%20Area";
+		
+		if (ctx.indexOf(workingAreaDLTitle) > -1)
+		{			
+			Add_Workflow();
+		}
+	}
+	catch (err) {}
+}
+
+
+function Add_Workflow()
+{
+	try
+	{
+    	var context = new SP.ClientContext.get_current();
+	    var list = context.get_web().get_lists().getByTitle("Working Area");
+		var customAction;
+		var guids= guid();
+		customAction= list.get_userCustomActions().clear(); 
+		context.executeQueryAsync(function () {
+			console.log("");
+		},
+        function (sender, args) {
+            console.log(args.get_message());
+        }); 
+		
+		customAction= list.get_userCustomActions().add();		
+	    customAction.set_location('CommandUI.Ribbon');
+		
+	    var uiExtension =   '<CommandUIExtension xmlns="http://schemas.microsoft.com/sharepoint/">' +
+									 '<CommandUIDefinitions>' +
+											'<CommandUIDefinition Location="Ribbon.Documents.Workflow.Controls._children">' +
+												'<Button Id="Ribbon.Documents.New.RibbonMajor" ' +
+														'Command="Major" ' +
+														'Sequence="10000" ' +
+														'Image16by16="/_layouts/images/WorkflowSolutionFeature.gif" ' +
+														'Image32by32="/_layouts/images/WorkflowSolutionFeature.gif" ' +
+														'Description="Uses the notification area to display a message." ' +
+														'LabelText="Major Version-Full Approval" ' +
+														'TemplateAlias="o1"/>' +
+											'</CommandUIDefinition>' +
+											'<CommandUIDefinition Location="Ribbon.Documents.Workflow.Controls._children">' +											
+												'<Button Id="Ribbon.Documents.New.RibbonMinor" ' +
+														'Command="Short" ' +
+														'Sequence="10001" ' +
+														'Image16by16="/_layouts/images/WorkflowSolutionFeature.gif" ' +
+														'Image32by32="/_layouts/images/WorkflowSolutionFeature.gif" ' +
+														'Description="Uses the notification area to display a message." ' +
+														'LabelText="Major Version-Short Approval" ' +
+														'TemplateAlias="o1"/>' +
+											'</CommandUIDefinition>' +
+											'<CommandUIDefinition Location="Ribbon.Documents.Workflow.Controls._children">' +
+												'<Button Id="Ribbon.Documents.New.Review" ' +
+														'Command="Review" ' +
+														'Sequence="10002" ' +
+														'Image16by16="/_layouts/images/WorkflowSolutionFeature.gif" ' +
+														'Image32by32="/_layouts/images/WorkflowSolutionFeature.gif" ' +
+														'Description="Uses the notification area to display a message." ' +
+														'LabelText="Review Workflow" ' +
+														'TemplateAlias="o1"/>' +														
+											'</CommandUIDefinition>' +
+									'</CommandUIDefinitions>' +
+								'<CommandUIHandlers>' +
+										'<CommandUIHandler Command="Major" ' +
+												'CommandAction="~site/_layouts/15/IniWrkflIP.aspx?List={ListId}&amp;ID={SelectedItemId}&amp;ItemGuid={'+guids+'}&amp;TemplateID={'+majorVersionFullApprovalWF+'}&amp;Source={Source}"/>' +
+										'<CommandUIHandler Command="Short" ' +
+												'CommandAction="~site/_layouts/15/IniWrkflIP.aspx?List={ListId}&amp;ID={SelectedItemId}&amp;ItemGuid={'+guids+'}&amp;TemplateID={'+majorVersionShortApprovalWF+'}&amp;Source={Source}"/>' +
+										'<CommandUIHandler Command="Review" ' +
+												'CommandAction="~site/_layouts/15/IniWrkflIP.aspx?List={ListId}&amp;ID={SelectedItemId}&amp;ItemGuid={'+guids+'}&amp;TemplateID={'+reviewWF+'}&amp;Source={Source}"/>' +
+								'</CommandUIHandlers>' +
+                           '</CommandUIExtension>';
+
+	    customAction.set_commandUIExtension(uiExtension);
+	    customAction.update();
+	    context.load(list, 'UserCustomActions');	
+	    context.executeQueryAsync(function () {},
+        function (sender, args) {
+            console.log(args.get_message());
+        });
+	}	
+	catch(err)
+	{		
+	}
+}
+
+//Customising the ECB menu
+function Custom_AddDocLibMenuItems(m, ctx) {
+	try
+    {
+		var siteURL = ctx.HttpRoot;
+        var ListId = ctx.listName;
+        var id = m.id.split('_')[0];
+		var ctx = window.location.href;
+		var guids= guid();
+        var workingAreaDLTitle = "Working%20Area";
+        var publishingDocsDLTitle = "Published%20Documents";
+        if (ctx.indexOf(workingAreaDLTitle) > -1) {
+
+            //Full Approval
+            var strDisplayText = "Major Version - Full Approval";
+            var strAction = "STSNavigate('"+siteURL+"/_layouts/15/IniWrkflIP.aspx?List="+ListId+"&ID="+id+"&ItemGuid={"+guids+"}&TemplateID={"+majorVersionFullApprovalWF+"}&Source="+ctx+workingAreaDLTitle+"/Forms/AllItems.aspx')";
+            var strImagePath = "";
+            // Add our new menu item
+            CAMOpt(m, strDisplayText, strAction, strImagePath);
+            // add a separator to the menu
+            CAMSep(m);
+
+
+            strDisplayText = "";
+            strAction = "";
+            strImagePath = "";
+            //Short Approval	
+            strDisplayText = "Major Version - Short Approval";
+            strAction = "STSNavigate('"+siteURL+"/_layouts/15/IniWrkflIP.aspx?List="+ListId+"&ID="+id+"&ItemGuid={"+guids+"}&TemplateID={"+majorVersionShortApprovalWF+"}&Source="+ctx+workingAreaDLTitle+"/Forms/AllItems.aspx')";
+            strImagePath = "";
+            // Add our new menu item
+            CAMOpt(m, strDisplayText, strAction, strImagePath);
+            // add a separator to the menu
+            CAMSep(m);
+			
+			strDisplayText = "";
+            strAction = "";
+            strImagePath = "";
+            //Short Approval	
+            strDisplayText = "Review Workflow";
+            strAction = "STSNavigate('"+siteURL+"/_layouts/15/IniWrkflIP.aspx?List="+ListId+"&ID="+id+"&ItemGuid={"+guids+"}&TemplateID={"+reviewWF+"}&Source="+ctx+workingAreaDLTitle+"/Forms/AllItems.aspx')";
+            strImagePath = "";
+            // Add our new menu item
+            CAMOpt(m, strDisplayText, strAction, strImagePath);
+            // add a separator to the menu
+            CAMSep(m);			
+			return false;
+			
+		}
+	}
+    catch (err)
+    {
+
+    }
+}
+
+//Hide send To for working area and publishing docs
+function Disable_SendtoinDoc()
+{
+	try
+	{	
+		
+		var ctx = window.location.href;
+		var workingAreaDLTitle = "Working%20Area";
+		var publishingDocsDLTitle = "Published%20Documents";
+		if ((ctx.indexOf(workingAreaDLTitle) > -1) || (ctx.indexOf(publishingDocsDLTitle) > -1))
+		{
+			AddSendSubMenu = function (m,ctx) {}
+		}
+	}
+	catch (err)
+    {
+
+    }	
+}
+
+//Getting parameters from URL
+function AutoPopulation() {
+
+    var currentUrl = window.location.href;
+    var queryStringVal = getParameterByName("Mode");
+
+    if (queryStringVal == "") {
+        queryStringVal = getParameterByName("RootFolder");
+    }
+    if (queryStringVal != "") {
+        getWebUserData();
+    }
+}
+
+//Fetching the current user details
+function getWebUserData() {
+    context = new SP.ClientContext.get_current();
+    web = context.get_web();
+    currentUser = web.get_currentUser();
+    currentUser.retrieve();
+    context.load(web);
+    context.executeQueryAsync(onSuccessMethod, onQueryFailed);
+}
+
+//Auto population of field in upload form document library
+function onSuccessMethod(sender, args) {
+
+    try {
+        var userObject = web.get_currentUser();
+
+        SetAndResolvePeoplePicker("Content Owner", userObject.get_loginName());
+        SetAndResolvePeoplePicker("Author Identification", userObject.get_loginName());
+        SetAndResolvePeoplePicker("Document Administrator", userObject.get_loginName());
+    }
+
+    catch (err) {
+    }    
+}
+
+
+//Setting the people picker fields in document field
+function SetAndResolvePeoplePicker(fieldName, userAccountName) {
+    
+    try
+    {
+        var controlName = fieldName;
+        var peoplePickerDiv = $("[id$='ClientPeoplePicker'][title='" + controlName + "']");
+        var peoplePickerEditor = peoplePickerDiv.find("[title='" + controlName + "']");
+
+        if (peoplePickerDiv[0] != undefined || peoplePickerDiv[0] != null) {
+            var spPeoplePicker = SPClientPeoplePicker.SPClientPeoplePickerDict[peoplePickerDiv[0].id];
+            if (spPeoplePicker.TotalUserCount == 0) {
+                peoplePickerEditor.val(userAccountName);
+                spPeoplePicker.AddUnresolvedUserFromEditor(true);
+                //disable the field 
+                spPeoplePicker.SetEnabledState(true);
+            }
+        }
+    }
+    catch (err) {
+    }
+}
+
+//Fetching the control from title,identifier and tag name
+function getTagFromIdentifierAndTitle(tagName, identifier, title) {
+
+    try
+    {
+        var len = identifier.length;
+        var tags = document.getElementsByTagName(tagName);
+        for (var i = 0; i < tags.length; i++) {
+            var tempString = tags[i].id;
+            if (tags[i].title == title && (identifier == "" || tempString.indexOf(identifier) == tempString.length - len)) {
+                return tags[i];
+            }
+        }
+    }
+    catch (err) {
+        return null;
+    }
+}
+
+function guid() {
+	function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
+}
+
+//Fetching the query string parameters values
+function getParameterByName(name) 
+{
+    try {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+           results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+    catch (err) {
+    }
+}
+
+//Fetch the people picker control values
+function PeoplePicker() {
+
+    this.context = null;
+    this.web = null;
+    this.currentUser = null;
+    this.parentTagId = null;
+
+    this.SetParentTagId = function (id) {
+        this.parentTagId = id;
+    }
+
+    this.SetLoggedInUser = function () {
+        if (this.parentTagId != null) {
+            this.getWebUserData();
+        }
+    }
+
+    this.getWebUserData = function () {
+        this.context = new SP.ClientContext.get_current();
+        this.web = this.context.get_web();
+        this.currentUser = this.web.get_currentUser();
+        this.currentUser.retrieve();
+        this.context.load(this.web);
+        this.context.executeQueryAsync(onSuccessMethod, onFailureMethod);
+    }
+
+    this.onSuccessMethod = function () {
+        this.setDefaultValue(this.currentUser.get_title());
+    }
+
+    this.onFailureMethod = function () {
+        alert('request failed ' + args.get_message() + '\n' + args.get_stackTrace());
+    }
+
+    this.setDefaultValue = function (value) {
+        var parentTag = document.getElementById(this.parentTagId);
+        if (parentTag != null) {
+            var peoplePickerTag = this.getTagFromIdentifierAndTitle(parentTag, 'div',
+                                                    'UserField_upLevelDiv', 'People Picker');
+            if (peoplePickerTag) {
+                peoplePickerTag.innerHTML = value;
+            }
+        }
+    }
+
+    this.getTagFromIdentifierAndTitle = function (parentElement, tagName, identifier, title) {
+        var len = identifier.length;
+        var tags = parentElement.getElementsByTagName(tagName);
+        for (var i = 0; i < tags.length; i++) {
+            var tempString = tags[i].id;
+            if (tags[i].title == title && (identifier == "" ||
+                                tempString.indexOf(identifier) == tempString.length - len)) {
+                return tags[i];
+            }
+        }
+        return null;
+    }
+}
+
+//Alert box notification for newly created domino doc site
+function getPathFromUrl(url) 
+{
+  return url.split("?")[0];
+}
+
+
+//Display of DISO icon based on property bag values
+var imageUrl;
+function GetDisoICon() {
+    try {
+    imageUrl="";
+        if (disolevel != undefined)
+        {  
+            var DISO_TRAFFICLIGHT_PATH=window.location.protocol + "//" + window.location.host + "/sites/O365/SiteAssets/DISO/DISOTrafficLight.gif"
+            var DISO_IMAGE_PATH = window.location.protocol + "//" + window.location.host + "/sites/O365/SiteAssets/DISO/"; 
+
+            if (disolevel.toLowerCase() == DISOLEVEL_PUBLIC) {
+                DISO_IMAGE_PATH = DISO_IMAGE_PATH + DISO_GREEN;
+            }
+            else if (disolevel.toLowerCase() == DISOLEVEL_INTERNAL) {
+                DISO_IMAGE_PATH = DISO_IMAGE_PATH + DISO_ORANGE;
+            }
+            else if (disolevel.toLowerCase() == DISOLEVEL_SPECIAL_CONTROL) {
+                DISO_IMAGE_PATH = DISO_IMAGE_PATH + DISO_RED;
+            }
+            else if (disolevel.toLowerCase() == DISOLEVEL_CONFIDENTIAL) {
+                DISO_IMAGE_PATH = DISO_IMAGE_PATH + DISO_YELLOW;
+            }
+            else {
+                DISO_IMAGE_PATH = DISO_IMAGE_PATH + "";
+            }
+			
+			if(isExternalShare != undefined){
+				var EXT_SHARE_IMAGE_PATH = window.location.protocol + "//" + window.location.host + "/sites/O365/SiteAssets/DISO/ExternalResource.png"
+				if(isExternalShare.toLowerCase() == 'yes'.toLowerCase())
+				{	
+					
+					imageUrl = '<img  id="imgDISOTraficID" onclick="javascript:OnDisoTrafficLight()" src= "' + DISO_TRAFFICLIGHT_PATH + '" alt="DISO" style="height: 30px; padding-bottom: 10px;"/>';
+					imageUrl = imageUrl + '<img src="' + DISO_IMAGE_PATH + '" alt="DISO" style="height: 27px; padding-left: 30px; padding-bottom: 10px;" />';
+					imageUrl = imageUrl + '<img src="' + EXT_SHARE_IMAGE_PATH + '" alt="ExternalResource" style=height:48px; />';
+				}
+				else
+				{
+					imageUrl = '<img id="imgDISOTraficID"  onclick="javascript:OnDisoTrafficLight()" src= "' + DISO_TRAFFICLIGHT_PATH + '" alt="DISO" style=height:30px;"/>';
+					imageUrl = imageUrl + '<img src="' + DISO_IMAGE_PATH + '" alt="DISO" style="height:20px;padding-left:30px;padding-bottom:3px;padding-top: 15px;width:120px;" />';					
+					
+				}
+			}
+			else
+			{
+				imageUrl = '<img id="imgDISOTraficID" onclick="javascript:OnDisoTrafficLight()" src= "' + DISO_TRAFFICLIGHT_PATH + '" alt="DISO" style=height:30px;"/>';
+				imageUrl = imageUrl + '<img src="' + DISO_IMAGE_PATH + '" alt="DISO" style="height:20px;padding-left:30px;padding-bottom:3px;padding-top: 15px;width:120px;" />';
+			}
+			// debugger;
+            if (divId != undefined && divId.length > 1)
+            {
+                divId.last().prev().prev().prev().prev().prev().prev().before(imageUrl); 
+                 //$("#suiteBarTop").find(".o365cs-nav-topItem")[10].before(imageUrl);   
+                //var id=$("#suiteBarTop").find(".o365cs-nav-topItem")[10].id;
+                 //$("#"+id).before(imageUrl);
+          
+
+            }
+            else
+            {
+             //checkContainer();
+             
+            }
+            
+        }
+    }
+
+    catch (err) {
+    }    
+}
+
+
+function checkContainer () {
+  if($('.o365cs-rsp-tn-hideIfAffordanceOff').is(':visible')){ //if the container is visible on the page
+    SetICon();  //Adds a grid to the html
+  } else {
+    setTimeout(checkContainer, 50); //wait 50 ms, then try again
+  }
+}
+
+
+
+
+
+
+function SetICon()
+{
+divId = $(".o365cs-rsp-tn-hideIfAffordanceOff"); 
+if (divId != undefined && divId.length > 1)
+            {
+                divId.last().prev().prev().prev().prev().prev().prev().before(imageUrl); 
+                 //$("#suiteBarTop").find(".o365cs-nav-topItem")[10].before(imageUrl);   
+                //var id=$("#suiteBarTop").find(".o365cs-nav-topItem")[10].id;
+                 //$("#"+id).before(imageUrl);
+          
+
+            }
+           
+}
+
+//Display the DISO traffic image
+function OnDisoTrafficLight() {
+    window.open(DISO_TRAFFICSUITELINK_URL, '_blank');
+}
+
+//Checking the current page is site contents or not for calling overriding the 'Create New Subsite link'
+function ProvidedHostedSubsite() 
+{	
+	var sharepointUrl=window.location.href;	
+	if (window.location.href.toLowerCase().indexOf("viewlsts.aspx") > -1 &&
+   	    window.location.href.toLowerCase().indexOf("_layouts/15") > -1) 
+   	{   
+	     SubsiteProviderHostedWeb_SiteContent();
+    }    
+}
+
+// Calling App from azure
+function SubsiteProviderHostedWeb_SiteContent() {
+	
+    try 
+	{
+		//Update create new site link point to our custom page.
+        if (_spPageContextInfo != null || _spPageContextInfo != undefined) 
+		{
+            var link = document.getElementById('createnewsite');
+            var siteURL = _spPageContextInfo.webAbsoluteUrl;  
+            if (link != undefined)
+			{
+                 link.href = siteURL + "/_layouts/15/appredirect.aspx?client_id=i%3A0i%2Et%7Cms%2Esp%2Eext%7Ce4608522-4e34-4c0b-a2ff-e26672f50207%406c5697cc-1ece-4c48-8e3b-7c379c02aab6&redirect_uri=https%3A%2F%2Fdupontcollab-subsite%2Eazurewebsites%2Enet%2FPages%2FDefault%2Easpx%3F%7BStandardTokens%7D";
+			}
+        }
+    }
+    catch (err) {
+    }
+}
+
+//Registering remote event reciever in every site collection and Subsite
+function RegisterListAddedRER() {
+    
+	if (_spPageContextInfo != null || _spPageContextInfo != undefined) {
+        //Registering the List Added RER in not Registered
+        //Check the property bag value if propetry not available or the value is 0 (DocumentLibraryRER)
+        var clientContext = new SP.ClientContext.get_current();
+        allWebProperties = clientContext.get_web().get_allProperties();
+        clientContext.load(allWebProperties);
+        clientContext.executeQueryAsync(Function.createDelegate(this, this.getDocumentLibraryWebProperty),Function.createDelegate(this, this.onQueryFailed) );
+    }
+}
+
+//Checking remote event reciver is registered in site or not..!!
+function getDocumentLibraryWebProperty() {
+    try {
+        var myPropBag = allWebProperties;
+        var disolevel = myPropBag.get_fieldValues()["DocumentLibraryRER"];
+        if (disolevel == null || disolevel == undefined || disolevel == "0")
+        {
+            var siteURL = _spPageContextInfo.webAbsoluteUrl;
+            var rerURL = siteURL + "/_layouts/15/appredirect.aspx?client_id=i%3A0i%2Et%7Cms%2Esp%2Eext%7C718a84c2-4227-41b2-96fa-ad37614e7d78%406c5697cc-1ece-4c48-8e3b-7c379c02aab6&redirect_uri=https%3A%2F%2Fdupontcollab-contenttypeassociation%2Eazurewebsites%2Enet%2FPages%2FDefault%2Easpx%3F%7BStandardTokens%7D";
+            SP.UI.ModalDialog.showModalDialog(
+                {
+                    url: rerURL,
+                    width: 500,
+                    height: 200,
+                    title: "Configuring DuPont Specific Customizations"
+                });
+        }
+        
+       
+    }
+    catch (err) {
+    }
+}
+
+//Get the rows of XML docs created
+function getZRows(rXML) {
+    try
+    {
+        var rows;
+        var itemCount = $(rXML).find("rs\\:data").attr("ItemCount");
+        if (rXML.getElementsByTagName("z:row").length == 0 && itemCount == undefined) {
+            rows = rXML.getElementsByTagNameNS("*", "row");
+        } else {
+            rows = rXML.getElementsByTagName("z:row");
+        }
+        return rows;
+    }
+
+    catch(e)
+    {
+    }
+}

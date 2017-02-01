@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransferJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="" Description="" Version="4.0.0.0">
+  <QuerySource xsi:type="NotesQuerySource">
+    <ConnectionString>database=C:\\Users\\nghie\\Desktop\\DPM PAMS v2.1\\dpmpamV21.nsf; server=local;</ConnectionString>
+  </QuerySource>
+  <SourceDefinition Name="DPM PAMS v2.1" Description="" Templates="DPM PAMS v2.1" ListTypes="">
+    <QuerySpec xsi:type="NotesQuerySpec">
+      <From />
+      <Forms>Information|Info</Forms>
+      <Search />
+      <Formula />
+      <Column ColumnType="RichText" Value="body" Alias="BodyHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="body" Alias="BodyText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="body" Alias="BodyMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="body" Alias="BodyAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="body" Alias="BodyEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="body" Alias="BodyImages" Option="Multi" />
+      <Column ColumnType="Item" Value="Creator" ReturnType="String" />
+      <Column ColumnType="Item" Value="DateComposed" ReturnType="Date" />
+      <Column ColumnType="Item" Value="DocAuthor" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="From" ReturnType="String" />
+      <Column ColumnType="Item" Value="PastAuthors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="PastEditDates" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="TimesModified" ReturnType="Number" />
+      <Column ColumnType="Item" Value="Title" ReturnType="String" />
+      <Column ColumnType="AttachmentLinks" Value="$NULL" Alias="OtherAttachmentLinks" Option="Html" />
+      <Column ColumnType="Attachment" Value="$NULL" Alias="OtherAttachments" Option="Multi" />
+    </QuerySpec>
+  </SourceDefinition>
+  <SharePointConnection>
+    <Web>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/</Web>
+    <List>Information</List>
+  </SharePointConnection>
+  <JobOptions>
+    <AutoCreateList>true</AutoCreateList>
+    <AddListToQuickLaunch>true</AddListToQuickLaunch>
+    <AutoCreateFields>true</AutoCreateFields>
+    <PreserveIdentities>true</PreserveIdentities>
+    <PreserveDates>true</PreserveDates>
+    <QueryOptions xsi:type="NotesRuntimeQueryOptions">
+      <DeleteMigratedDocuments>false</DeleteMigratedDocuments>
+      <ExtractRecurrencePatterns>false</ExtractRecurrencePatterns>
+      <ExtractDocSecurity>false</ExtractDocSecurity>
+    </QueryOptions>
+    <UserMappingOptions>
+      <MappingFailureSubstitution>DefaultIdentity</MappingFailureSubstitution>
+      <DefaultUserName>dupontnet\sb1654</DefaultUserName>
+    </UserMappingOptions>
+    <LinkConversionOptions />
+  </JobOptions>
+  <SecurityMapping Enabled="false">
+    <AccessLevelMappings>
+      <AccessLevelMapping NotesAccessLevel="Reader" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Author" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Editor" SharePointPermissionLevel="Contribute" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Designer" SharePointPermissionLevel="Design" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Manager" SharePointPermissionLevel="Full Control" SharePointGroup="{Owners}" />
+      <AccessLevelMapping NotesAccessLevel="Can Create" />
+      <AccessLevelMapping NotesAccessLevel="Can Delete" />
+    </AccessLevelMappings>
+    <MapACLUsers>false</MapACLUsers>
+    <MapACLGroups>false</MapACLGroups>
+    <MapACLRoles />
+  </SecurityMapping>
+  <SharePointTargetDefinition Name="DPM PAMS v2.1" Description="Information" Templates="" SharePointTemplates="Custom List">
+    <ExtractIcons>false</ExtractIcons>
+    <IsDocLib>false</IsDocLib>
+    <IsDiscussion>false</IsDiscussion>
+    <IsEvents>false</IsEvents>
+    <AllowAttachments>false</AllowAttachments>
+    <Field Name="Title" Type="Text" NotesItems="Title" IsTitleField="true" />
+    <Field Name="Attachments" Type="Attachments" NotesItems="BodyAttachments;BodyEmbeddedObjects;BodyImages;OtherAttachments" AllowMultiple="true" />
+    <Field Name="Body" Type="Note" NotesItems="BodyHtml;OtherAttachmentLinks" AllowMultiple="true" />
+    <Field Name="Creator" Type="Text" NotesItems="Creator" />
+    <Field Name="DocAuthor" Type="Text" NotesItems="DocAuthor" />
+    <Field Name="PastAuthors" Type="Text" NotesItems="PastAuthors" />
+    <Field Name="PastEditDates" Type="Text" NotesItems="PastEditDates" />
+    <Field Name="Folder" Type="Folder" />
+    <Field Name="Help" Type="Text" />
+    <ViewsOverwriteExisting>false</ViewsOverwriteExisting>
+    <View Name="Help Doc/Examples" IsDefault="true">
+      <Column>Title (linked to item)</Column>
+      <Column>ContentType</Column>
+      <Column>Body</Column>
+      <Column>Attachments</Column>
+      <OrderColumn1Name />
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name />
+      <OrderColumn2Ascending>false</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name />
+      <GroupByColumn1Ascending>false</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+  </SharePointTargetDefinition>
+  <Mapping Destination="Body" SourceValue="BodyHtml" />
+  <Mapping Destination="Body" SourceValue="OtherAttachmentLinks" />
+  <Mapping Destination="Attachments" SourceValue="BodyAttachments" />
+  <Mapping Destination="Attachments" SourceValue="BodyEmbeddedObjects" />
+  <Mapping Destination="Attachments" SourceValue="BodyImages" />
+  <Mapping Destination="Attachments" SourceValue="OtherAttachments" />
+  <Mapping Destination="Creator" SourceValue="Creator" />
+  <Mapping Destination="DocAuthor" SourceValue="DocAuthor" />
+  <Mapping Destination="PastAuthors" SourceValue="PastAuthors" />
+  <Mapping Destination="PastEditDates" SourceValue="PastEditDates" />
+  <Mapping Destination="Title" SourceValue="Title" />
+</TransferJob>

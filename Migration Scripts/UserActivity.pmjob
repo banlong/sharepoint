@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransferJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="" Description="" Version="4.0.0.0">
+  <QuerySource xsi:type="NotesQuerySource">
+    <ConnectionString>database=C:\\Users\\nghie\\Desktop\\DPM PAMS v2.1\\dpmpamV21.nsf; server=local;</ConnectionString>
+  </QuerySource>
+  <SourceDefinition Name="DPM PAMS v2.1" Description="User Activity" Templates="DPM PAMS v2.1" ListTypes="">
+    <QuerySpec xsi:type="NotesQuerySpec">
+      <From />
+      <Forms>(UserActivity)|UserActivity</Forms>
+      <Search />
+      <Formula />
+      <Column ColumnType="Item" Value="AcceptDate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="AcceptStatus" ReturnType="String" />
+      <Column ColumnType="Item" Value="FirstVisit" ReturnType="Date" />
+      <Column ColumnType="Item" Value="Form" ReturnType="String" />
+      <Column ColumnType="Item" Value="LastServer" ReturnType="String" />
+      <Column ColumnType="Item" Value="LastVisit" ReturnType="Date" />
+      <Column ColumnType="Item" Value="NotesBuildVersion" ReturnType="Number" />
+      <Column ColumnType="Item" Value="NotesVersion" ReturnType="String" />
+      <Column ColumnType="Item" Value="OpenedDocs" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Owner" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Platform" ReturnType="String" />
+      <Column ColumnType="Item" Value="Readers" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="RealForm" ReturnType="String" />
+      <Column ColumnType="Item" Value="Servers" ReturnType="String" />
+      <Column ColumnType="Item" Value="TotalVisits" ReturnType="Number" />
+      <Column ColumnType="Item" Value="UserName" ReturnType="String" />
+    </QuerySpec>
+  </SourceDefinition>
+  <SharePointConnection>
+    <Web>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/</Web>
+    <List>User Activity</List>
+  </SharePointConnection>
+  <JobOptions>
+    <AutoCreateFields>true</AutoCreateFields>
+    <DuplicateDocumentHandling>Skip</DuplicateDocumentHandling>
+    <PreserveIdentities>true</PreserveIdentities>
+    <PreserveDates>true</PreserveDates>
+    <MaxRecords>1</MaxRecords>
+    <SkipRecords>612</SkipRecords>
+    <QueryOptions xsi:type="NotesRuntimeQueryOptions">
+      <DeleteMigratedDocuments>false</DeleteMigratedDocuments>
+      <ExtractRecurrencePatterns>false</ExtractRecurrencePatterns>
+      <ExtractDocSecurity>false</ExtractDocSecurity>
+    </QueryOptions>
+    <UserMappingOptions>
+      <MappingFailureSubstitution>DefaultIdentity</MappingFailureSubstitution>
+      <UseMappingFailureSubstitutionForUserFields>true</UseMappingFailureSubstitutionForUserFields>
+      <DefaultUserName>dupontnet\sb1654</DefaultUserName>
+    </UserMappingOptions>
+    <LinkConversionOptions />
+  </JobOptions>
+  <SecurityMapping Enabled="false">
+    <AccessLevelMappings>
+      <AccessLevelMapping NotesAccessLevel="Reader" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Author" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Editor" SharePointPermissionLevel="Contribute" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Designer" SharePointPermissionLevel="Design" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Manager" SharePointPermissionLevel="Full Control" SharePointGroup="{Owners}" />
+      <AccessLevelMapping NotesAccessLevel="Can Create" />
+      <AccessLevelMapping NotesAccessLevel="Can Delete" />
+    </AccessLevelMappings>
+    <MapACLUsers>false</MapACLUsers>
+    <MapACLGroups>false</MapACLGroups>
+    <MapACLRoles />
+  </SecurityMapping>
+  <SharePointTargetDefinition Name="DPM PAMS v2.1" Description="User Activity" Templates="" SharePointTemplates="Custom List">
+    <ExtractIcons>false</ExtractIcons>
+    <IsDocLib>false</IsDocLib>
+    <IsDiscussion>false</IsDiscussion>
+    <IsEvents>false</IsEvents>
+    <AllowAttachments>false</AllowAttachments>
+    <Field Name="User Name" Type="Text" NotesItems="UserName" IsTitleField="true" />
+    <Field Name="Accept Date" Type="DateTime" NotesItems="AcceptDate" />
+    <Field Name="Accept Status" Type="Text" NotesItems="AcceptStatus" />
+    <Field Name="First Visit" Type="DateTime" NotesItems="FirstVisit" />
+    <Field Name="Most Recent Visit" Type="DateTime" NotesItems="LastVisit" />
+    <Field Name="on" Type="Text" NotesItems="LastServer" />
+    <Field Name="Total Visits" Type="Number" NotesItems="TotalVisits" />
+    <Field Name="Notes Version" Type="Text" NotesItems="NotesVersion" />
+    <Field Name="Notes Build Version" Type="Number" NotesItems="NotesBuildVersion" />
+    <Field Name="Platform" Type="Text" NotesItems="Platform" />
+    <Field Name="Opened Documents" Type="Text" NotesItems="OpenedDocs" />
+    <Field Name="Owner" Type="Text" NotesItems="Owner" />
+    <Field Name="Real Form" Type="Text" NotesItems="RealForm" />
+    <Field Name="Servers" Type="Text" NotesItems="Servers" />
+    <Field Name="Folder" Type="Folder" />
+    <Field Name="Title" Type="Text" NotesItems="Subject;Title" />
+    <ViewsOverwriteExisting>false</ViewsOverwriteExisting>
+    <View Name="User Activities" IsDefault="true">
+      <Column>Title (linked to item)</Column>
+      <Column>Most Recent Visit</Column>
+      <Column>on</Column>
+      <Column>Total Visits</Column>
+      <Column>Notes Version</Column>
+      <Column>Notes Build Version</Column>
+      <OrderColumn1Name>Most Recent Visit</OrderColumn1Name>
+      <OrderColumn1Ascending>false</OrderColumn1Ascending>
+      <OrderColumn2Name />
+      <OrderColumn2Ascending>false</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Title (linked to item)</GroupByColumn1Name>
+      <GroupByColumn1Ascending>false</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+  </SharePointTargetDefinition>
+  <Mapping Destination="Accept Date" SourceValue="AcceptDate" />
+  <Mapping Destination="Accept Status" SourceValue="AcceptStatus" />
+  <Mapping Destination="First Visit" SourceValue="FirstVisit" />
+  <Mapping Destination="Notes Build Version" SourceValue="NotesBuildVersion" />
+  <Mapping Destination="Notes Version" SourceValue="NotesVersion" />
+  <Mapping Destination="Opened Documents" SourceValue="OpenedDocs" />
+  <Mapping Destination="Owner" SourceValue="Owner" />
+  <Mapping Destination="Most Recent Visit" SourceValue="LastVisit" />
+  <Mapping Destination="Platform" SourceValue="Platform" />
+  <Mapping Destination="Real Form" SourceValue="RealForm" />
+  <Mapping Destination="Servers" SourceValue="Servers" />
+  <Mapping Destination="Total Visits" SourceValue="TotalVisits" />
+  <Mapping Destination="User Name" SourceValue="UserName" />
+  <Mapping Destination="on" SourceValue="LastServer" />
+</TransferJob>

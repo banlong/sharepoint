@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransferJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="" Description="" Version="4.0.0.0">
+  <QuerySource xsi:type="NotesQuerySource">
+    <ConnectionString>database=C:\\Users\\nghie\\Desktop\\DPM PAMS v2.1\\dpmpamV21.nsf; server=local;</ConnectionString>
+  </QuerySource>
+  <SourceDefinition Name="DPM PAMS v2.1" Description="CRIM Archive" Templates="DPM PAMS v2.1" ListTypes="">
+    <QuerySpec xsi:type="NotesQuerySpec">
+      <From />
+      <Forms>CRIM Archive|CRIMArch</Forms>
+      <Search />
+      <Formula />
+      <Column ColumnType="Item" Value="dArchDateComposed" ReturnType="Date" />
+      <Column ColumnType="Item" Value="dArchDateSubmitted" ReturnType="Date" />
+      <Column ColumnType="Item" Value="dArchDroppedDate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="dArchFANumber" ReturnType="String" />
+      <Column ColumnType="Item" Value="dArchFiledDate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="dArchFrom" ReturnType="String" />
+      <Column ColumnType="Item" Value="dArchiveAuthor" ReturnType="String" />
+      <Column ColumnType="Item" Value="dArchivedDate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="dArchPatDate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="dArchPatentNum" ReturnType="String" />
+      <Column ColumnType="Item" Value="dArchTitle" ReturnType="String" />
+      <Column ColumnType="Item" Value="txt_DocDesc" ReturnType="String" />
+    </QuerySpec>
+  </SourceDefinition>
+  <SharePointConnection>
+    <Web>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/</Web>
+    <List>CRIM Archive</List>
+  </SharePointConnection>
+  <JobOptions>
+    <AutoCreateList>true</AutoCreateList>
+    <AddListToQuickLaunch>true</AddListToQuickLaunch>
+    <AutoCreateFields>true</AutoCreateFields>
+    <ClearListData>true</ClearListData>
+    <PreserveIdentities>true</PreserveIdentities>
+    <PreserveDates>true</PreserveDates>
+    <QueryOptions xsi:type="NotesRuntimeQueryOptions">
+      <DeleteMigratedDocuments>false</DeleteMigratedDocuments>
+      <ExtractRecurrencePatterns>false</ExtractRecurrencePatterns>
+      <ExtractDocSecurity>false</ExtractDocSecurity>
+    </QueryOptions>
+    <UserMappingOptions>
+      <MappingFailureSubstitution>DefaultIdentity</MappingFailureSubstitution>
+      <DefaultUserName>dupontnet\sb1654</DefaultUserName>
+    </UserMappingOptions>
+    <LinkConversionOptions />
+  </JobOptions>
+  <SecurityMapping Enabled="false">
+    <AccessLevelMappings>
+      <AccessLevelMapping NotesAccessLevel="Reader" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Author" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Editor" SharePointPermissionLevel="Contribute" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Designer" SharePointPermissionLevel="Design" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Manager" SharePointPermissionLevel="Full Control" SharePointGroup="{Owners}" />
+      <AccessLevelMapping NotesAccessLevel="Can Create" />
+      <AccessLevelMapping NotesAccessLevel="Can Delete" />
+    </AccessLevelMappings>
+    <MapACLUsers>false</MapACLUsers>
+    <MapACLGroups>false</MapACLGroups>
+    <MapACLRoles />
+  </SecurityMapping>
+  <SharePointTargetDefinition Name="DPM PAMS v2.1" Description="CRIM Archive" Templates="" SharePointTemplates="Custom List">
+    <ExtractIcons>false</ExtractIcons>
+    <IsDocLib>false</IsDocLib>
+    <IsDiscussion>false</IsDiscussion>
+    <IsEvents>false</IsEvents>
+    <AllowAttachments>false</AllowAttachments>
+    <Field Name="Docket" Type="Text" NotesItems="dArchFANumber" IsTitleField="true" />
+    <Field Name="Document Description" Type="Text" NotesItems="txt_DocDesc" MultiLine="true" />
+    <Field Name="Title of NOI" Type="Text" NotesItems="dArchTitle" />
+    <Field Name="NOI Submitted Date" Type="Text" NotesItems="dArchDateSubmitted" />
+    <Field Name="Application Filed Date" Type="DateTime" NotesItems="dArchFiledDate" />
+    <Field Name="Dropped Date" Type="DateTime" NotesItems="dArchDroppedDate" />
+    <Field Name="Patent Issued Date" Type="DateTime" NotesItems="dArchPatDate" />
+    <Field Name="US Patent Number" Type="Text" NotesItems="dArchPatentNum" />
+    <Field Name="Original NOI Created By" Type="Text" NotesItems="dArchFrom" />
+    <Field Name="Original NOI Creation Date" Type="DateTime" NotesItems="dArchDateComposed" />
+    <Field Name="Archive Author" Type="Text" NotesItems="dArchiveAuthor" />
+    <Field Name="Date Archived" Type="DateTime" NotesItems="dArchivedDate" />
+    <Field Name="Folder" Type="Folder" />
+    <Field Name="Title" Type="Text" NotesItems="Subject;Title" />
+    <Field Name="Submit Years" Type="Calculated" Formula="=YEAR([TODAY])-YEAR(DATEVALUE([Application Filed Date]))" />
+    <ViewsOverwriteExisting>false</ViewsOverwriteExisting>
+    <View Name="Archived" IsDefault="true">
+      <Column>Title (linked to item)</Column>
+      <Column>Title of NOI</Column>
+      <Column>NOI Submitted Date</Column>
+      <Column>Application Filed Date</Column>
+      <Column>Dropped Date</Column>
+      <Column>Patent Issued Date</Column>
+      <Column>Original NOI Created By</Column>
+      <Column>Original NOI Creation Date</Column>
+      <OrderColumn1Name>Docket</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name />
+      <OrderColumn2Ascending>false</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name />
+      <GroupByColumn1Ascending>false</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+    <View Name="CRIM\Docs &gt; 3 Years Old" IsDefault="false">
+      <Column>Submit Years</Column>
+      <Column>Docket</Column>
+      <Column>Title (linked to item)</Column>
+      <Column>NOI Submitted Date</Column>
+      <Column>Application Filed Date</Column>
+      <Column>Dropped Date</Column>
+      <Column>Patent Issued Date</Column>
+      <Column>Created</Column>
+      <Column>Modified</Column>
+      <Column>ContentType</Column>
+      <OrderColumn1Name>Docket</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name>Created</OrderColumn2Name>
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Submit Years</GroupByColumn1Name>
+      <GroupByColumn1Ascending>false</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>30</GroupsPerPage>
+      <IsFiltered>true</IsFiltered>
+      <ViewFilterColumn ColumnName="Patent Issued Date">
+        <ColumnOperation>IsEqualTo</ColumnOperation>
+        <Value>""</Value>
+        <IsAnd>false</IsAnd>
+      </ViewFilterColumn>
+      <ViewFilterColumn ColumnName="Dropped Date">
+        <ColumnOperation>IsEqualTo</ColumnOperation>
+        <Value>""</Value>
+        <IsAnd>true</IsAnd>
+      </ViewFilterColumn>
+      <ViewFilterColumn ColumnName="Application Filed Date">
+        <ColumnOperation>IsGreaterThan</ColumnOperation>
+        <Value>3</Value>
+        <IsAnd>true</IsAnd>
+      </ViewFilterColumn>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>30</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+  </SharePointTargetDefinition>
+  <Mapping Destination="Original NOI Creation Date" SourceValue="dArchDateComposed" />
+  <Mapping Destination="NOI Submitted Date" SourceValue="dArchDateSubmitted" />
+  <Mapping Destination="Dropped Date" SourceValue="dArchDroppedDate" />
+  <Mapping Destination="Docket" SourceValue="dArchFANumber" />
+  <Mapping Destination="Application Filed Date" SourceValue="dArchFiledDate" />
+  <Mapping Destination="Original NOI Created By" SourceValue="dArchFrom" />
+  <Mapping Destination="Archive Author" SourceValue="dArchiveAuthor" />
+  <Mapping Destination="Date Archived" SourceValue="dArchivedDate" />
+  <Mapping Destination="Patent Issued Date" SourceValue="dArchPatDate" />
+  <Mapping Destination="US Patent Number" SourceValue="dArchPatentNum" />
+  <Mapping Destination="Title of NOI" SourceValue="dArchTitle" />
+  <Mapping Destination="Document Description" SourceValue="txt_DocDesc" />
+</TransferJob>

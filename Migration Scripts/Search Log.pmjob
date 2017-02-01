@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransferJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="" Description="" Version="4.0.0.0">
+  <QuerySource xsi:type="NotesQuerySource">
+    <ConnectionString>database=C:\\Users\\nghie\\Desktop\\DPM PAMS v2.1\\dpmpamV21.nsf; server=local;</ConnectionString>
+  </QuerySource>
+  <SourceDefinition Name="DPM PAMS v2.1" Description="Search Log" Templates="DPM PAMS v2.1" ListTypes="">
+    <QuerySpec xsi:type="NotesQuerySpec">
+      <From />
+      <Forms>Search Log</Forms>
+      <Search />
+      <Formula />
+      <Column ColumnType="Item" Value="AllContributors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Attorney" ReturnType="String" Option="Multi" />
+      <Column ColumnType="RichText" Value="body" Alias="BodyHtml" Option="Html" />
+      <Column ColumnType="RichText" Value="body" Alias="BodyText" ReturnType="String" />
+      <Column ColumnType="RichText" Value="body" Alias="BodyMime" Option="Mime" />
+      <Column ColumnType="Attachment" Value="body" Alias="BodyAttachments" Option="Multi" />
+      <Column ColumnType="OleObject" Value="body" Alias="BodyEmbeddedObjects" Option="Multi" />
+      <Column ColumnType="Image" Value="body" Alias="BodyImages" Option="Multi" />
+      <Column ColumnType="Item" Value="Creator" ReturnType="String" />
+      <Column ColumnType="Item" Value="DateComposed" ReturnType="Date" />
+      <Column ColumnType="Item" Value="DocAuthor" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="DocReader" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="FANumber" ReturnType="String" />
+      <Column ColumnType="Item" Value="Flag" ReturnType="String" />
+      <Column ColumnType="Item" Value="Inventors" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Keyword" ReturnType="String" />
+      <Column ColumnType="Item" Value="PatentLiaison" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="Searchdate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="SearchPerson" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="SearchType" ReturnType="String" />
+      <Column ColumnType="Item" Value="txt_DocDesc" ReturnType="String" />
+      <Column ColumnType="AttachmentLinks" Value="$NULL" Alias="OtherAttachmentLinks" Option="Html" />
+      <Column ColumnType="Attachment" Value="$NULL" Alias="OtherAttachments" Option="Multi" />
+    </QuerySpec>
+  </SourceDefinition>
+  <SharePointConnection>
+    <Web>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/</Web>
+    <List>Search Log</List>
+  </SharePointConnection>
+  <JobOptions>
+    <AutoCreateFields>true</AutoCreateFields>
+    <PreserveIdentities>true</PreserveIdentities>
+    <PreserveDates>true</PreserveDates>
+    <QueryOptions xsi:type="NotesRuntimeQueryOptions">
+      <DeleteMigratedDocuments>false</DeleteMigratedDocuments>
+      <ExtractRecurrencePatterns>false</ExtractRecurrencePatterns>
+      <ExtractDocSecurity>false</ExtractDocSecurity>
+    </QueryOptions>
+    <UserMappingOptions>
+      <MappingFailureSubstitution>DefaultIdentity</MappingFailureSubstitution>
+      <DefaultUserName>dupontnet\sb1654</DefaultUserName>
+    </UserMappingOptions>
+    <LinkConversionOptions />
+  </JobOptions>
+  <SecurityMapping Enabled="false">
+    <AccessLevelMappings>
+      <AccessLevelMapping NotesAccessLevel="Reader" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Author" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Editor" SharePointPermissionLevel="Contribute" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Designer" SharePointPermissionLevel="Design" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Manager" SharePointPermissionLevel="Full Control" SharePointGroup="{Owners}" />
+      <AccessLevelMapping NotesAccessLevel="Can Create" />
+      <AccessLevelMapping NotesAccessLevel="Can Delete" />
+    </AccessLevelMappings>
+    <MapACLUsers>false</MapACLUsers>
+    <MapACLGroups>false</MapACLGroups>
+    <MapACLRoles />
+  </SecurityMapping>
+  <SharePointTargetDefinition Name="DPM PAMS v2.1" Description="Search Log" Templates="" SharePointTemplates="Custom List">
+    <ExtractIcons>false</ExtractIcons>
+    <IsDocLib>false</IsDocLib>
+    <IsDiscussion>false</IsDiscussion>
+    <IsEvents>false</IsEvents>
+    <AllowAttachments>false</AllowAttachments>
+    <Field Name="Docket Number" Type="Text" NotesItems="FANumber" IsTitleField="true" />
+    <Field Name="Who did the search?" Type="Text" NotesItems="SearchPerson" />
+    <Field Name="Type of Search" Type="Text" NotesItems="SearchType" />
+    <Field Name="Keywords used in the search" Type="Text" NotesItems="Keyword" />
+    <Field Name="Attach Search Results Files" Type="Note" NotesItems="BodyHtml;OtherAttachmentLinks" AllowMultiple="true" />
+    <Field Name="All Contributors" Type="Text" NotesItems="AllContributors" />
+    <Field Name="Attorney" Type="Text" NotesItems="Attorney" />
+    <Field Name="Attachments" Type="Attachments" NotesItems="BodyAttachments;BodyEmbeddedObjects;BodyImages;OtherAttachments" AllowMultiple="true" />
+    <Field Name="Creator" Type="Text" NotesItems="Creator" />
+    <Field Name="Document Author" Type="Text" NotesItems="DocAuthor" />
+    <Field Name="Document Reader" Type="Text" NotesItems="DocReader" />
+    <Field Name="Flag" Type="Text" NotesItems="Flag" />
+    <Field Name="Inventors" Type="Text" NotesItems="Inventors" />
+    <Field Name="Patent Liaison" Type="Text" NotesItems="PatentLiaison" />
+    <Field Name="Date Search Initiated" Type="DateTime" NotesItems="Searchdate" />
+    <Field Name="Folder" Type="Folder" />
+    <Field Name="Title" Type="Text" NotesItems="Subject;Title" />
+    <ViewsOverwriteExisting>false</ViewsOverwriteExisting>
+    <View Name="By Person" IsDefault="true">
+      <Column>Title (linked to item)</Column>
+      <Column>Type of Search</Column>
+      <Column>Keywords used in the search</Column>
+      <Column>Attach Search Results Files</Column>
+      <OrderColumn1Name />
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name />
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Who did the search?</GroupByColumn1Name>
+      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>true</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+  </SharePointTargetDefinition>
+  <Mapping Destination="Attorney" SourceValue="Attorney" />
+  <Mapping Destination="Attach Search Results Files" SourceValue="BodyHtml" />
+  <Mapping Destination="Attach Search Results Files" SourceValue="OtherAttachmentLinks" />
+  <Mapping Destination="Attachments" SourceValue="BodyAttachments" />
+  <Mapping Destination="Attachments" SourceValue="BodyEmbeddedObjects" />
+  <Mapping Destination="Attachments" SourceValue="BodyImages" />
+  <Mapping Destination="Attachments" SourceValue="OtherAttachments" />
+  <Mapping Destination="Creator" SourceValue="Creator" />
+  <Mapping Destination="Docket Number" SourceValue="FANumber" />
+  <Mapping Destination="Flag" SourceValue="Flag" />
+  <Mapping Destination="Inventors" SourceValue="Inventors" />
+  <Mapping Destination="Keywords used in the search" SourceValue="Keyword" />
+  <Mapping Destination="Date Search Initiated" SourceValue="Searchdate" />
+  <Mapping Destination="Who did the search?" SourceValue="SearchPerson" />
+  <Mapping Destination="Type of Search" SourceValue="SearchType" />
+  <Mapping Destination="All Contributors" SourceValue="AllContributors" />
+  <Mapping Destination="Document Author" SourceValue="DocAuthor" />
+  <Mapping Destination="Document Reader" SourceValue="DocReader" />
+  <Mapping Destination="Patent Liaison" SourceValue="PatentLiaison" />
+</TransferJob>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TransferJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="" Description="" Version="4.0.0.0">
+  <QuerySource xsi:type="NotesQuerySource">
+    <ConnectionString>database=C:\\Users\\nghie\\Desktop\\DPM PAMS v2.1\\dpmpamV21.nsf; server=local;</ConnectionString>
+  </QuerySource>
+  <SourceDefinition Name="DPM PAMS v2.1" Description="Admin\ Developer Keyword" Templates="DPM PAMS v2.1" ListTypes="">
+    <QuerySpec xsi:type="NotesQuerySpec">
+      <From />
+      <Forms>Admin \ Developer Keyword|DevKey</Forms>
+      <Search />
+      <Formula />
+      <Column ColumnType="Item" Value="AuthorUse" ReturnType="String" />
+      <Column ColumnType="Item" Value="CreatedBy" ReturnType="String" />
+      <Column ColumnType="Item" Value="Creator" ReturnType="String" />
+      <Column ColumnType="Item" Value="DateComposed" ReturnType="Date" />
+      <Column ColumnType="Item" Value="DevKeyword" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="DevKeywordDescr" ReturnType="String" />
+      <Column ColumnType="Item" Value="DevKeywordType" ReturnType="String" />
+      <Column ColumnType="Item" Value="DevRoleKeyword" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="DocAuthor" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="ReaderUse" ReturnType="String" />
+      <Column ColumnType="Item" Value="StatusUse" ReturnType="String" Option="Multi" />
+      <Column ColumnType="Item" Value="tim_EDate" ReturnType="Date" />
+      <Column ColumnType="Item" Value="txt_DocDesc" ReturnType="String" />
+      <Column ColumnType="Item" Value="txt_EditBy" ReturnType="String" />
+    </QuerySpec>
+  </SourceDefinition>
+  <SharePointConnection>
+    <Web>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/</Web>
+    <List>Admin\Developer Keyword</List>
+  </SharePointConnection>
+  <JobOptions>
+    <AutoCreateList>true</AutoCreateList>
+    <AddListToQuickLaunch>true</AddListToQuickLaunch>
+    <AutoCreateFields>true</AutoCreateFields>
+    <PreserveIdentities>true</PreserveIdentities>
+    <PreserveDates>true</PreserveDates>
+    <QueryOptions xsi:type="NotesRuntimeQueryOptions">
+      <DeleteMigratedDocuments>false</DeleteMigratedDocuments>
+      <ExtractRecurrencePatterns>false</ExtractRecurrencePatterns>
+      <ExtractDocSecurity>false</ExtractDocSecurity>
+    </QueryOptions>
+    <UserMappingOptions>
+      <MappingFailureSubstitution>DefaultIdentity</MappingFailureSubstitution>
+      <UseMappingFailureSubstitutionForUserFields>true</UseMappingFailureSubstitutionForUserFields>
+      <DefaultUserName>dupontnet\sb1654</DefaultUserName>
+    </UserMappingOptions>
+    <LinkConversionOptions />
+  </JobOptions>
+  <SecurityMapping Enabled="false">
+    <AccessLevelMappings>
+      <AccessLevelMapping NotesAccessLevel="Reader" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Author" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" />
+      <AccessLevelMapping NotesAccessLevel="Editor" SharePointPermissionLevel="Contribute" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Designer" SharePointPermissionLevel="Design" SharePointGroup="{Members}" />
+      <AccessLevelMapping NotesAccessLevel="Manager" SharePointPermissionLevel="Full Control" SharePointGroup="{Owners}" />
+      <AccessLevelMapping NotesAccessLevel="Can Create" />
+      <AccessLevelMapping NotesAccessLevel="Can Delete" />
+    </AccessLevelMappings>
+    <MapACLUsers>false</MapACLUsers>
+    <MapACLGroups>false</MapACLGroups>
+    <MapACLRoles />
+  </SecurityMapping>
+  <SharePointTargetDefinition Name="DPM PAMS v2.1" Description="Admin\ Developer Keyword" Templates="" SharePointTemplates="Custom List">
+    <ExtractIcons>false</ExtractIcons>
+    <IsDocLib>false</IsDocLib>
+    <IsDiscussion>false</IsDiscussion>
+    <IsEvents>false</IsEvents>
+    <AllowAttachments>false</AllowAttachments>
+    <Field Name="Document Description" Type="Text" NotesItems="txt_DocDesc" />
+    <Field Name="Developer Keyword Type" Type="Text" NotesItems="DevKeywordType" />
+    <Field Name="Developer Keyword(s)" Type="Text" NotesItems="DevKeyword" IsTitleField="true" />
+    <Field Name="Developer Role Keyword(s)" Type="Text" NotesItems="DevRoleKeyword" />
+    <Field Name="Authors Fields Use" Type="Text" NotesItems="AuthorUse" />
+    <Field Name="Readers Field Use" Type="Text" NotesItems="ReaderUse" />
+    <Field Name="Status Used" Type="Text" NotesItems="StatusUse" />
+    <Field Name="Description" Type="Text" NotesItems="DevKeywordDescr" />
+    <Field Name="DocAuthor" Type="Text" NotesItems="DocAuthor" />
+    <Field Name="Folder" Type="Folder" />
+    <Field Name="Title" Type="Text" NotesItems="Subject;Title" />
+    <ViewsOverwriteExisting>false</ViewsOverwriteExisting>
+    <View Name="Admin\Developer" IsDefault="true">
+      <Column>Title (linked to item)</Column>
+      <Column>Developer Role Keyword(s)</Column>
+      <Column>Status Used</Column>
+      <Column>Authors Fields Use</Column>
+      <Column>Readers Field Use</Column>
+      <Column>Description</Column>
+      <OrderColumn1Name>Developer Keyword Type</OrderColumn1Name>
+      <OrderColumn1Ascending>true</OrderColumn1Ascending>
+      <OrderColumn2Name>Developer Keyword(s)</OrderColumn2Name>
+      <OrderColumn2Ascending>true</OrderColumn2Ascending>
+      <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
+      <GroupByColumn1Name>Developer Keyword Type</GroupByColumn1Name>
+      <GroupByColumn1Ascending>false</GroupByColumn1Ascending>
+      <GroupByColumn2Name />
+      <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
+      <ExpandGroups>false</ExpandGroups>
+      <GroupsPerPage>100</GroupsPerPage>
+      <IsFiltered>false</IsFiltered>
+      <ShowItemsInsideTheirFolders>true</ShowItemsInsideTheirFolders>
+      <FolderOption>InAllFolders</FolderOption>
+      <NumberItemsToDisplay>100</NumberItemsToDisplay>
+      <DisplayItemsInBatches>true</DisplayItemsInBatches>
+      <FolderContentType />
+    </View>
+  </SharePointTargetDefinition>
+  <Mapping Destination="Authors Fields Use" SourceValue="AuthorUse" />
+  <Mapping Destination="Developer Keyword(s)" SourceValue="DevKeyword" />
+  <Mapping Destination="Description" SourceValue="DevKeywordDescr" />
+  <Mapping Destination="Developer Keyword Type" SourceValue="DevKeywordType" />
+  <Mapping Destination="Developer Role Keyword(s)" SourceValue="DevRoleKeyword" />
+  <Mapping Destination="DocAuthor" SourceValue="DocAuthor" />
+  <Mapping Destination="Readers Field Use" SourceValue="ReaderUse" />
+  <Mapping Destination="Status Used" SourceValue="StatusUse" />
+  <Mapping Destination="Document Description" SourceValue="txt_DocDesc" />
+</TransferJob>

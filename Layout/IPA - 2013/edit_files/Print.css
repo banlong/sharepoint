@@ -1,0 +1,7 @@
+﻿@media print 
+{ 
+ #footers 
+	{ 
+		display: none !important ;
+	}
+}

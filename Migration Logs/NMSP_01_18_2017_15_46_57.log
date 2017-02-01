@@ -1,0 +1,986 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<log>
+  <entry date="2017-01-18T23:46:57.4129931Z" severity="General" stage="General">
+    <context>Agent</context>
+    <message>NMSP, Version=6.3.1.1191, Culture=neutral, PublicKeyToken=47a476656d73eed4</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.4209931Z" severity="General" stage="General">
+    <context>User</context>
+    <message>nghie</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.4214925Z" severity="General" stage="General">
+    <context>Machine</context>
+    <message>DESKTOP-6KT7VNU (Microsoft Windows NT 6.2.9200.0)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.4219934Z" severity="General" stage="General">
+    <context>Job Name</context>
+    <message>Information</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.4229937Z" severity="General" stage="General">
+    <context>Job</context>
+    <message>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;TransferJob xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Information" Description="" Version="4.0.0.0"&gt;
+  &lt;QuerySource xsi:type="NotesQuerySource"&gt;
+    &lt;ConnectionString&gt;database=C:\\Users\\nghie\\Desktop\\DPM PAMS v2.1\\dpmpamV21.nsf; server=local;&lt;/ConnectionString&gt;
+  &lt;/QuerySource&gt;
+  &lt;SourceDefinition Name="DPM PAMS v2.1" Description="" Templates="DPM PAMS v2.1" ListTypes=""&gt;
+    &lt;QuerySpec xsi:type="NotesQuerySpec"&gt;
+      &lt;From /&gt;
+      &lt;Forms&gt;Information|Info&lt;/Forms&gt;
+      &lt;Search /&gt;
+      &lt;Formula /&gt;
+      &lt;Column ColumnType="RichText" Value="body" Alias="BodyHtml" Option="Html" /&gt;
+      &lt;Column ColumnType="RichText" Value="body" Alias="BodyText" ReturnType="String" /&gt;
+      &lt;Column ColumnType="RichText" Value="body" Alias="BodyMime" Option="Mime" /&gt;
+      &lt;Column ColumnType="Attachment" Value="body" Alias="BodyAttachments" Option="Multi" /&gt;
+      &lt;Column ColumnType="OleObject" Value="body" Alias="BodyEmbeddedObjects" Option="Multi" /&gt;
+      &lt;Column ColumnType="Image" Value="body" Alias="BodyImages" Option="Multi" /&gt;
+      &lt;Column ColumnType="Item" Value="Creator" ReturnType="String" /&gt;
+      &lt;Column ColumnType="Item" Value="DateComposed" ReturnType="Date" /&gt;
+      &lt;Column ColumnType="Item" Value="DocAuthor" ReturnType="String" Option="Multi" /&gt;
+      &lt;Column ColumnType="Item" Value="From" ReturnType="String" /&gt;
+      &lt;Column ColumnType="Item" Value="PastAuthors" ReturnType="String" Option="Multi" /&gt;
+      &lt;Column ColumnType="Item" Value="PastEditDates" ReturnType="String" Option="Multi" /&gt;
+      &lt;Column ColumnType="Item" Value="TimesModified" ReturnType="Number" /&gt;
+      &lt;Column ColumnType="Item" Value="Title" ReturnType="String" /&gt;
+      &lt;Column ColumnType="AttachmentLinks" Value="$NULL" Alias="OtherAttachmentLinks" Option="Html" /&gt;
+      &lt;Column ColumnType="Attachment" Value="$NULL" Alias="OtherAttachments" Option="Multi" /&gt;
+    &lt;/QuerySpec&gt;
+  &lt;/SourceDefinition&gt;
+  &lt;SharePointConnection&gt;
+    &lt;Web&gt;https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/&lt;/Web&gt;
+    &lt;List&gt;Information&lt;/List&gt;
+  &lt;/SharePointConnection&gt;
+  &lt;JobOptions&gt;
+    &lt;AutoCreateList&gt;true&lt;/AutoCreateList&gt;
+    &lt;AddListToQuickLaunch&gt;true&lt;/AddListToQuickLaunch&gt;
+    &lt;AutoCreateFields&gt;true&lt;/AutoCreateFields&gt;
+    &lt;PreserveIdentities&gt;true&lt;/PreserveIdentities&gt;
+    &lt;PreserveDates&gt;true&lt;/PreserveDates&gt;
+    &lt;QueryOptions xsi:type="NotesRuntimeQueryOptions"&gt;
+      &lt;DeleteMigratedDocuments&gt;false&lt;/DeleteMigratedDocuments&gt;
+      &lt;ExtractRecurrencePatterns&gt;false&lt;/ExtractRecurrencePatterns&gt;
+      &lt;ExtractDocSecurity&gt;false&lt;/ExtractDocSecurity&gt;
+    &lt;/QueryOptions&gt;
+    &lt;UserMappingOptions&gt;
+      &lt;MappingFailureSubstitution&gt;DefaultIdentity&lt;/MappingFailureSubstitution&gt;
+      &lt;DefaultUserName&gt;dupontnet\sb1654&lt;/DefaultUserName&gt;
+    &lt;/UserMappingOptions&gt;
+    &lt;LinkConversionOptions /&gt;
+  &lt;/JobOptions&gt;
+  &lt;SecurityMapping Enabled="false"&gt;
+    &lt;AccessLevelMappings&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Reader" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" /&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Author" SharePointPermissionLevel="Read" SharePointGroup="{Visitors}" /&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Editor" SharePointPermissionLevel="Contribute" SharePointGroup="{Members}" /&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Designer" SharePointPermissionLevel="Design" SharePointGroup="{Members}" /&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Manager" SharePointPermissionLevel="Full Control" SharePointGroup="{Owners}" /&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Can Create" /&gt;
+      &lt;AccessLevelMapping NotesAccessLevel="Can Delete" /&gt;
+    &lt;/AccessLevelMappings&gt;
+    &lt;MapACLUsers&gt;false&lt;/MapACLUsers&gt;
+    &lt;MapACLGroups&gt;false&lt;/MapACLGroups&gt;
+    &lt;MapACLRoles /&gt;
+  &lt;/SecurityMapping&gt;
+  &lt;SharePointTargetDefinition Name="DPM PAMS v2.1" Description="Information" Templates="" SharePointTemplates="Custom List"&gt;
+    &lt;ExtractIcons&gt;false&lt;/ExtractIcons&gt;
+    &lt;IsDocLib&gt;false&lt;/IsDocLib&gt;
+    &lt;IsDiscussion&gt;false&lt;/IsDiscussion&gt;
+    &lt;IsEvents&gt;false&lt;/IsEvents&gt;
+    &lt;AllowAttachments&gt;false&lt;/AllowAttachments&gt;
+    &lt;Field Name="Title" Type="Text" NotesItems="Title" IsTitleField="true" /&gt;
+    &lt;Field Name="Attachments" Type="Attachments" NotesItems="BodyAttachments;BodyEmbeddedObjects;BodyImages;OtherAttachments" AllowMultiple="true" /&gt;
+    &lt;Field Name="Body" Type="Note" NotesItems="BodyHtml;OtherAttachmentLinks" AllowMultiple="true" /&gt;
+    &lt;Field Name="Creator" Type="Text" NotesItems="Creator" /&gt;
+    &lt;Field Name="DocAuthor" Type="Text" NotesItems="DocAuthor" /&gt;
+    &lt;Field Name="PastAuthors" Type="Text" NotesItems="PastAuthors" /&gt;
+    &lt;Field Name="PastEditDates" Type="Text" NotesItems="PastEditDates" /&gt;
+    &lt;Field Name="Folder" Type="Folder" /&gt;
+    &lt;Field Name="Help" Type="Text" /&gt;
+    &lt;ViewsOverwriteExisting&gt;false&lt;/ViewsOverwriteExisting&gt;
+    &lt;View Name="Help Doc/Examples" IsDefault="true"&gt;
+      &lt;Column&gt;Title (linked to item)&lt;/Column&gt;
+      &lt;Column&gt;ContentType&lt;/Column&gt;
+      &lt;Column&gt;Body&lt;/Column&gt;
+      &lt;Column&gt;Attachments&lt;/Column&gt;
+      &lt;OrderColumn1Name /&gt;
+      &lt;OrderColumn1Ascending&gt;true&lt;/OrderColumn1Ascending&gt;
+      &lt;OrderColumn2Name /&gt;
+      &lt;OrderColumn2Ascending&gt;false&lt;/OrderColumn2Ascending&gt;
+      &lt;SortOnlyBySpecifiedCriteria&gt;false&lt;/SortOnlyBySpecifiedCriteria&gt;
+      &lt;GroupByColumn1Name /&gt;
+      &lt;GroupByColumn1Ascending&gt;false&lt;/GroupByColumn1Ascending&gt;
+      &lt;GroupByColumn2Name /&gt;
+      &lt;GroupByColumn2Ascending&gt;false&lt;/GroupByColumn2Ascending&gt;
+      &lt;ExpandGroups&gt;false&lt;/ExpandGroups&gt;
+      &lt;GroupsPerPage&gt;100&lt;/GroupsPerPage&gt;
+      &lt;IsFiltered&gt;false&lt;/IsFiltered&gt;
+      &lt;ShowItemsInsideTheirFolders&gt;true&lt;/ShowItemsInsideTheirFolders&gt;
+      &lt;FolderOption&gt;InAllFolders&lt;/FolderOption&gt;
+      &lt;NumberItemsToDisplay&gt;100&lt;/NumberItemsToDisplay&gt;
+      &lt;DisplayItemsInBatches&gt;true&lt;/DisplayItemsInBatches&gt;
+      &lt;FolderContentType /&gt;
+    &lt;/View&gt;
+  &lt;/SharePointTargetDefinition&gt;
+  &lt;Mapping Destination="Body" SourceValue="BodyHtml" /&gt;
+  &lt;Mapping Destination="Body" SourceValue="OtherAttachmentLinks" /&gt;
+  &lt;Mapping Destination="Attachments" SourceValue="BodyAttachments" /&gt;
+  &lt;Mapping Destination="Attachments" SourceValue="BodyEmbeddedObjects" /&gt;
+  &lt;Mapping Destination="Attachments" SourceValue="BodyImages" /&gt;
+  &lt;Mapping Destination="Attachments" SourceValue="OtherAttachments" /&gt;
+  &lt;Mapping Destination="Creator" SourceValue="Creator" /&gt;
+  &lt;Mapping Destination="DocAuthor" SourceValue="DocAuthor" /&gt;
+  &lt;Mapping Destination="PastAuthors" SourceValue="PastAuthors" /&gt;
+  &lt;Mapping Destination="PastEditDates" SourceValue="PastEditDates" /&gt;
+  &lt;Mapping Destination="Title" SourceValue="Title" /&gt;
+&lt;/TransferJob&gt;</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.4395286Z" severity="General" stage="General">
+    <context>Global Options</context>
+    <message>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;m_maxGroupSize&gt;100&lt;/m_maxGroupSize&gt;
+  &lt;DatabaseDispositions&gt;
+    &lt;Disposition Name="" DispositionType="Undecided" /&gt;
+    &lt;Disposition Name="Migrate to standard SharePoint targets" DispositionType="Migrate to SharePoint" /&gt;
+    &lt;Disposition Name="Migrate to customized SharePoint targets" DispositionType="Migrate to SharePoint" /&gt;
+    &lt;Disposition Name="Migrate to developed SharePoint targets" DispositionType="Migrate to SharePoint" /&gt;
+    &lt;Disposition Name="Leave in place" DispositionType="Leave in place" /&gt;
+    &lt;Disposition Name="End-of-life" DispositionType="Delete" /&gt;
+    &lt;Disposition Name="Delete" DispositionType="Delete" /&gt;
+  &lt;/DatabaseDispositions&gt;
+  &lt;LogFilesPath&gt;D:\FPT\QUEST-FILES\Log Files&lt;/LogFilesPath&gt;
+  &lt;DesignCopyPath&gt;C:\ProgramData\Quest Software\Notes Migrator For SharePoint\6.0\Design Copies&lt;/DesignCopyPath&gt;
+  &lt;IdentityMappingOptions&gt;
+    &lt;IdentityMappingType&gt;Users&lt;/IdentityMappingType&gt;
+    &lt;IdentityLookupMode&gt;MappingFileLookup&lt;/IdentityLookupMode&gt;
+    &lt;NotesIdPassword&gt;kq8cfRVf71FkIjZYrwYt6g==&lt;/NotesIdPassword&gt;
+    &lt;LookupCache /&gt;
+    &lt;MappingFile&gt;
+      &lt;Path&gt;C:\Users\nghie\Desktop\DPM PAMS v2.1\Migration User Mapping\dpmpamV21.xml&lt;/Path&gt;
+    &lt;/MappingFile&gt;
+    &lt;NotesDatabase&gt;
+      &lt;DatabasePath&gt;UserMapping.nsf&lt;/DatabasePath&gt;
+    &lt;/NotesDatabase&gt;
+    &lt;DominoDirectory&gt;
+      &lt;FromNotesNameView&gt;$Users&lt;/FromNotesNameView&gt;
+      &lt;FromNotesNameItem&gt;WindowsName&lt;/FromNotesNameItem&gt;
+      &lt;FromDomainNameView&gt;ByWindowsLogin&lt;/FromDomainNameView&gt;
+      &lt;FromDomainNameItem&gt;FullName&lt;/FromDomainNameItem&gt;
+    &lt;/DominoDirectory&gt;
+    &lt;Adsi&gt;
+      &lt;AdsiLoginPassword&gt;4GE1ctUMvPk=&lt;/AdsiLoginPassword&gt;
+      &lt;AdsiFromDomainNameQuery&gt;(&amp;amp;(ObjectClass=Person)(distinguishedName={0}))&lt;/AdsiFromDomainNameQuery&gt;
+      &lt;AdsiFromNotesNameQuery&gt;(&amp;amp;(ObjectClass=Person)(distinguishedName={0}))&lt;/AdsiFromNotesNameQuery&gt;
+    &lt;/Adsi&gt;
+  &lt;/IdentityMappingOptions&gt;
+  &lt;GroupIdentityMappingOptions&gt;
+    &lt;IdentityMappingType&gt;Groups&lt;/IdentityMappingType&gt;
+    &lt;NotesIdPassword&gt;kq8cfRVf71FkIjZYrwYt6g==&lt;/NotesIdPassword&gt;
+    &lt;LookupCache /&gt;
+    &lt;MappingFile&gt;
+      &lt;Path&gt;GroupMapping.xml&lt;/Path&gt;
+    &lt;/MappingFile&gt;
+    &lt;NotesDatabase&gt;
+      &lt;DatabasePath&gt;GroupMapping.nsf&lt;/DatabasePath&gt;
+    &lt;/NotesDatabase&gt;
+    &lt;DominoDirectory&gt;
+      &lt;FromNotesNameView&gt;$Groups&lt;/FromNotesNameView&gt;
+      &lt;FromNotesNameItem&gt;WindowsName&lt;/FromNotesNameItem&gt;
+      &lt;FromDomainNameView&gt;ByWindowsGroup&lt;/FromDomainNameView&gt;
+      &lt;FromDomainNameItem&gt;ListName&lt;/FromDomainNameItem&gt;
+    &lt;/DominoDirectory&gt;
+    &lt;Adsi&gt;
+      &lt;AdsiLoginPassword&gt;4GE1ctUMvPk=&lt;/AdsiLoginPassword&gt;
+      &lt;AdsiFromDomainNameQuery&gt;(&amp;amp;(ObjectClass=Group)(distinguishedName={0}))&lt;/AdsiFromDomainNameQuery&gt;
+      &lt;AdsiFromNotesNameQuery&gt;(&amp;amp;(ObjectClass=Group)(distinguishedName={0}))&lt;/AdsiFromNotesNameQuery&gt;
+    &lt;/Adsi&gt;
+  &lt;/GroupIdentityMappingOptions&gt;
+  &lt;LinkTrackingOptions /&gt;
+  &lt;ReportingOptions /&gt;
+  &lt;BlockedExtensions&gt;ade|adp|app|asa|ashx|asmx|asp|bas|bat|cdx|cer|chm|class|cmd|cnt|com|config|cpl|crt|csh|der|dll|exe|fxp|gadget|hlp|hpj|hta|htr|htw|ida|idc|idq|ins|isp|its|jse|ksh|lnk|mad|maf|mag|mam|maq|mar|mas|mat|mau|mav|maw|mda|mdb|mde|mdt|mdw|mdz|msc|msh|msh1|msh1xml|msh2|msh2xml|mshxml|msi|msp|mst|ops|pcd|pif|prf|prg|printer|ps1|ps1xml|ps2|ps2xml|psc1|psc2|pst|reg|rem|scf|scr|sct|shb|shs|shtm|shtml|soap|stm|url|vb|vbe|vbs|ws|wsc|wsf|wsh&lt;/BlockedExtensions&gt;
+  &lt;SharePointEnvironments&gt;
+    &lt;SharePointEnvironment Name="Default" IsDefault="true" EnvironmentType="RemoteWebServicesClassicModeAuthentication"&gt;
+      &lt;Settings xsi:type="ClientWebServicesEnvironmentSettings"&gt;
+        &lt;CredentialsExpirationInterval&gt;0&lt;/CredentialsExpirationInterval&gt;
+      &lt;/Settings&gt;
+    &lt;/SharePointEnvironment&gt;
+  &lt;/SharePointEnvironments&gt;
+  &lt;ScanCatalogs&gt;false&lt;/ScanCatalogs&gt;
+  &lt;ScanServers&gt;false&lt;/ScanServers&gt;
+  &lt;MasterCatalog&gt;
+    &lt;CatalogServer /&gt;
+    &lt;CatalogPath&gt;QuestRepository.nsf&lt;/CatalogPath&gt;
+  &lt;/MasterCatalog&gt;
+  &lt;ReadOnlyRepository&gt;false&lt;/ReadOnlyRepository&gt;
+  &lt;CatalogUpdateMachine /&gt;
+  &lt;CatalogDatabases /&gt;
+  &lt;ScanLocations /&gt;
+  &lt;ExcludeServers /&gt;
+  &lt;ExcludeTemplates /&gt;
+  &lt;ExcludeClasses /&gt;
+  &lt;ExcludeCategories /&gt;
+  &lt;ExcludeFiles /&gt;
+  &lt;ExcludeFolders /&gt;
+  &lt;ExcludeUserNames /&gt;
+  &lt;PreferredNotesServers /&gt;
+  &lt;PreferredQuickPlaceServers /&gt;
+  &lt;PreferredQuickrServers /&gt;
+  &lt;PreferredDominoDocServers /&gt;
+  &lt;DefaultDirectoryServer /&gt;
+  &lt;MaxGroupSize&gt;100&lt;/MaxGroupSize&gt;
+  &lt;PreferredDirectoryServers /&gt;
+  &lt;EnableLinkTranslations&gt;false&lt;/EnableLinkTranslations&gt;
+  &lt;LinkTranslations /&gt;
+  &lt;CustomReportingDays&gt;0&lt;/CustomReportingDays&gt;
+  &lt;MaxAnalysisTimeMinutes&gt;20&lt;/MaxAnalysisTimeMinutes&gt;
+  &lt;ResponsibilityAssignmentNames /&gt;
+  &lt;ComplexityDEIWeight&gt;5&lt;/ComplexityDEIWeight&gt;
+  &lt;ComplexityDEIAverage&gt;true&lt;/ComplexityDEIAverage&gt;
+  &lt;ComplexityDataWeight&gt;3&lt;/ComplexityDataWeight&gt;
+  &lt;ComplexityDesignWeight&gt;0&lt;/ComplexityDesignWeight&gt;
+  &lt;ComplexityDesignDelta&gt;true&lt;/ComplexityDesignDelta&gt;
+  &lt;EffortUnitsLabel&gt;hours&lt;/EffortUnitsLabel&gt;
+  &lt;SetDataAnalyzed&gt;true&lt;/SetDataAnalyzed&gt;
+  &lt;SetDesignAnalyzed&gt;true&lt;/SetDesignAnalyzed&gt;
+  &lt;SetTargetsIdentified&gt;true&lt;/SetTargetsIdentified&gt;
+  &lt;SetJobsAssigned&gt;true&lt;/SetJobsAssigned&gt;
+  &lt;SetContentMigrated&gt;true&lt;/SetContentMigrated&gt;
+  &lt;ShowSetupWizardOnStartup&gt;true&lt;/ShowSetupWizardOnStartup&gt;
+&lt;/Options&gt;</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.4470048Z" severity="General" stage="General">
+    <context>User Options</context>
+    <message>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;UserOptions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;AllowClearList&gt;true&lt;/AllowClearList&gt;
+  &lt;DefaultUserMappingFailureSubstitution&gt;DefaultIdentity&lt;/DefaultUserMappingFailureSubstitution&gt;
+  &lt;DefaultUserMappingUserName&gt;dupontnet\sb1654&lt;/DefaultUserMappingUserName&gt;
+  &lt;SharePointCredentialsForEnvironments&gt;
+    &lt;SharePointCredentialsForEnvironment environment="Default"&gt;
+      &lt;SharePointCredentials&gt;
+        &lt;UseWindowsAuthentication&gt;false&lt;/UseWindowsAuthentication&gt;
+        &lt;LogonName&gt;dupontnet\gw3274n&lt;/LogonName&gt;
+        &lt;Password&gt;18YdID5AhjnE2uloTm11tTLiEmF/B7f8&lt;/Password&gt;
+        &lt;CookiesAcquired&gt;2017-01-10T14:52:26.7982001-08:00&lt;/CookiesAcquired&gt;
+      &lt;/SharePointCredentials&gt;
+    &lt;/SharePointCredentialsForEnvironment&gt;
+  &lt;/SharePointCredentialsForEnvironments&gt;
+  &lt;NotesQueryOptions&gt;
+    &lt;IniFile /&gt;
+    &lt;Password&gt;kq8cfRVf71FkIjZYrwYt6g==&lt;/Password&gt;
+    &lt;StrictDataExtraction&gt;false&lt;/StrictDataExtraction&gt;
+    &lt;CacheSize&gt;0&lt;/CacheSize&gt;
+    &lt;DefaultNotesServer /&gt;
+    &lt;DefaultQuickPlaceServer /&gt;
+    &lt;DefaultQuickrServer /&gt;
+    &lt;DefaultDominoDocServer /&gt;
+  &lt;/NotesQueryOptions&gt;
+  &lt;AtomQueryOptions&gt;
+    &lt;User /&gt;
+    &lt;Password /&gt;
+    &lt;CacheSize&gt;0&lt;/CacheSize&gt;
+    &lt;ConnectionsProfileServiceUrl /&gt;
+    &lt;ConnectionsDiscoveryAddress /&gt;
+  &lt;/AtomQueryOptions&gt;
+  &lt;CustomViews /&gt;
+  &lt;ServerNodes /&gt;
+  &lt;DispositionNodes /&gt;
+  &lt;TechnicalClassNodes /&gt;
+  &lt;BusinessClassNodes /&gt;
+&lt;/UserOptions&gt;</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.4502423Z" severity="General" stage="General">
+    <context>License</context>
+    <message>[Notes Migrator for SharePoint]
+Product name=Notes Migrator for SharePoint
+Edition=Premier
+License=126-233-810
+Version=6.x
+License Type=Ongoing
+AboutText=Product: Notes Migrator for SharePoint%0D%0AVersion: 6.x%0D%0A%0D%0ALicense Number: 126-233-810%0D%0A%0D%0AEdition: Premier%0D%0A%0D%0ADatabases: 900%0D%0A%0D%0ALicense Type: Ongoing%0D%0A%0D%0A
+Databases=900
+Signature=B8952D63EFE9FADD6714B86C93B567BBE8F3D367B49BAD10D773121259BA980C2DC2442A89703D54EAE0BA9784611E5B916832338F7E63D8F395022BF091274F
+Installation Time=1484083714
+Product Installation Time=1561090288</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.4507085Z" severity="General" stage="General">
+    <context>SharePoint Environment</context>
+    <message>Using SharePointEnvironment 'Default'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.4549103Z" severity="Informational" stage="General">
+    <context>Reading Source data</context>
+    <message />
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.4629103Z" severity="Informational" stage="Query">
+    <context>QueryNotesData</context>
+    <message>Begin query</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.4799462Z" severity="Informational" stage="General">
+    <context>Notes Build</context>
+    <message>805.03</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.4804115Z" severity="Informational" stage="General">
+    <context>Notes User</context>
+    <message>Ngo Nghiep/Contractor/AE/DuPont</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.5154108Z" severity="Informational" stage="Query">
+    <context>QueryNotesData</context>
+    <message>Begin query</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:46:57.5384378Z" severity="Informational" stage="General">
+    <context>Writing SharePoint data</context>
+    <message />
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:47:01.0453553Z" severity="Informational" stage="Write">
+    <context>Accessing SharePoint Web</context>
+    <message>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:47:33.7424522Z" severity="Informational" stage="Modify">
+    <context>List Created</context>
+    <message>Name=Information</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:48:15.5343706Z" severity="Informational" stage="Write">
+    <context>Accessing SharePoint List</context>
+    <message>Information</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:48:46.5317355Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column Body of type Note</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:49:10.5308862Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column Creator of type Text</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:49:42.5558564Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column DocAuthor of type Text</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:50:07.5514914Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column PastAuthors of type Text</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:50:35.5255481Z" severity="Informational" stage="Modify">
+    <context>Adding field to list</context>
+    <message>Provisioned new list column PastEditDates of type Text</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:51:43.3145391Z" severity="Informational" stage="Write">
+    <rec>1</rec>
+    <context>Processing Notes Document</context>
+    <unid>b01cb7d7c7049214852573240074bebc</unid>
+    <documentUrl>notes:///862580aa00576093/0/b01cb7d7c7049214852573240074bebc</documentUrl>
+    <message>b01cb7d7c7049214852573240074bebc</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:51:44.5533533Z" severity="Informational" stage="Write">
+    <rec>1</rec>
+    <context>Map User</context>
+    <unid>b01cb7d7c7049214852573240074bebc</unid>
+    <documentUrl>notes:///862580aa00576093/0/b01cb7d7c7049214852573240074bebc</documentUrl>
+    <message>Input name 'CN=Shawn C Newman/OU=AE/O=DuPont' mapped to Windows login 'DUPONTNET\sb1654' (NOT CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:51:47.193369Z" severity="Informational" stage="Write">
+    <rec>1</rec>
+    <context>Map User</context>
+    <unid>b01cb7d7c7049214852573240074bebc</unid>
+    <documentUrl>notes:///862580aa00576093/0/b01cb7d7c7049214852573240074bebc</documentUrl>
+    <message>Found Windows Principal from name 'DUPONTNET\sb1654' with email='PAULA.BEYER.HIETPAS@dupont.com', display name='HIETPAS, PAULA BEYER', type='User'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:51:47.1967855Z" severity="Informational" stage="Write">
+    <rec>1</rec>
+    <context>Map User</context>
+    <unid>b01cb7d7c7049214852573240074bebc</unid>
+    <documentUrl>notes:///862580aa00576093/0/b01cb7d7c7049214852573240074bebc</documentUrl>
+    <message>Creating new Site Collection User 'HIETPAS, PAULA BEYER' with Windows login 'i:0#.w|dupontnet\sb1654' and Email 'PAULA.BEYER.HIETPAS@dupont.com'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:52:18.2888147Z" severity="Informational" stage="Write">
+    <rec>1</rec>
+    <context>Map User</context>
+    <unid>b01cb7d7c7049214852573240074bebc</unid>
+    <documentUrl>notes:///862580aa00576093/0/b01cb7d7c7049214852573240074bebc</documentUrl>
+    <message>Created Site Collection User number '34' with login='i:0#.w|dupontnet\sb1654', name='HIETPAS, PAULA BEYER', email='PAULA.BEYER.HIETPAS@dupont.com'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:52:18.2902815Z" severity="Informational" stage="Write">
+    <rec>1</rec>
+    <context>Map User</context>
+    <unid>b01cb7d7c7049214852573240074bebc</unid>
+    <documentUrl>notes:///862580aa00576093/0/b01cb7d7c7049214852573240074bebc</documentUrl>
+    <message>Input name 'CN=CDCLN88/OU=SRV/O=DuPont_Appl' mapped to Windows login 'DUPONTNET\sb1654' (NOT CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:52:20.0118225Z" severity="Informational" stage="Write">
+    <rec>1</rec>
+    <context>Map User</context>
+    <unid>b01cb7d7c7049214852573240074bebc</unid>
+    <documentUrl>notes:///862580aa00576093/0/b01cb7d7c7049214852573240074bebc</documentUrl>
+    <message>Found Windows Principal from name 'DUPONTNET\sb1654' with email='PAULA.BEYER.HIETPAS@dupont.com', display name='HIETPAS, PAULA BEYER', type='User'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:52:20.0128271Z" severity="Informational" stage="Write">
+    <rec>1</rec>
+    <context>Map User</context>
+    <unid>b01cb7d7c7049214852573240074bebc</unid>
+    <documentUrl>notes:///862580aa00576093/0/b01cb7d7c7049214852573240074bebc</documentUrl>
+    <message>Creating new Site Collection User 'HIETPAS, PAULA BEYER' with Windows login 'i:0#.w|dupontnet\sb1654' and Email 'PAULA.BEYER.HIETPAS@dupont.com'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:53:21.4284768Z" severity="Informational" stage="Write">
+    <rec>1</rec>
+    <context>Map User</context>
+    <unid>b01cb7d7c7049214852573240074bebc</unid>
+    <documentUrl>notes:///862580aa00576093/0/b01cb7d7c7049214852573240074bebc</documentUrl>
+    <message>Created Site Collection User number '34' with login='i:0#.w|dupontnet\sb1654', name='HIETPAS, PAULA BEYER', email='PAULA.BEYER.HIETPAS@dupont.com'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:53:36.3961272Z" severity="Informational" stage="Write">
+    <rec>2</rec>
+    <context>Processing Notes Document</context>
+    <unid>12166713be118d3c8525731d0042a1f3</unid>
+    <documentUrl>notes:///862580aa00576093/0/12166713be118d3c8525731d0042a1f3</documentUrl>
+    <message>12166713be118d3c8525731d0042a1f3</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:53:36.4240327Z" severity="Informational" stage="Write">
+    <rec>2</rec>
+    <context>Map User</context>
+    <unid>12166713be118d3c8525731d0042a1f3</unid>
+    <documentUrl>notes:///862580aa00576093/0/12166713be118d3c8525731d0042a1f3</documentUrl>
+    <message>Input name 'CN=Blake R Bichlmeir/OU=AE/O=DuPont' mapped to Windows login 'DUPONTNET\sb1654' (NOT CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:53:38.0856772Z" severity="Informational" stage="Write">
+    <rec>2</rec>
+    <context>Map User</context>
+    <unid>12166713be118d3c8525731d0042a1f3</unid>
+    <documentUrl>notes:///862580aa00576093/0/12166713be118d3c8525731d0042a1f3</documentUrl>
+    <message>Found Windows Principal from name 'DUPONTNET\sb1654' with email='PAULA.BEYER.HIETPAS@dupont.com', display name='HIETPAS, PAULA BEYER', type='User'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:53:38.0861734Z" severity="Informational" stage="Write">
+    <rec>2</rec>
+    <context>Map User</context>
+    <unid>12166713be118d3c8525731d0042a1f3</unid>
+    <documentUrl>notes:///862580aa00576093/0/12166713be118d3c8525731d0042a1f3</documentUrl>
+    <message>Creating new Site Collection User 'HIETPAS, PAULA BEYER' with Windows login 'i:0#.w|dupontnet\sb1654' and Email 'PAULA.BEYER.HIETPAS@dupont.com'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:54:08.4526628Z" severity="Informational" stage="Write">
+    <rec>2</rec>
+    <context>Map User</context>
+    <unid>12166713be118d3c8525731d0042a1f3</unid>
+    <documentUrl>notes:///862580aa00576093/0/12166713be118d3c8525731d0042a1f3</documentUrl>
+    <message>Created Site Collection User number '34' with login='i:0#.w|dupontnet\sb1654', name='HIETPAS, PAULA BEYER', email='PAULA.BEYER.HIETPAS@dupont.com'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:54:08.453161Z" severity="Informational" stage="Write">
+    <rec>2</rec>
+    <context>Map User</context>
+    <unid>12166713be118d3c8525731d0042a1f3</unid>
+    <documentUrl>notes:///862580aa00576093/0/12166713be118d3c8525731d0042a1f3</documentUrl>
+    <message>Input name 'CN=CDCLN88/OU=SRV/O=DuPont_Appl' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:54:08.4536607Z" severity="Informational" stage="Write">
+    <rec>2</rec>
+    <context>Map User</context>
+    <unid>12166713be118d3c8525731d0042a1f3</unid>
+    <documentUrl>notes:///862580aa00576093/0/12166713be118d3c8525731d0042a1f3</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:54:48.3007277Z" severity="Informational" stage="Write">
+    <rec>3</rec>
+    <context>Processing Notes Document</context>
+    <unid>8704b6d88050c0078525731d0042a1f6</unid>
+    <documentUrl>notes:///862580aa00576093/0/8704b6d88050c0078525731d0042a1f6</documentUrl>
+    <message>8704b6d88050c0078525731d0042a1f6</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:54:48.3087289Z" severity="Informational" stage="Write">
+    <rec>3</rec>
+    <context>Map User</context>
+    <unid>8704b6d88050c0078525731d0042a1f6</unid>
+    <documentUrl>notes:///862580aa00576093/0/8704b6d88050c0078525731d0042a1f6</documentUrl>
+    <message>Input name 'CN=David Wallan/OU=AE/O=DuPont' mapped to Windows login 'DUPONTNET\sb1654' (NOT CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:54:50.200091Z" severity="Informational" stage="Write">
+    <rec>3</rec>
+    <context>Map User</context>
+    <unid>8704b6d88050c0078525731d0042a1f6</unid>
+    <documentUrl>notes:///862580aa00576093/0/8704b6d88050c0078525731d0042a1f6</documentUrl>
+    <message>Found Windows Principal from name 'DUPONTNET\sb1654' with email='PAULA.BEYER.HIETPAS@dupont.com', display name='HIETPAS, PAULA BEYER', type='User'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:54:50.2005891Z" severity="Informational" stage="Write">
+    <rec>3</rec>
+    <context>Map User</context>
+    <unid>8704b6d88050c0078525731d0042a1f6</unid>
+    <documentUrl>notes:///862580aa00576093/0/8704b6d88050c0078525731d0042a1f6</documentUrl>
+    <message>Creating new Site Collection User 'HIETPAS, PAULA BEYER' with Windows login 'i:0#.w|dupontnet\sb1654' and Email 'PAULA.BEYER.HIETPAS@dupont.com'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:55:22.5631133Z" severity="Informational" stage="Write">
+    <rec>3</rec>
+    <context>Map User</context>
+    <unid>8704b6d88050c0078525731d0042a1f6</unid>
+    <documentUrl>notes:///862580aa00576093/0/8704b6d88050c0078525731d0042a1f6</documentUrl>
+    <message>Created Site Collection User number '34' with login='i:0#.w|dupontnet\sb1654', name='HIETPAS, PAULA BEYER', email='PAULA.BEYER.HIETPAS@dupont.com'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:55:22.5640816Z" severity="Informational" stage="Write">
+    <rec>3</rec>
+    <context>Map User</context>
+    <unid>8704b6d88050c0078525731d0042a1f6</unid>
+    <documentUrl>notes:///862580aa00576093/0/8704b6d88050c0078525731d0042a1f6</documentUrl>
+    <message>Input name 'CN=CDCLN88/OU=SRV/O=DuPont_Appl' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:55:22.5646003Z" severity="Informational" stage="Write">
+    <rec>3</rec>
+    <context>Map User</context>
+    <unid>8704b6d88050c0078525731d0042a1f6</unid>
+    <documentUrl>notes:///862580aa00576093/0/8704b6d88050c0078525731d0042a1f6</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:56:17.4163421Z" severity="Informational" stage="Write">
+    <rec>4</rec>
+    <context>Processing Notes Document</context>
+    <unid>1c71149552d9b4a58525733300573ade</unid>
+    <documentUrl>notes:///862580aa00576093/0/1c71149552d9b4a58525733300573ade</documentUrl>
+    <message>1c71149552d9b4a58525733300573ade</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:56:17.4258204Z" severity="Informational" stage="Write">
+    <rec>4</rec>
+    <context>Map User</context>
+    <unid>1c71149552d9b4a58525733300573ade</unid>
+    <documentUrl>notes:///862580aa00576093/0/1c71149552d9b4a58525733300573ade</documentUrl>
+    <message>Input name 'CN=Shawn C Newman/OU=AE/O=DuPont' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:56:17.4263225Z" severity="Informational" stage="Write">
+    <rec>4</rec>
+    <context>Map User</context>
+    <unid>1c71149552d9b4a58525733300573ade</unid>
+    <documentUrl>notes:///862580aa00576093/0/1c71149552d9b4a58525733300573ade</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:56:17.4268428Z" severity="Informational" stage="Write">
+    <rec>4</rec>
+    <context>Map User</context>
+    <unid>1c71149552d9b4a58525733300573ade</unid>
+    <documentUrl>notes:///862580aa00576093/0/1c71149552d9b4a58525733300573ade</documentUrl>
+    <message>Input name 'CN=Shawn C Newman/OU=AE/O=DuPont' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:56:17.4270775Z" severity="Informational" stage="Write">
+    <rec>4</rec>
+    <context>Map User</context>
+    <unid>1c71149552d9b4a58525733300573ade</unid>
+    <documentUrl>notes:///862580aa00576093/0/1c71149552d9b4a58525733300573ade</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:56:30.4842033Z" severity="Informational" stage="Write">
+    <rec>5</rec>
+    <context>Processing Notes Document</context>
+    <unid>045995c1088b0fbb8525731d0042a1f2</unid>
+    <documentUrl>notes:///862580aa00576093/0/045995c1088b0fbb8525731d0042a1f2</documentUrl>
+    <message>045995c1088b0fbb8525731d0042a1f2</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:56:30.501703Z" severity="Informational" stage="Write">
+    <rec>5</rec>
+    <context>Map User</context>
+    <unid>045995c1088b0fbb8525731d0042a1f2</unid>
+    <documentUrl>notes:///862580aa00576093/0/045995c1088b0fbb8525731d0042a1f2</documentUrl>
+    <message>Input name 'CN=Blake R Bichlmeir/OU=AE/O=DuPont' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:56:30.5026977Z" severity="Informational" stage="Write">
+    <rec>5</rec>
+    <context>Map User</context>
+    <unid>045995c1088b0fbb8525731d0042a1f2</unid>
+    <documentUrl>notes:///862580aa00576093/0/045995c1088b0fbb8525731d0042a1f2</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:56:30.5032042Z" severity="Informational" stage="Write">
+    <rec>5</rec>
+    <context>Map User</context>
+    <unid>045995c1088b0fbb8525731d0042a1f2</unid>
+    <documentUrl>notes:///862580aa00576093/0/045995c1088b0fbb8525731d0042a1f2</documentUrl>
+    <message>Input name 'CN=CDCLN88/OU=SRV/O=DuPont_Appl' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:56:30.5037028Z" severity="Informational" stage="Write">
+    <rec>5</rec>
+    <context>Map User</context>
+    <unid>045995c1088b0fbb8525731d0042a1f2</unid>
+    <documentUrl>notes:///862580aa00576093/0/045995c1088b0fbb8525731d0042a1f2</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:57:19.869611Z" severity="Informational" stage="Write">
+    <rec>6</rec>
+    <context>Processing Notes Document</context>
+    <unid>e543c79751769a558525731d0042a1f4</unid>
+    <documentUrl>notes:///862580aa00576093/0/e543c79751769a558525731d0042a1f4</documentUrl>
+    <message>e543c79751769a558525731d0042a1f4</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:57:19.8771129Z" severity="Informational" stage="Write">
+    <rec>6</rec>
+    <context>Map User</context>
+    <unid>e543c79751769a558525731d0042a1f4</unid>
+    <documentUrl>notes:///862580aa00576093/0/e543c79751769a558525731d0042a1f4</documentUrl>
+    <message>Input name 'CN=Laura Kras/OU=AE/O=DuPont' mapped to Windows login 'DUPONTNET\sb1654' (NOT CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:57:23.5502592Z" severity="Informational" stage="Write">
+    <rec>6</rec>
+    <context>Map User</context>
+    <unid>e543c79751769a558525731d0042a1f4</unid>
+    <documentUrl>notes:///862580aa00576093/0/e543c79751769a558525731d0042a1f4</documentUrl>
+    <message>Found Windows Principal from name 'DUPONTNET\sb1654' with email='PAULA.BEYER.HIETPAS@dupont.com', display name='HIETPAS, PAULA BEYER', type='User'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:57:23.5507246Z" severity="Informational" stage="Write">
+    <rec>6</rec>
+    <context>Map User</context>
+    <unid>e543c79751769a558525731d0042a1f4</unid>
+    <documentUrl>notes:///862580aa00576093/0/e543c79751769a558525731d0042a1f4</documentUrl>
+    <message>Creating new Site Collection User 'HIETPAS, PAULA BEYER' with Windows login 'i:0#.w|dupontnet\sb1654' and Email 'PAULA.BEYER.HIETPAS@dupont.com'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:57:51.5677272Z" severity="Informational" stage="Write">
+    <rec>6</rec>
+    <context>Map User</context>
+    <unid>e543c79751769a558525731d0042a1f4</unid>
+    <documentUrl>notes:///862580aa00576093/0/e543c79751769a558525731d0042a1f4</documentUrl>
+    <message>Created Site Collection User number '34' with login='i:0#.w|dupontnet\sb1654', name='HIETPAS, PAULA BEYER', email='PAULA.BEYER.HIETPAS@dupont.com'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:57:51.5682286Z" severity="Informational" stage="Write">
+    <rec>6</rec>
+    <context>Map User</context>
+    <unid>e543c79751769a558525731d0042a1f4</unid>
+    <documentUrl>notes:///862580aa00576093/0/e543c79751769a558525731d0042a1f4</documentUrl>
+    <message>Input name 'CN=CDCLN88/OU=SRV/O=DuPont_Appl' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:57:51.5682286Z" severity="Informational" stage="Write">
+    <rec>6</rec>
+    <context>Map User</context>
+    <unid>e543c79751769a558525731d0042a1f4</unid>
+    <documentUrl>notes:///862580aa00576093/0/e543c79751769a558525731d0042a1f4</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:59:20.3988436Z" severity="Informational" stage="Write">
+    <rec>7</rec>
+    <context>Processing Notes Document</context>
+    <unid>80ca29d36594688e8525731d0042a1f5</unid>
+    <documentUrl>notes:///862580aa00576093/0/80ca29d36594688e8525731d0042a1f5</documentUrl>
+    <message>80ca29d36594688e8525731d0042a1f5</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:59:20.4051824Z" severity="Informational" stage="Write">
+    <rec>7</rec>
+    <context>Map User</context>
+    <unid>80ca29d36594688e8525731d0042a1f5</unid>
+    <documentUrl>notes:///862580aa00576093/0/80ca29d36594688e8525731d0042a1f5</documentUrl>
+    <message>Input name 'CN=Laura Kras/OU=AE/O=DuPont' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:59:20.4053471Z" severity="Informational" stage="Write">
+    <rec>7</rec>
+    <context>Map User</context>
+    <unid>80ca29d36594688e8525731d0042a1f5</unid>
+    <documentUrl>notes:///862580aa00576093/0/80ca29d36594688e8525731d0042a1f5</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:59:20.4058571Z" severity="Informational" stage="Write">
+    <rec>7</rec>
+    <context>Map User</context>
+    <unid>80ca29d36594688e8525731d0042a1f5</unid>
+    <documentUrl>notes:///862580aa00576093/0/80ca29d36594688e8525731d0042a1f5</documentUrl>
+    <message>Input name 'CN=CDCLN88/OU=SRV/O=DuPont_Appl' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-18T23:59:20.4058571Z" severity="Informational" stage="Write">
+    <rec>7</rec>
+    <context>Map User</context>
+    <unid>80ca29d36594688e8525731d0042a1f5</unid>
+    <documentUrl>notes:///862580aa00576093/0/80ca29d36594688e8525731d0042a1f5</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:28.4245585Z" severity="Informational" stage="Write">
+    <rec>8</rec>
+    <context>Processing Notes Document</context>
+    <unid>8ee9d519948d6ffd852573330057523b</unid>
+    <documentUrl>notes:///862580aa00576093/0/8ee9d519948d6ffd852573330057523b</documentUrl>
+    <message>8ee9d519948d6ffd852573330057523b</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:28.4469648Z" severity="Informational" stage="Write">
+    <rec>8</rec>
+    <context>Map User</context>
+    <unid>8ee9d519948d6ffd852573330057523b</unid>
+    <documentUrl>notes:///862580aa00576093/0/8ee9d519948d6ffd852573330057523b</documentUrl>
+    <message>Input name 'CN=Shawn C Newman/OU=AE/O=DuPont' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:28.4474314Z" severity="Informational" stage="Write">
+    <rec>8</rec>
+    <context>Map User</context>
+    <unid>8ee9d519948d6ffd852573330057523b</unid>
+    <documentUrl>notes:///862580aa00576093/0/8ee9d519948d6ffd852573330057523b</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:28.4484499Z" severity="Informational" stage="Write">
+    <rec>8</rec>
+    <context>Map User</context>
+    <unid>8ee9d519948d6ffd852573330057523b</unid>
+    <documentUrl>notes:///862580aa00576093/0/8ee9d519948d6ffd852573330057523b</documentUrl>
+    <message>Input name 'CN=Shawn C Newman/OU=AE/O=DuPont' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:28.4484499Z" severity="Informational" stage="Write">
+    <rec>8</rec>
+    <context>Map User</context>
+    <unid>8ee9d519948d6ffd852573330057523b</unid>
+    <documentUrl>notes:///862580aa00576093/0/8ee9d519948d6ffd852573330057523b</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:38.3042742Z" severity="Informational" stage="Write">
+    <rec>9</rec>
+    <context>Processing Notes Document</context>
+    <unid>c2bf0154e7c5bbef8525733300575fd0</unid>
+    <documentUrl>notes:///862580aa00576093/0/c2bf0154e7c5bbef8525733300575fd0</documentUrl>
+    <message>c2bf0154e7c5bbef8525733300575fd0</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:38.3142617Z" severity="Informational" stage="Write">
+    <rec>9</rec>
+    <context>Map User</context>
+    <unid>c2bf0154e7c5bbef8525733300575fd0</unid>
+    <documentUrl>notes:///862580aa00576093/0/c2bf0154e7c5bbef8525733300575fd0</documentUrl>
+    <message>Input name 'CN=Shawn C Newman/OU=AE/O=DuPont' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:38.3142617Z" severity="Informational" stage="Write">
+    <rec>9</rec>
+    <context>Map User</context>
+    <unid>c2bf0154e7c5bbef8525733300575fd0</unid>
+    <documentUrl>notes:///862580aa00576093/0/c2bf0154e7c5bbef8525733300575fd0</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:38.3147556Z" severity="Informational" stage="Write">
+    <rec>9</rec>
+    <context>Map User</context>
+    <unid>c2bf0154e7c5bbef8525733300575fd0</unid>
+    <documentUrl>notes:///862580aa00576093/0/c2bf0154e7c5bbef8525733300575fd0</documentUrl>
+    <message>Input name 'CN=Shawn C Newman/OU=AE/O=DuPont' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:38.3147556Z" severity="Informational" stage="Write">
+    <rec>9</rec>
+    <context>Map User</context>
+    <unid>c2bf0154e7c5bbef8525733300575fd0</unid>
+    <documentUrl>notes:///862580aa00576093/0/c2bf0154e7c5bbef8525733300575fd0</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:48.570851Z" severity="Informational" stage="Write">
+    <rec>10</rec>
+    <context>Processing Notes Document</context>
+    <unid>fbf71fc36d6a92308525733300577aa4</unid>
+    <documentUrl>notes:///862580aa00576093/0/fbf71fc36d6a92308525733300577aa4</documentUrl>
+    <message>fbf71fc36d6a92308525733300577aa4</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:48.5751911Z" severity="Warning" stage="Write">
+    <rec>10</rec>
+    <context>Migrating Attachments</context>
+    <unid>fbf71fc36d6a92308525733300577aa4</unid>
+    <documentUrl>notes:///862580aa00576093/0/fbf71fc36d6a92308525733300577aa4</documentUrl>
+    <message>Blocked file not migrated to SharePoint: id=Shortcut to Default Filing Countries.xls.lnk; name=Shortcut to Default Filing Countries.xls.lnk; size=0 kb; created=8/10/2007 3:57:43 PM; modified=8/10/2007 3:57:43 PM</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:48.5799018Z" severity="Informational" stage="Write">
+    <rec>10</rec>
+    <context>Map User</context>
+    <unid>fbf71fc36d6a92308525733300577aa4</unid>
+    <documentUrl>notes:///862580aa00576093/0/fbf71fc36d6a92308525733300577aa4</documentUrl>
+    <message>Input name 'CN=Shawn C Newman/OU=AE/O=DuPont' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:48.5799018Z" severity="Informational" stage="Write">
+    <rec>10</rec>
+    <context>Map User</context>
+    <unid>fbf71fc36d6a92308525733300577aa4</unid>
+    <documentUrl>notes:///862580aa00576093/0/fbf71fc36d6a92308525733300577aa4</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:48.5809286Z" severity="Informational" stage="Write">
+    <rec>10</rec>
+    <context>Map User</context>
+    <unid>fbf71fc36d6a92308525733300577aa4</unid>
+    <documentUrl>notes:///862580aa00576093/0/fbf71fc36d6a92308525733300577aa4</documentUrl>
+    <message>Input name 'CN=Shawn C Newman/OU=AE/O=DuPont' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:00:48.5809286Z" severity="Informational" stage="Write">
+    <rec>10</rec>
+    <context>Map User</context>
+    <unid>fbf71fc36d6a92308525733300577aa4</unid>
+    <documentUrl>notes:///862580aa00576093/0/fbf71fc36d6a92308525733300577aa4</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:01:30.3319072Z" severity="Informational" stage="Write">
+    <rec>11</rec>
+    <context>Processing Notes Document</context>
+    <unid>9b16ec27b6dd479b852578ff0056553a</unid>
+    <documentUrl>notes:///862580aa00576093/0/9b16ec27b6dd479b852578ff0056553a</documentUrl>
+    <message>9b16ec27b6dd479b852578ff0056553a</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:01:30.3400308Z" severity="Informational" stage="Write">
+    <rec>11</rec>
+    <context>Map User</context>
+    <unid>9b16ec27b6dd479b852578ff0056553a</unid>
+    <documentUrl>notes:///862580aa00576093/0/9b16ec27b6dd479b852578ff0056553a</documentUrl>
+    <message>Input name 'CN=Jan M Stouffer/OU=AE/O=DuPont' mapped to Windows login 'DUPONTNET\sb1654' (NOT CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:01:33.4309182Z" severity="Informational" stage="Write">
+    <rec>11</rec>
+    <context>Map User</context>
+    <unid>9b16ec27b6dd479b852578ff0056553a</unid>
+    <documentUrl>notes:///862580aa00576093/0/9b16ec27b6dd479b852578ff0056553a</documentUrl>
+    <message>Found Windows Principal from name 'DUPONTNET\sb1654' with email='PAULA.BEYER.HIETPAS@dupont.com', display name='HIETPAS, PAULA BEYER', type='User'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:01:33.431418Z" severity="Informational" stage="Write">
+    <rec>11</rec>
+    <context>Map User</context>
+    <unid>9b16ec27b6dd479b852578ff0056553a</unid>
+    <documentUrl>notes:///862580aa00576093/0/9b16ec27b6dd479b852578ff0056553a</documentUrl>
+    <message>Creating new Site Collection User 'HIETPAS, PAULA BEYER' with Windows login 'i:0#.w|dupontnet\sb1654' and Email 'PAULA.BEYER.HIETPAS@dupont.com'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:02:01.5183157Z" severity="Informational" stage="Write">
+    <rec>11</rec>
+    <context>Map User</context>
+    <unid>9b16ec27b6dd479b852578ff0056553a</unid>
+    <documentUrl>notes:///862580aa00576093/0/9b16ec27b6dd479b852578ff0056553a</documentUrl>
+    <message>Created Site Collection User number '34' with login='i:0#.w|dupontnet\sb1654', name='HIETPAS, PAULA BEYER', email='PAULA.BEYER.HIETPAS@dupont.com'</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:02:01.5198142Z" severity="Informational" stage="Write">
+    <rec>11</rec>
+    <context>Map User</context>
+    <unid>9b16ec27b6dd479b852578ff0056553a</unid>
+    <documentUrl>notes:///862580aa00576093/0/9b16ec27b6dd479b852578ff0056553a</documentUrl>
+    <message>Input name 'CN=CDCLN88/OU=SRV/O=DuPont_Appl' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:02:01.5198142Z" severity="Informational" stage="Write">
+    <rec>11</rec>
+    <context>Map User</context>
+    <unid>9b16ec27b6dd479b852578ff0056553a</unid>
+    <documentUrl>notes:///862580aa00576093/0/9b16ec27b6dd479b852578ff0056553a</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:02:39.3693337Z" severity="Informational" stage="Write">
+    <rec>12</rec>
+    <context>Processing Notes Document</context>
+    <unid>af2481a1ad01c746852578ff005606e1</unid>
+    <documentUrl>notes:///862580aa00576093/0/af2481a1ad01c746852578ff005606e1</documentUrl>
+    <message>af2481a1ad01c746852578ff005606e1</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:02:39.3773361Z" severity="Informational" stage="Write">
+    <rec>12</rec>
+    <context>Map User</context>
+    <unid>af2481a1ad01c746852578ff005606e1</unid>
+    <documentUrl>notes:///862580aa00576093/0/af2481a1ad01c746852578ff005606e1</documentUrl>
+    <message>Input name 'CN=Jan M Stouffer/OU=AE/O=DuPont' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:02:39.3778082Z" severity="Informational" stage="Write">
+    <rec>12</rec>
+    <context>Map User</context>
+    <unid>af2481a1ad01c746852578ff005606e1</unid>
+    <documentUrl>notes:///862580aa00576093/0/af2481a1ad01c746852578ff005606e1</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:02:39.3778082Z" severity="Informational" stage="Write">
+    <rec>12</rec>
+    <context>Map User</context>
+    <unid>af2481a1ad01c746852578ff005606e1</unid>
+    <documentUrl>notes:///862580aa00576093/0/af2481a1ad01c746852578ff005606e1</documentUrl>
+    <message>Input name 'CN=CDCLN88/OU=SRV/O=DuPont_Appl' mapped to Windows login 'i:0#.w|dupontnet\sb1654' (CACHED)</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:02:39.3783087Z" severity="Informational" stage="Write">
+    <rec>12</rec>
+    <context>Map User</context>
+    <unid>af2481a1ad01c746852578ff005606e1</unid>
+    <documentUrl>notes:///862580aa00576093/0/af2481a1ad01c746852578ff005606e1</documentUrl>
+    <message>Found cached user with login='i:0#.w|dupontnet\sb1654', email=PAULA.BEYER.HIETPAS@dupont.com, id=34</message>
+    <stackTrace />
+  </entry>
+  <entry date="2017-01-19T00:03:20.5619392Z" severity="Informational" stage="Write">
+    <rec>12</rec>
+    <context>Finished writing List items</context>
+    <message>Written=12</message>
+    <stackTrace />
+  </entry>
+  <summary date="2017-01-18T23:46:57.3960233Z">
+    <job name="Information" />
+    <source type="Notes" location="database=C:\\Users\\nghie\\Desktop\\DPM PAMS v2.1\\dpmpamV21.nsf; server=local;" />
+    <target webUrl="https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/" list="Information" />
+    <results documentsRead="12" documentsWritten="12" errorCount="0" warningCount="1" />
+  </summary>
+</log>
