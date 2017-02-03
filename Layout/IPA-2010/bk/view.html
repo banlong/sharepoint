@@ -1,0 +1,1452 @@
+<script src="../../_catalogs/masterpage/CustomByFPT/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="../../_catalogs/masterpage/CustomByFPT/js/DuPont_JSLibrary.js"  type="text/javascript"></script>
+
+<style type="text/css">
+    .ms-standardheader {
+        font-size: 1em;
+        margin: 0px;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .ms-standardheader span {
+        white-space: normal;
+        font-weight: bold;
+    }
+
+    .ms-standardheader-nowrap span {
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    .ms-standardheader-note span {
+        font-size: 1em;
+        margin: 0px;
+        text-align: left;
+        font-weight: bold;
+        color: steelblue;
+        white-space: normal;
+    }
+
+    .ms-standardheader-lv2 span {
+        white-space: normal;
+        font-weight: bold;
+        padding-left: 20px;
+        display: inline-block;
+    }
+
+    .ms-rtestate-field p, p.ms-rteElement-P {
+        margin: 0px 0px 10px 0px;
+        line-height: 1.6;
+        padding-left: 5px;
+        text-decoration: underline;
+        color: steelblue;
+    }
+    .ms-WPBody td {
+        font-size: 8pt;
+        font-family: verdana,arial,helvetica,sans-serif;
+        background: white;
+    }
+
+    .ms-WPBody th {
+        font-weight: normal;
+        background: #676767;
+        height: 25px;
+        border: none;
+        color: white;
+        font-size: 12px;
+    }
+
+    .ms-columntext p {
+        display: inline-block;
+        padding: 5px 5px 0px 5px;
+    }
+    .ms-rte-layoutszone-inner {
+        padding: 0px 5px 0px 20px;
+        font-size: 12px;
+    }
+
+    .ms-formbody{
+        padding-left:25px;
+        width:400px
+    }
+
+    .ms-formtable {
+        top:-10000px;
+        left:-10000px;
+        position:absolute;
+
+    }
+    .blankcolumn
+    {
+        width:15px;
+    }
+
+    table.table1 tr> td{
+        padding-left:5px;
+        padding-right:5px;
+    }
+
+    .table2 {
+        padding: 0.5rem;
+    }
+    .table2 tr>td{
+        padding-left: 0.5rem;
+        padding-top: 0.5rem;
+    }
+
+    .table3 {
+        margin-left: 20px;
+        padding: 0.5rem;
+    }
+
+    .table3 tr>th {
+        background: #1f2ac6;
+    }
+    .table3 tr> td, th {
+        border: 1px solid;
+
+    }
+    .table3 tr>td {
+        padding-left: 0.5rem;
+        padding-top: 0.5rem;
+        text-align: center;
+    }
+
+    hr{
+        color: steelblue;
+    }
+
+    tr.disabledAnchor a{
+        pointer-events: none;
+        cursor: text;
+        color: #444;
+        text-decoration: none;
+    }
+
+
+</style>
+
+<div class="maintable" style="width:0px;height:0px;">
+	<div id="part1">
+        <!--STATUS-->
+		<table class="table1">
+			<tr>
+		         	<td class="ms-formlabel"><span class="ms-standardheader"><span>DOCKET #: </span></span></td>
+		         	<td class="ms-formbody">
+                        <span class="hillbillyForm" id="Title"></span>
+                    </td>
+		    </tr>
+		    <tr>
+		         	<td class="ms-formlabel"><span class="ms-standardheader"><span>Status: </span></span></td>
+		         	<td class="ms-formbody"><span class="hillbillyForm" id="Status"></span></td>
+		    </tr>
+		</table>
+		<br />
+
+		<div id="ContributorsCategorization">
+            <table class="table1">
+                <tr>
+                    <td class="ms-formlabel"><span class="ms-standardheader"><span>Title</span><a style="color:red">*</a></span></td>
+                    <td class="ms-formbody" colspan="3"><span class="hillbillyForm" id="Title_x0020_of_x0020_NOI"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel"><span class="ms-standardheader"><span>Change Creator</span><a style="color:red">*</a></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="From"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel"><span class="ms-standardheader">Business</span><a style="color:red">*</a></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Business"></span></td>
+                    <!--<td class="blankcolumn"></td>-->
+                    <td class="ms-formlabel"><span class="ms-standardheader">SBU</span><a style="color:red">*</a></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="SBU"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel"><span class="ms-standardheader">Patent Type</span><a style="color:red">*</a></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Pattern_x0020_Type"></span></td>
+                    <!--<td class="blankcolumn"></td>-->
+                    <td class="ms-formlabel"><span class="ms-standardheader">Unit</span><a style="color:red">*</a></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Business_x0020_Unit"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel"><span class="ms-standardheader">Segment</span><a style="color:red">*</a></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Segment"></span></td>
+                    <!--<td class="blankcolumn"></td>-->
+                    <td class="ms-formlabel"><span class="ms-standardheader">Application</span><a style="color:red">*</a></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Application"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel"><span class="ms-standardheader">Product</span><a style="color:red">*</a></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Product"></span></td>
+                    <!--<td class="blankcolumn"></td>-->
+                    <td class="ms-formlabel"><span class="ms-standardheader">Project</span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Project"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel"><span class="ms-standardheader-nowrap"><span>Manager/NOI Approver</span><a style="color:red">*</a></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="NOI_x0020_Approval_x0020_Manager"></span></td>
+                </tr>
+            </table>
+        </div>
+        <br />
+
+        <div id="ContributorsNOIDetails">
+            <table class="table1">
+                <!--1-->
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><a style="color:red">*</a><span>1.  State the problem or technical objective that the invention is intended to solve or address.</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Problem"></span></td></tr>
+
+                <!--2-->
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><a style="color:red">*</a><span>2. Briefly summarize approaches previously used, by us and others, to meet the technical objective or solve the problem and identify any deficiencies or disadvantages to those approaches.</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Approaches"></span></td></tr>
+
+                <!--3-->
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><a style="color:red">*</a><span>3.  Describe your solution to the problem or technical objective.  Please provide details of the process, apparatus and/or composition that achieves the objective or resolves the problem, including any critical parameters.  Highlight how your approach is technically different from, or produces improved results, versus  approaches identified in responseto the previous item.  Attach copies of any drawings, flow diagrams, photographs or similar documents that will aid in understanding the invention.</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Others_x0020_Solution"></span></td></tr>
+
+                <!--4-->
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><a style="color:red">*</a><span>4.  How do you plan to use your invention in your business?  Include your thoughts on what areas of DuPont could use your invention as an improvement,  replacement or new product.</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Utility"></span></td></tr>
+
+                <!--5-->
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><a style="color:red">*</a><span>5. Identify (or append copies of) any known competitive products, literature or patent references that attempt to provide the same technical objective or resolve the same problem as your invention.  Identify any patent proposals, pending patent applications, research reports or technical work or projects of others within Du Pont that are related to your invention.</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Competitive"></span></td></tr>
+
+                <!--6-->
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><a style="color:red">*</a><span>6.  Identify (and append copies of) any documents (including notebook pages) that reflect the earliest date of conception of the invention and the date of earliest reduction to practice of the invention (i.e., the first working example). Identify any records in which the invention is described, such as a notebook entry, internal confidential report, letter, etc</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Earliest_x0020_Document"></span></td></tr>
+
+                <!--7-->
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><a style="color:red">*</a><span>7.  Has the invention (or any products incorporating the invention or made using the invention) been described to, disclosed to, sold to, offered for sale to, given to, or otherwise transferred to any person, firm or agency outside of the company, whether or not under secrecy or for experimental use or evaluation?</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Disclosure"></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader-lv2"><span>If the answer to question above is Yes, please provide details, including the first date of each such occurrence, the identity of the person or entity and the circumstances surrounding same.  Attach copies of, or identify any agreements or other documents concerning each such disclosure, description, sale, offer or transfer.</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Other"></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader-lv2"><span>If yes identify the party.</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Other_x0020_Parties_x0020_1"></span></td></tr>
+
+                <!--8-->
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><a style="color:red">*</a><span>8.  Is the invention related in any way to a joint development effort or other joint project with other companies universities or goverment agencies?</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Disclosure_x0020_2"></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader-lv2"><span>If yes identify the companies universities or goverment agencies.</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Other_x0020_Parties"></span></td></tr>
+
+                <!--9-->
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><a style="color:red">*</a><span>9.  Is the invention in any way related to requirements for maintaining confidentiality of any third party?</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Disclosure_x0020_3"></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader-lv2"></a><span>If the answer is yes, identify the third party.</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Thirdparty"></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader-lv2"><span>Is there a confidentiality clause in such agreement that restricts access to information exchanged during the relationship to those who have a "need to know"?</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Confidential"></span></td></tr>
+
+                <!--10-->
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><a style="color:red">*</a><span>10.  Is this document considered DuPont Confidential - Special Control with approval by a Manager required for access?</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="DuPont_x0020_Confidential"></span></td></tr>
+            </table>
+        </div>
+        <br />
+
+        <div id="ContributingAuthors">
+            <table class="table1" >
+                <!--<tr><th>Contributing Authors</th></tr>-->
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><span> 1. </span><span class="hillbillyForm" id="Contributing_x0020_Author_x0020_"></span></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><span> 2. </span><span class="hillbillyForm" id="Contributing_x0020_Author_x0020_0"></span></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><span> 3. </span><span class="hillbillyForm" id="Contributing_x0020_Author_x0020_1"></span></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><span> 4. </span><span class="hillbillyForm" id="Contributing_x0020_Author_x0020_2"></span></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><span> 5. </span><span class="hillbillyForm" id="Contributing_x0020_Author_x0020_3"></span></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><span> 6. </span><span class="hillbillyForm" id="Contributing_x0020_Author_x0020_4"></span></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><span> 7. </span><span class="hillbillyForm" id="Contributing_x0020_Author_x0020_5"></span></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><span> 8. </span><span class="hillbillyForm" id="Contributing_x0020_Author_x0020_6"></span></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><span> 9. </span><span class="hillbillyForm" id="Contributing_x0020_Author_x0020_7"></span></span></td></tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><span>10. </span><span class="hillbillyForm" id="Contributing_x0020_Author_x0020_8"></span></span></td></tr>
+                <tr>
+                    <td class="ms-formlabel"><span class="ms-standardheader-note"><span>Enter in the following field, other Contributors who may not have access to Lotus Notes or DPM PAMS.  Please contact your Patent Liaison for further information.  These individuals will not be added to Authors or Reader fields and will not have access to the database or document:</span></span></td>
+                </tr>
+                <tr><td class="ms-formlabel"><span class="ms-standardheader"><span>Other Contributing Authors:</span></span></td></tr>
+                <tr><td class="ms-formbody"><span class="hillbillyForm" id="Contributing_x0020_Authors_x0020"></span></td></tr>
+            </table>
+        </div>
+        <br />
+
+        <div id="NOIApprover">
+            <table class="table1">
+                <tr>
+                    <td class="ms-columntext" colspan="4" >
+                        <p>
+                            DPM Filing and Foreign Filing decisions are the responsiblity of the Research Manager acting on behalf of and with input from the Business, Attorney, Liaison, Inventor and other IP team members.  DPM's current default IP Strategy is to file "US only."  Foreign filing should be considered for high value cases and areas of strategic interest to DuPont. Foreign filing must be based on a well thought-out IP strategy, including assessment of IP strength, ability to detect IP in products, and assessment of countries based on market size, potential for manufacture and use, as well as respect for and enforcement of IP. A "Decision Tree for Foreign Filing," "Legal's ABCD List of Countries," and a spreadsheet with "Patent Cost Estimates" are available in the PAMS "Resource Documents.
+                        </p>
+                        <p>
+                            Please provide patent filing recommendations for this docket.  Please select either US Only or US & Foreign Filing.  The default position is US Only.  If Foreign Filing is recommended, fill in the Proposed Foreign Countries field with appropriate countries.  On completion, please Save and Close before exiting DPM PAMS.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel" width="250px" ><span class="ms-standardheader" width=""><span>Filing Recommendation</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Filing_x0020_Recommendation"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel" width="250px"><span class="ms-standardheader"><span>Proposed Foreign Countries</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Proposed_x0020_Foreign_x0020_Cou"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel"><span class="ms-standardheader"><span>Business Value</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Business_x0020_Value"></span></td>
+
+                    <td class="ms-formlabel" width="350px"><span class="ms-standardheader"><span>Proposed First Commercial Use Date</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Projected_x0020_Date"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel"><span class="ms-standardheader"><span>Reasons NOI Not Approved</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Reasons_x0020_NOI_x0020_Not_x002"></span></td>
+                    <td class="ms-formlabel"><span class="ms-standardheader"><span>AT/AL</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="AT_AL"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabe"><span class="ms-standardheader"><span>Priority</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Priority"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabe" width="250px"><span class="ms-standardheader"><span>Basis for Priority:</span></span></td>
+                    <td class="ms-formbody" colspan="3"><span class="hillbillyForm" id="Basis_x0020_for_x0020_Priority"></span></td>
+                </tr>
+
+            </table>
+        </div>
+        <br />
+
+        <div id="AttorneyLiaison">
+            <table class="table1">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Docket #</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="dDocket_x0020_Number"></span></td>
+                    <td class="ms-formlabe"><span class="ms-standardheader"><span>Related Docket</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Related_x0020_Docket"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe" width="150px"><span class="ms-standardheader"><span>Related Patent #</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Related_x0020_Patent_x0020_Numbe"></span></td>
+                    <td class="ms-formlabe" width="150px"><span class="ms-standardheader"><span>Filing Type</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Filing_x0020_Type"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe" width="250px"><span class="ms-standardheader"><span>Attorney of Record</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Attorney_x0020_of_x0020_Record"></span></td>
+                    <td class="ms-formlabe"><span class="ms-standardheader"><span>Liaison</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Liaison"></span></td>
+                </tr>
+            </table>
+            <table class="table1">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Reason NOI Details Need Editing</span></span></td>
+                    <td class="ms-formbody" colspan="3"><span class="hillbillyForm" id="Reason_x0020_NOI_x0020_Details_x"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Reason Examples Need Editing</span></span></td>
+                    <td class="ms-formbody" colspan="3"><span class="hillbillyForm" id="Reason_x0020_Examples_x0020_Need"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Transferred SBU to</span></span></td>
+                    <td class="ms-formbody" colspan="3"><span class="hillbillyForm" id="TransferredSBU"></span></td>
+                </tr>
+            </table>
+        </div>
+        <br />
+
+        <div id="ContributorInformation">
+            </br>
+            <table class="table2">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><a style="color:red">*</a><span>Inventor Name (DuPont):</span></span></td>
+                	<td class="ms-formbody"><span class="hillbillyForm" id="Inventor_x0020_Name_x0020__x0028"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>Full Given Name:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Full_x0020_Name_x0020__x0028_Inv"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Street:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Street_x0020__x0028_Inventor_x00"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>City, State, Zip Code, Country:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="City_x002c__x0020_State_x002c__x"></span></td>
+                </tr>
+            </table>
+
+            </br><hr>
+            <table class="table2">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><a style="color:red">*</a><span>Inventor Name (DuPont):</span></span></td>
+                	<td class="ms-formbody"><span class="hillbillyForm" id="Inventor_x0020_Name_x0020__x00280"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>Full Given Name:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Full_x0020_Name_x0020__x0028_Inv0"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Street:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Street_x0020__x0028_Inventor_x000"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>City, State, Zip Code, Country:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="City_x002c__x0020_State_x002c__x0"></span></td>
+                </tr>
+            </table>
+
+            </br><hr>
+            <table class="table2">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><a style="color:red">*</a><span>Inventor Name (DuPont):</span></span></td>
+                	<td class="ms-formbody"><span class="hillbillyForm" id="Inventor_x0020_Name_x0020__x00281"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>Full Given Name:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Full_x0020_Name_x0020__x0028_Inv1"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Street:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Street_x0020__x0028_Inventor_x001"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>City, State, Zip Code, Country:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="City_x002c__x0020_State_x002c__x1"></span></td>
+                </tr>
+            </table>
+
+            </br><hr>
+            <table class="table2">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><a style="color:red">*</a><span>Inventor Name (DuPont):</span></span></td>
+                	<td class="ms-formbody"><span class="hillbillyForm" id="Inventor_x0020_Name_x0020__x00282"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>Full Given Name:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Full_x0020_Name_x0020__x0028_Inv2"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Street:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Street_x0020__x0028_Inventor_x002"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>City, State, Zip Code, Country:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="City_x002c__x0020_State_x002c__x2"></span></td>
+                </tr>
+            </table>
+
+            </br><hr>
+            <table class="table2">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><a style="color:red">*</a><span>Inventor Name (DuPont):</span></span></td>
+                	<td class="ms-formbody"><span class="hillbillyForm" id="Inventor_x0020_Name_x0020__x00283"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>Full Given Name:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Full_x0020_Name_x0020__x0028_Inv3"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Street:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Street_x0020__x0028_Inventor_x003"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>City, State, Zip Code, Country:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="City_x002c__x0020_State_x002c__x3"></span></td>
+                </tr>
+            </table>
+
+            </br><hr>
+            <table class="table2">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><a style="color:red">*</a><span>Inventor Name (DuPont):</span></span></td>
+                	<td class="ms-formbody"><span class="hillbillyForm" id="Inventor_x0020_Name_x0020__x00284"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>Full Given Name:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Full_x0020_Name_x0020__x0028_Inv4"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Street:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Street_x0020__x0028_Inventor_x004"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>City, State, Zip Code, Country:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="City_x002c__x0020_State_x002c__x4"></span></td>
+                </tr>
+            </table>
+
+            </br><hr>
+            <table class="table2">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><a style="color:red">*</a><span>Inventor Name (DuPont):</span></span></td>
+                	<td class="ms-formbody"><span class="hillbillyForm" id="Inventor_x0020_Name_x0020__x00285"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>Full Given Name:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Full_x0020_Name_x0020__x0028_Inv5"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Street:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Street_x0020__x0028_Inventor_x005"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>City, State, Zip Code, Country:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="City_x002c__x0020_State_x002c__x5"></span></td>
+                </tr>
+            </table>
+
+            </br><hr>
+            <table class="table2">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><a style="color:red">*</a><span>Inventor Name (DuPont):</span></span></td>
+                	<td class="ms-formbody"><span class="hillbillyForm" id="Inventor_x0020_Name_x0020__x00286"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>Full Given Name:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Full_x0020_Name_x0020__x0028_Inv6"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Street:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Street_x0020__x0028_Inventor_x006"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>City, State, Zip Code, Country:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="City_x002c__x0020_State_x002c__x6"></span></td>
+                </tr>
+            </table>
+            </br><hr>
+
+            <table class="table2">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><a style="color:red">*</a><span>Inventor Name (DuPont):</span></span></td>
+                	<td class="ms-formbody"><span class="hillbillyForm" id="Inventor_x0020_Name_x0020__x00287"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>Full Given Name:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Full_x0020_Name_x0020__x0028_Inv7"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Street:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Street_x0020__x0028_Inventor_x007"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>City, State, Zip Code, Country:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="City_x002c__x0020_State_x002c__x7"></span></td>
+                </tr>
+            </table>
+
+            </br><hr>
+            <table class="table2">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><a style="color:red">*</a><span>Inventor Name (DuPont):</span></span></td>
+                	<td class="ms-formbody"><span class="hillbillyForm" id="Inventor_x0020_Name_x0020__x00288"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>Full Given Name:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Full_x0020_Name_x0020__x0028_Inv8"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Street:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Street_x0020__x0028_Inventor_x008"></span></td>
+                </tr>
+                <tr>
+	                <td class="ms-formlabe"><span class="ms-standardheader"><span>City, State, Zip Code, Country:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="City_x002c__x0020_State_x002c__x8"></span></td>
+                </tr>
+            </table>
+
+        </div>
+        <br />
+
+
+        <div id="PatentApplicationDevelopment">
+            <table class="table1">
+                <tr>
+					<td class="ms-formlabel"><span class="ms-standardheader"><span>Summary of Invention:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Summary_x0020_of_x0020_Invention"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel"><span class="ms-standardheader"><span>Related Patent Applications/Patents:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Related_x0020_Patent_x0020_Appli"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" width="150px"><span class="ms-standardheader"><span>Difference With Prior Art:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Difference_x0020_With_x0020_Prio"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel" width="150px"><span class="ms-standardheader"><span>Main Claim:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Main_x0020_Claim"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" width="250px"><span class="ms-standardheader"><span>Other Claims:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Other_x0020_Claims"></span></td>
+                </tr>
+            </table>
+        </div>
+        <br />
+
+        <div id="ExamplesApplication">
+            <table class="table1">
+                <tr>
+					<td class="ms-formlabel"><span class="ms-standardheader"><span>Examples/Drawings:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Examples_x002f_Drawings"></span></td>
+                </tr>
+                <tr>
+                    <td class="ms-formlabel"><span class="ms-standardheader"><span>Patent Application:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Patent_x0020_Application"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" width="150px"><span class="ms-standardheader"><span>Correspondence:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Correspondence"></span></td>
+                </tr>
+            </table>
+            <p>Draft Application Transmittal Records</p>
+
+            <table class="table1">
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Draft to Contributor:</span></span></td>
+                    <td class="ms-formbody" ><span class="hillbillyForm" id="Draft_x0020_to_x0020_Contributor"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Draft to Liaison:</span></span></td>
+                    <td class="ms-formbody" ><span class="hillbillyForm" id="Draft_x0020_to_x0020_Liaison"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Draft to Attorney:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Draft_x0020_to_x0020_Attorney"></span></td>
+                </tr>
+            </table>
+        </div>
+        <br />
+
+        <div id="PatentDocketManagement">
+            <table class="table1">
+                <tr>
+                    <td class="ms-columntext"><span class="hillbillyForm" id="Sec_PatDocMgmtEditors"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe"><span class="ms-standardheader"><span>Reason Patent Application was Dropped: </span></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formbody"><span class="hillbillyForm" id="DropReason"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe" width="150px"><span class="ms-standardheader"><span>Management Notes:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Notes"></span></td>
+                </tr>
+            </table>
+            <table class="table3">
+                <tr>
+                    <th></th>
+                    <th>Goal Date</th>
+                    <th>Actual Date</th>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" style="text-align:left"><span class="ms-standardheader"><span>NOI Submitted</span></span></td>
+                    <td></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="NOI_x0020_Submitted_x0020_Date"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" style="text-align:left"><span class="ms-standardheader"><span>NOI Approved</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="NOI_x0020_Approved_x0020_Goal_x0"></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="NOI_x0020_Approved_x0020_Date"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" style="text-align:left"><span class="ms-standardheader"><span>Team Notified</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Team_x0020_Notified_x0020_Goal_x"></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Team_x0020_Notified_x0020_Date"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" style="text-align:left"><span class="ms-standardheader"><span>Search Initiated</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Search_x0020_Initiated_x0020_Goa"></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Search_x0020_Initiated_x0020_Act"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" style="text-align:left"><span class="ms-standardheader"><span>Search Completed</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Search_x0020_Completed_x0020_Goa"></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Search_x0020_Completed_x0020_Dat"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" style="text-align:left"><span class="ms-standardheader"><span>Examples Requested</span></span></td>
+                    <td></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Examples_x0020_Requested_x0020_D"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" style="text-align:left"><span class="ms-standardheader"><span>Examples Submitted</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Examples_x0020_Submitted_x0020_G"></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Examples_x0020_Submitted_x0020_D"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" style="text-align:left"><span class="ms-standardheader"><span>Examples Accepted</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Examples_x0020_Accepted_x0020_Go"></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Examples_x0020_Accepted_x0020_Da"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" style="text-align:left"><span class="ms-standardheader"><span>Application Completed</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Application_x0020_Completed_x002"></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Application_x0020_Completed_x0020"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" style="text-align:left"><span class="ms-standardheader"><span>Application Filed</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Goal_x0020_Filing_x0020_Date"></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Actual_x0020_Filing_x0020_Date"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" style="text-align:left"><span class="ms-standardheader"><span>Transferred to SBU Date</span></span></td>
+                    <td></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="TransferSBUDate"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabel" style="text-align:left"><span class="ms-standardheader"><span>Dropped Date</span></span></td>
+                    <td></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="Dropped_x0020_Date"></span></td>
+                </tr>
+            </table>
+            </br>
+            <table class="table2">
+                <tr>
+					<td class="ms-formlabe" width="150px"><span class="ms-standardheader"><span>US Patent Issued Date:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="US_x0020_Patent_x0020_Issued_x00"></span></td>
+                    <td class="ms-formlabe" width="150px"><span class="ms-standardheader"><span>US Patent Number:</span></span></td>
+                    <td class="ms-formbody"><span class="hillbillyForm" id="US_x0020_Patent_x0020_Number"></span></td>
+                </tr>
+                <tr>
+					<td class="ms-formlabe" width="150px"><span class="ms-standardheader"><span>US Patent Document:</span></span></td>
+                    <td class="ms-formbody" colspan="3"><span class="hillbillyForm" id="US_x0020_Patent_x0020_Document"></span></td>
+                </tr>
+            </table>
+        </div>
+        <br />
+
+		<!--<table id="fptattachmenttable">-->
+		<!--</table>-->
+
+		<table cellpadding="0" cellspacing="0" id="fptformbuttons" style="margin-top: 7px;">
+		</table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        ExecuteOrDelayUntilScriptLoaded(fptinitform, "sp.js");
+
+//        if(GetUrlKeyValue("Type") !== "1"){
+//            ExecuteOrDelayUntilScriptLoaded(fptinitform, "sp.js");
+//        }
+//        else{
+//            jQuery('#workingonit').html('').hide();
+//            var tdiv = jQuery('#WebPartWPQ2');
+//            tdiv.css('width','auto');
+//            tdiv.css('height','auto');
+//            //tdiv.css('overflow','auto')
+//        }
+    });
+
+    fptinitform = function(){
+        ////process attachment
+        try{
+            jQuery('#idAttachmentsRow').appendTo(jQuery('#fptattachmenttable'))
+        } catch(err){}
+
+        jQuery("span.hillbillyForm").each(function(){
+            //get the display name from the custom layout
+            internalName = jQuery(this).attr("data-internalName");
+            elem = jQuery(this);
+            //find the corresponding field from the default form and move it
+            //into the custom layout
+            jQuery("table.ms-formtable td").each(function(){
+                if (this.innerHTML.indexOf('FieldInternalName="'+internalName+'"') != -1){
+                    console.log("Append this");
+                    jQuery(this).contents().appendTo(elem);
+                }
+            });
+        });
+
+        jQuery('table.ms-informationbar').insertBefore(jQuery('div.maintable'));
+        jQuery('table.ms-formtable').next().contents().appendTo(jQuery('#fptformbuttons'))
+        ////Custom JS here
+        ////example: show hide fields, render sections, set field read-only
+        ////Custom JS here
+        bindSectionControl("ContributorsCategorization", "CONTRIBUTOR CATEGORIZATION");
+        bindSectionControl("ContributorsNOIDetails", "CONTRIBUTOR NOI DETAILS");
+        bindSectionControl("ContributingAuthors", "CONTRIBUTING AUTHORS");
+        bindSectionControl("NOIApprover", "NOI APPROVER");
+        bindSectionControl("AttorneyLiaison", "ATTORNEY/LIAISON");
+        bindSectionControl("ContributorInformation", "CONTRIBUTOR INFORMATION");
+        bindSectionControl("PatentApplicationDevelopment", "PATENT APPLICATION DEVELOPMENT");
+        bindSectionControl("ExamplesApplication", "EXAMPLES, APLLICATION & OTHER ATTACHMENTS");
+        bindSectionControl("PatentDocketManagement", "PATENT DOCKET MANAGEMENT");
+
+        Main();
+
+        jQuery('#workingonit').html('').hide();
+        var tdiv = jQuery('.maintable');
+        tdiv.css('width','auto');
+        tdiv.css('height','auto');
+        //tdiv.css('overflow','auto')
+    };
+
+    function LoadViewData(item){
+        jQuery("span.hillbillyForm").each(function () {
+                var fieldID =  this.id;
+                var idStr = "#" + fieldID;
+                var valStr = item[fieldID];
+                if( fieldID=="From" ||
+                    fieldID=="NOI_x0020_Approval_x0020_Manager" ||
+                    fieldID=="Liaison" ||
+                    fieldID=="Sec_PatDocMgmtEditors" ||
+                    fieldID=="Attorney_x0020_of_x0020_Record"){
+                    var slashPostion = valStr.search("/");
+                    if(slashPostion > 3){
+                        var name = valStr.substr(3,slashPostion-3);
+                        $(idStr).html(name);
+                    }else{
+                        $(idStr).html(valStr);
+                    }
+
+                }else{
+                    $(idStr).html(valStr);
+                }
+            
+            });
+    }
+
+    function Main(){
+        //var formmode = getCurrentFormMode();
+        var formmode = "display";
+        var id = getCurrentItemId();
+        //console.log("Id: %s", id);
+        //console.log(_spPageContextInfo);
+
+        //must run after ExecuteOrDelayUntilScriptLoaded(fptinitform, "sp.js");
+        var clientContext = new SP.ClientContext();
+        //console.log(clientContext);
+
+        //currently cannot get it from data-internal, so load it from the object returned
+        getItemById(id, onCompleted, onFailed);
+        function onCompleted(result){
+            //console.log(result);
+            var item = result.get_fieldValues();
+            //console.log(item);
+
+            //Load data to span
+            LoadViewData(item);
+        }
+
+        function onFailed(err) {
+            console.log('Request failed. ' + err + '\n');
+        }
+
+
+        jQuery(".showindisplay1").hide();
+        jQuery(".showindisplay2").hide();
+        jQuery(".showindisplay3").hide();
+
+        //jQuery("span[data-internalname='Assign_x0020_Next_x0020_DDS_x002']").parent().parent().hide();
+
+        if(formmode == 'new'){
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+            //jQuery("span[data-internalname='Submit_x0020_For_x0020_Export_x0']").parent().parent().hide();
+            jQuery("span[data-internalname='Comment_x0020_to_x0020_send_x002']").parent().parent().hide();
+            jQuery("span[data-internalname='Submit_x0020_For_x0020_Approval']").parent().parent().hide();
+            jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().hide();
+            jQuery("span[data-internalname='Approve_x002f_Reject']").parent().parent().hide();
+            jQuery("span[data-internalname='File_x0020_Request']").parent().parent().hide();
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+
+            setFieldToLabel("Title");
+            setFieldToLabel("Status");
+            //jQuery("span[data-internalname='Status'] input").val("Test Value");
+
+            ////////////////////////////////////////////
+            ////////////////////////////////////////////
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; //January is 0!
+            var yyyy = today.getFullYear();
+            if(dd<10){
+                dd='0'+dd
+            }
+            if(mm<10){
+                mm='0'+mm
+            }
+            today = mm+'/'+dd+'/'+yyyy;
+            jQuery("span[data-internalname='Last_x0020_Updated'] input").val(today);
+            setFieldToLabel("Last Updated");
+            ///////////////////////////////////////////
+            ///////////////////////////////////////////
+
+            setCurrentUserToUserField("Requester Name");
+            setTimeout(function(){
+                disableUserField("span[data-internalname='Requester_x0020_Name']");
+            },2000);
+
+            ///////////////////////////////////////////
+            ///////////////////////////////////////////
+            var Status = jQuery("input[id^='Status']").val();
+            console.log("Status: %s", Status);
+
+            jQuery(".ContributingAuthors").hide();
+            jQuery('select[id^="Business"]').change(function() {
+                var Business = jQuery("select[id^='Business'] option:selected").text();
+                if(Status != "New" || Business != "Viton"){
+                    jQuery(".ContributingAuthors").hide();
+                }
+                else{
+                    jQuery(".ContributingAuthors").show();
+                }
+            });
+            ////
+            jQuery(".shipped_before").hide();
+            jQuery('input[id^="Has_x0020_this_x0020_material"]').change(function () {
+                var selectValue = jQuery(this).val();
+                if (selectValue == "Yes") {
+                    jQuery(".shipped_before").show();
+                } else {
+                    jQuery(".shipped_before").hide();
+                }
+            });
+            /// hiden Section Export Compliance Check
+            jQuery("#AttorneyLiaison").hide();
+            jQuery("#ContributorInformation").hide();
+            jQuery("#PatentApplicationDevelopment").hide();
+            jQuery("#ExamplesApplication").hide();
+            jQuery("#PatentDocketManagement").hide();
+
+            /// hiden Section RegulatoryComplianceCheck
+            jQuery("#fptheaderRegulatoryComplianceCheck").hide();
+            jQuery("#fptwrapperRegulatoryComplianceCheck").hide();
+            jQuery("#fptheaderExportComplianceCheck").hide();
+            jQuery("#fptwrapperExportComplianceCheck").hide();
+            jQuery("#fptheaderRegulatoryComplianceCheck").hide();
+            jQuery("#fptwrapperRegulatoryComplianceCheck").hide();
+        }
+
+        if(formmode == "edit"){
+            setFieldToLabel("DDS");
+            setFieldToLabel("Requester Name");
+            //setFieldToLabel("Status");
+            setFieldToLabel("Last Updated");
+            setTimeout(function(){
+                disableUserField("span[data-internalname='Requester_x0020_Name']");
+            },2000);
+
+            var Status = jQuery("input[id^='Status']").val();
+            var DDS = jQuery("input[id^='DDS']").val();
+            if(Status != "New"){
+                setFieldToLabel('Company Name');
+                setFieldToLabel('Attention To');
+                setFieldToLabel('Company Street');
+                setFieldToLabel('Company City');
+                setFieldToLabel('Company State');
+                setFieldToLabel('Company Zip Code');
+                setFieldToLabel('Company Phone');
+                setFieldToLabel('Company Country');
+                setFieldToLabel('Material Type');
+                setFieldToLabel('Additional Comments About Material');
+                setFieldToLabel('Business');
+                setFieldToLabel('Additional Comments About Business');
+                setFieldToLabel('Commercial Grade Viton');
+                setFieldToLabel('Do you have business Approval to send this Viton Material?');
+                setFieldToLabel('Do you have appropriate paperwork to send with this material?');
+                setFieldToLabel('Is PO required?');
+                setFieldToLabel('Composition with constituent(s)');
+                setFieldToLabel('CAS No(s)');
+                setFieldToLabel('% with total adding to 100%');
+                setFieldToLabel('Name / synonyms of material');
+                setFieldToLabel('Size');
+                setFieldToLabel('Weight');
+                setFieldToLabel('Description of container(s) for shipment');
+                setFieldToLabel('Has this material been shipped before?');
+                setFieldToLabel('When?');
+                setFieldToLabel('By whom?');
+                setFieldToLabel('Export Shipping DDS No. Or  EMIS Reference No.');
+                setFieldToLabel('Mode of Shipment');
+                setFieldToLabel('Description of use of material');
+                setFieldToLabel('Nature of Product');
+                setFieldToLabel('Is Product Technology Controlled?');
+                setFieldToLabel('Does product have military use?');
+                setFieldToLabel('Intellectual Asset Status');
+                setFieldToLabel('Shipment Purpose');
+                setFieldToLabel('Include');
+                setFieldToLabel('Confidentiality Agreement Required');
+                setFieldToLabel('Valuation');
+            }
+
+            var Business = jQuery("select[id^='Business'] option:selected").text();
+            if(Status != "New" || Business != "Viton"){
+                jQuery(".ContributingAuthors").hide();
+            }
+            else{
+                jQuery(".ContributingAuthors").show();
+            }
+
+            jQuery('select[id^="Business"]').change(function() {
+                var Business = jQuery("select[id^='Business'] option:selected").text();
+                if(Status != "New" || Business != "Viton"){
+                    jQuery(".ContributingAuthors").hide();
+                }
+                else{
+                    jQuery(".ContributingAuthors").show();
+                }
+            });
+            ///////////////////////////////////////////
+            ///////////////////////////////////////////
+            jQuery('input[id^="Send_x0020_Mail_x0020_to_x0020_R"]').change(function (){
+                var sendMailIsCheck = jQuery(this).is(':checked');
+                if(sendMailIsCheck)
+                {
+                    jQuery("span[data-internalname='Comment_x0020_to_x0020_send_x002']").parent().parent().show();
+                }
+                else
+                {
+                    jQuery("span[data-internalname='Comment_x0020_to_x0020_send_x002']").parent().parent().hide();
+                }
+            });
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+            if(Status == 'New'){
+                jQuery("span[data-internalname='Comment_x0020_to_x0020_send_x002']").parent().parent().hide();
+                jQuery("span[data-internalname='Submit_x0020_For_x0020_Export_x0']").parent().parent().hide();
+                jQuery("span[data-internalname='Submit_x0020_For_x0020_Approval']").parent().parent().hide();
+                jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().hide();
+                jQuery("span[data-internalname='Approve_x002f_Reject']").parent().parent().hide();
+                jQuery("span[data-internalname='File_x0020_Request']").parent().parent().hide();
+                var url = _spPageContextInfo.siteAbsoluteUrl;
+                url += "/_api/web/lists/getbytitle('Export%20Shipping%20Request')/items("+ getCurrentItemId() +")";
+                jQuery.ajax({
+                    url: url,
+                    method: "GET",
+                    headers: { "Accept": "application/json; odata=verbose" },
+                    success: function (data) {
+                        if (data.d != undefined) {
+                            var id = data.d.Requester_x0020_NameStringId;
+                            var curID = getCurrentUserId();
+                            if(id == curID && typeof id != 'undefined' && typeof curID != 'undefined')
+                            {
+                                jQuery("span[data-internalname='Submit_x0020_For_x0020_Export_x0']").parent().parent().show();
+                            }
+                        }
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        ////do nothing
+                    }
+                });
+
+                jQuery(".shipped_before").hide();
+                jQuery('input[id^="Has_x0020_this_x0020_material"]').change(function () {
+                    var selectValue = jQuery(this).val();
+                    if (selectValue == "Yes") {
+                        jQuery(".shipped_before").show();
+                    } else {
+                        jQuery(".shipped_before").hide();
+                    }
+                });
+
+                /// hiden Section Export Compliance Check
+                jQuery("#AttorneyLiaison").hide();
+                jQuery("#fptheaderExportComplianceCheck").hide();
+                jQuery("#fptwrapperExportComplianceCheck").hide();
+
+                /// hiden Section RegulatoryComplianceCheck
+                jQuery("#ContributorInformation").hide();
+                jQuery("#fptheaderRegulatoryComplianceCheck").hide();
+                jQuery("#fptwrapperRegulatoryComplianceCheck").hide();
+
+                /// hiden Section RegulatoryComplianceCheck
+                jQuery("#PatentDocketManagement").hide();
+                jQuery("#fptheaderRegulatoryComplianceCheck").hide();
+                jQuery("#fptwrapperRegulatoryComplianceCheck").hide();
+
+
+                jQuery("#PatentApplicationDevelopment").hide();
+                jQuery("#ExamplesApplication").hide();
+
+
+            }
+
+            if(Status == "Submitted For Export Regulatory Requirements Compliance"){
+                jQuery("span[data-internalname='Comment_x0020_to_x0020_send_x002']").parent().parent().hide();
+                jQuery("span[data-internalname='Submit_x0020_For_x0020_Export_x0']").parent().parent().hide();
+                jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().hide();
+                jQuery("span[data-internalname='Approve_x002f_Reject']").parent().parent().hide();
+                jQuery("span[data-internalname='File_x0020_Request']").parent().parent().hide();
+
+                if(isCurrentUserInGroup("Export Compliance Checker") || isCurrentUserInGroup("Regulatory Compliance Checker")){
+                    jQuery("span[data-internalname='Submit_x0020_For_x0020_Approval']").parent().parent().show();
+                }
+                else{
+                    jQuery("span[data-internalname='Submit_x0020_For_x0020_Approval']").parent().parent().hide();
+                }
+                if(isCurrentUserInGroup("Export Compliance Checker") ||
+                        isCurrentUserInGroup("Regulatory Compliance Checker")){
+                    jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().show();
+                }
+                else{
+                    jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().hide();
+                }
+            }
+
+            if(Status == "Submitted For Approval"){
+                jQuery("span[data-internalname='Comment_x0020_to_x0020_send_x002']").parent().parent().hide();
+                jQuery("span[data-internalname='Submit_x0020_For_x0020_Export_x0']").parent().parent().hide();
+                jQuery("span[data-internalname='Submit_x0020_For_x0020_Approval']").parent().parent().hide();
+                jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().hide();
+                jQuery("span[data-internalname='Approve_x002f_Reject']").find("span[title='None']").hide();
+                jQuery("span[data-internalname='File_x0020_Request']").parent().parent().hide();
+                if(isCurrentUserInGroup("Shipment Approver")){
+                    jQuery("span[data-internalname='Approve_x002f_Reject']").parent().parent().show();
+                }
+                else{
+                    jQuery("span[data-internalname='Approve_x002f_Reject']").parent().parent().hide();
+                }
+                if(isCurrentUserInGroup("Shipment Approver") || isCurrentUserInGroup("Export Compliance Checker") ||
+                        isCurrentUserInGroup("Regulatory Compliance Checker")){
+                    jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().show();
+                }
+                else{
+                    jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().hide();
+                }
+            }
+
+            if(Status == "Completed"){
+                jQuery("span[data-internalname='Comment_x0020_to_x0020_send_x002']").parent().parent().hide();
+                jQuery("span[data-internalname='Submit_x0020_For_x0020_Export_x0']").parent().parent().hide();
+                jQuery("span[data-internalname='Submit_x0020_For_x0020_Approval']").parent().parent().hide();
+                jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().hide();
+                jQuery("span[data-internalname='Approve_x002f_Reject']").parent().parent().hide();
+                jQuery("span[data-internalname='File_x0020_Request']").parent().parent().hide();
+                if(isCurrentUserInGroup("Shipment Approver") || isCurrentUserInGroup("Export Compliance Checker") ||
+                        isCurrentUserInGroup("Regulatory Compliance Checker")){
+                    jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().show();
+                }
+                else{
+                    jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().hide();
+                }
+            }
+
+            if(Status == 'Approved - Submitted For Shipment' || Status == 'Rejected'){
+                jQuery("span[data-internalname='Comment_x0020_to_x0020_send_x002']").parent().parent().hide();
+                jQuery("span[data-internalname='Submit_x0020_For_x0020_Export_x0']").parent().parent().hide();
+                jQuery("span[data-internalname='Submit_x0020_For_x0020_Approval']").parent().parent().hide();
+                jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().hide();
+                jQuery("span[data-internalname='Approve_x002f_Reject']").parent().parent().hide();
+                var isUserCreatedDoc = false;
+                var url = _spPageContextInfo.siteAbsoluteUrl;
+                url += "/_api/web/lists/getbytitle('Export%20Shipping%20Request')/items("+ getCurrentItemId() +")";
+                jQuery.ajax({
+                    url: url,
+                    method: "GET",
+                    headers: { "Accept": "application/json; odata=verbose" },
+                    success: function (data) {
+                        if (data.d != undefined) {
+                            var id = data.d.Control_x0020_ApproverId;
+                            var curID = getCurrentUserId();
+                            if(id == curID && typeof id != 'undefined' && typeof curID != 'undefined')
+                            {
+                                isUserCreatedDoc = true;
+                            }
+                        }
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        ////do nothing
+                    }
+                });
+                if(isCurrentUserInGroup("Export Shipping Reg Troy Editor") || isCurrentUserInGroup("Export Shipping Reg Troy Admin") ||
+                        isCurrentUserInGroup("Export Compliance Checker") || isCurrentUserInGroup("Regulatory Compliance Checker") ||
+                        isCurrentUserInGroup("Shipment Approver") || isCurrentUserInGroup("Office Professional - Clerk") || isUserCreatedDoc == true){
+                    jQuery("span[data-internalname='File_x0020_Request']").parent().parent().show();
+                }
+                else{
+                    jQuery("span[data-internalname='File_x0020_Request']").parent().parent().hide();
+                }
+
+                //if(isCurrentUserInGroup("Export Shipping Reg Troy Editor") || isCurrentUserInGroup("Export Shipping Reg Troy Admin") ||
+                //isCurrentUserInGroup("Export Compliance Checker") || isCurrentUserInGroup("Regulatory Compliance Checker") ||
+                //isCurrentUserInGroup("Shipment Approver") || isCurrentUserInGroup("Office Professional - Clerk") ||
+                //isCurrentUserInGroup('Export Shipping Reg Troy Author')){
+                //	jQuery("span[data-internalname='Assign_x0020_Next_x0020_DDS_x002']").parent().parent().show();
+                //}
+
+
+            }
+
+            //if(DDS != 'TBD'){
+            //	jQuery("span[data-internalname='Assign_x0020_Next_x0020_DDS_x002']").parent().parent().hide();
+            //}
+
+            if(!isCurrentUserInGroup("Export Compliance Checker") || Status != 'Submitted For Export Regulatory Requirements Compliance'){
+                jQuery('input[id^="Embargoed_x0020_and_x0020_Sensit"]').attr("disabled","true");
+
+                jQuery('input[id^="Prohibited_x0020_Parties"]').attr("disabled","true");
+
+                jQuery('input[id^="Prohibited_x0020_Parties_x0020_S"]').attr("disabled","true");
+
+                jQuery('input[id^="Anti_x002d_Boycott"]').attr("disabled","true");
+
+                jQuery('input[id^="Not_x0020_In_x0020_Compliance_x0_"]').attr("disabled","true");
+            }
+
+            if(!isCurrentUserInGroup("Regulatory Compliance Checker") || Status != 'Submitted For Export Regulatory Requirements Compliance'){
+                jQuery('input[id^="Export_x0020_Commodity_x0020_Cod"]').attr("disabled","true");
+
+                //jQuery('input[id^="Enter_x0020_the_x0020_ECCode_x00"]').attr("disabled","true");
+                setFieldToLabel("Enter the ECCode code here", formmode);
+
+                jQuery('input[id^="ECCN"]').attr("disabled","true");
+
+                //jQuery('input[id^="Enter_x0020_the_x0020_ECCN"]').attr("disabled","true");
+                setFieldToLabel("Enter the ECCN code here", formmode);
+
+                jQuery('input[id^="Harmonized_x0020_Tariff_x0020_Sy"]').attr("disabled","true");
+
+                //jQuery('input[id^="Enter_x0020_the_x0020_HTS"]').attr("disabled","true");
+                setFieldToLabel("Enter the HTS code here", formmode);
+
+                jQuery('input[id^="Handling_x0020_of_x0020_Hazardou"]').attr("disabled","true");
+
+                //jQuery('input[id^="Enter_x0020_the_x0020_Hazmat"]').attr("disabled","true");
+                setFieldToLabel("Enter the Hazmat code here", formmode);
+
+                jQuery('input[id^="Comply_x0020_With_x0020_Governme"]').attr("disabled","true");
+
+                jQuery('input[id^="In_x0020_compliance_x0020_with_x"]').attr("disabled","true");
+
+                setFieldToLabel("Enter the Compliance Note here", formmode);
+
+                jQuery('input[id^="Not_x0020_In_x0020_Compliance_x00_"]').attr("disabled","true");
+            }
+
+            if(Status == "Rejected"){
+                jQuery("span[data-internalname='Comment_x0020_to_x0020_send_x002']").parent().parent().hide();
+                jQuery("span[data-internalname='Submit_x0020_For_x0020_Export_x0']").parent().parent().hide();
+                jQuery("span[data-internalname='Submit_x0020_For_x0020_Approval']").parent().parent().hide();
+                jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().hide();
+                jQuery("span[data-internalname='Approve_x002f_Reject']").parent().parent().hide();
+                jQuery("span[data-internalname='File_x0020_Request']").parent().parent().hide();
+                //jQuery("span[data-internalname='Assign_x0020_Next_x0020_DDS_x002']").parent().parent().hide();
+            }
+            ///////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////
+        }
+
+        if(formmode == 'display'){
+
+            jQuery("span[data-internalname='Business']").parent().parent().prop("class","disabledAnchor");
+            jQuery("span[data-internalname='Material_x0020_Type']").parent().parent().prop("class","disabledAnchor");
+            jQuery("span[data-internalname='Business']").find("a").prop("href", "#");
+            jQuery("span[data-internalname='Material_x0020_Type']").find("a").prop("href", "#");
+
+
+            jQuery("span[data-internalname='Status'] input").val("Test Value");
+
+            /////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////
+            var isShippedBefore = jQuery("span[data-internalname='Has_x0020_this_x0020_material_x0']").text().trim();
+            if(isShippedBefore == "No")
+            {
+                jQuery(".shipped_before").hide();
+            }
+
+            jQuery("span[data-internalname='Comment_x0020_to_x0020_send_x002']").parent().parent().hide();
+            jQuery("span[data-internalname='Submit_x0020_For_x0020_Export_x0']").parent().parent().hide();
+            jQuery("span[data-internalname='Submit_x0020_For_x0020_Approval']").parent().parent().hide();
+            jQuery("span[data-internalname='Send_x0020_Mail_x0020_to_x0020_R']").parent().parent().hide();
+            jQuery("span[data-internalname='Approve_x002f_Reject']").parent().parent().hide();
+            jQuery("span[data-internalname='File_x0020_Request']").parent().parent().hide();
+            ////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////
+            var Status = jQuery("span[data-internalname='Status']").text().trim();
+            var Business = jQuery("span[data-internalname='Business']").text().trim();
+
+            if(Status != "New" || Business != "Viton"){
+                jQuery("span[data-internalname='Commercial_x0020_Grade_x0020_Vit']").parent().parent().hide();
+                jQuery("span[data-internalname='Do_x0020_you_x0020_have_x0020_bu']").parent().parent().hide();
+                jQuery("span[data-internalname='Do_x0020_you_x0020_have_x0020_ap']").parent().parent().hide();
+                jQuery("span[data-internalname='Is_x0020_PO_x0020_required_x003f']").parent().parent().hide();
+            }
+            else{
+                jQuery("span[data-internalname='Commercial_x0020_Grade_x0020_Vit']").parent().parent().show();
+                jQuery("span[data-internalname='Do_x0020_you_x0020_have_x0020_bu']").parent().parent().show();
+                jQuery("span[data-internalname='Do_x0020_you_x0020_have_x0020_ap']").parent().parent().show();
+                jQuery("span[data-internalname='Is_x0020_PO_x0020_required_x003f']").parent().parent().show();
+            }
+            if(Status == 'New'){
+                /// hiden Section Export Compliance Check
+                jQuery("#ExportComplianceCheck").hide();
+                jQuery("#fptheaderExportComplianceCheck").hide();
+                jQuery("#fptwrapperExportComplianceCheck").hide();
+
+                /// hiden Section RegulatoryComplianceCheck
+                jQuery("#ContributorInformation").hide();
+                jQuery("#fptheaderRegulatoryComplianceCheck").hide();
+                jQuery("#fptwrapperRegulatoryComplianceCheck").hide();
+            } else{
+                jQuery("#ExportComplianceCheck").show();
+                jQuery("#fptheaderExportComplianceCheck").show();
+                jQuery("#fptwrapperExportComplianceCheck").show();
+
+                jQuery("#ContributorInformation").show();
+                jQuery("#fptheaderRegulatoryComplianceCheck").show();
+                jQuery("#fptwrapperRegulatoryComplianceCheck").show();
+            }
+            if(Status == 'Approved - Submitted For Shipment'){
+                if(isCurrentUserInGroup("Export Shipping Reg Troy Editor") || isCurrentUserInGroup("Export Shipping Reg Troy Admin") ||
+                        isCurrentUserInGroup("Export Compliance Checker") || isCurrentUserInGroup("Regulatory Compliance Checker") ||
+                        isCurrentUserInGroup("Shipment Approver") || isCurrentUserInGroup("Office Professional - Clerk") ||
+                        isCurrentUserInGroup('Export Shipping Reg Troy Author')){
+                    jQuery(".showindisplay1").show();
+                    jQuery(".showindisplay2").show();
+                    jQuery(".showindisplay3").show();
+                }
+            }
+        }
+    }
+
+    function validateData(){
+        jQuery('.ms-csrformvalidation').remove();
+        var valid = true;
+        var arrErrorMessage = ['', "You can't leave this blank.", "Enter the formulation by percent in the Additional Comments About Material field of Material Type or attach the formulation file in Additional Attachment field."];
+
+        var Material_Type = jQuery("select[id^='Material_x0020_Type'] option:selected").text();
+        var AdditionalCommentForMaterial = jQuery("input[title='Additional Comments About Material']").val();
+        if(Material_Type == 'Uncured Compound' || Material_Type == 'Cured Compound'){
+            if(AdditionalCommentForMaterial == ''){
+                valid = false;
+                messagerError(jQuery("input[title='Additional Comments About Material']"),arrErrorMessage[2]);
+            }
+        }
+
+        //var formmode = getCurrentFormMode();
+        var formmode = '';
+        if (formmode == 'new') {
+            if (jQuery(jQuery('#trHasThis').find('input[type="radio"]:checked:first')).val() == "Yes") {
+                var bool1 = mandatoryfield("When_x003f_");
+                var bool2 = mandatoryfield("By_x0020_whom_x003f_");
+                var bool4 = mandatoryfield("Export_x0020_Shipping_x0020_DDS_");
+                valid = bool1 && bool2 && bool4;
+            }
+        }
+        if (formmode == "edit") {
+            var Status = jQuery("input[id^='Status']").val();
+            if (Status != "New") {
+                if (jQuery(jQuery('#trHasThis').find('input[type="radio"]:checked:first')).val() == "Yes") {
+                    var bool1=mandatoryfield("When_x003f_");
+                    var bool2=mandatoryfield("By_x0020_whom_x003f_");
+                    var bool4=mandatoryfield("Export_x0020_Shipping_x0020_DDS_");
+                    valid = bool1 && bool2 && bool4;
+                }
+            }
+
+            //if (Status == "Approved - Submitted For Shipment") {
+            //	valid = mandatoryfield("Assign_x0020_Next_x0020_DDS_x002");
+            //}
+
+            if(jQuery('input[id^="Submit_x0020_For_x0020_Approval"]').is(':checked') || jQuery('input[id^="Approve_x002f_Reject"]')[0].checked ||
+                    jQuery('input[id^="Approve_x002f_Reject"]')[1].checked || jQuery('input[id^="File_x0020_Request"]').is(':checked')){
+                var EmbargoedSensitiveCountries = jQuery("input[id^='Embargoed_x0020_and_x0020_Sensit']").is(':checked');
+                var ProhibitedParties = jQuery("input[id^='Prohibited_x0020_Parties']").is(':checked');
+                var ProhibitedPartiesScreeningGuidelines = jQuery("input[id^='Prohibited_x0020_Parties_x0020_S']").is(':checked');
+                var AntiBoycott = jQuery("input[id^='Anti_x002d_Boycott']").is(':checked');
+                var ExportCommodityCode = jQuery("input[id^='Export_x0020_Commodity_x0020_Cod']").is(':checked');
+                var ECCN = jQuery("input[id^='ECCN']").is(':checked');
+                var HarmonizedTariffSystem = jQuery("input[id^='Harmonized_x0020_Tariff']").is(':checked');
+                var HandlingOfHazardousMaterials = jQuery("input[id^='Handling_x0020_of_x0020_Hazardou']").is(':checked');
+                var ComplyWithGovernmentalRegistration = jQuery("input[id^='Comply_x0020_With_x0020_Governme']").is(':checked');
+                if(!EmbargoedSensitiveCountries){
+                    messagerError(jQuery("input[id^='Embargoed_x0020_and_x0020_Sensit']"), arrErrorMessage[1]);
+                    valid = false;
+                }
+                if(!ProhibitedParties){
+                    messagerError(jQuery("input[id^='Prohibited_x0020_Parties']"), arrErrorMessage[1]);
+                    valid = false;
+                }
+                if(!ProhibitedPartiesScreeningGuidelines){
+                    messagerError(jQuery("input[id^='Prohibited_x0020_Parties_x0020_S']"), arrErrorMessage[1]);
+                    valid = false;
+                }
+                if(!AntiBoycott ){
+                    messagerError(jQuery("input[id^='Anti_x002d_Boycott']"), arrErrorMessage[1]);
+                    valid = false;
+                }
+                if(!ExportCommodityCode ){
+                    messagerError(jQuery("input[id^='Export_x0020_Commodity_x0020_Cod']"), arrErrorMessage[1]);
+                    valid = false;
+                }
+                if(!ECCN ){
+                    messagerError(jQuery("input[id^='ECCN']"), arrErrorMessage[1]);
+                    valid = false;
+                }
+                if(!HarmonizedTariffSystem){
+                    messagerError(jQuery("input[id^='Harmonized_x0020_Tariff']"), arrErrorMessage[1]);
+                    valid = false;
+                }
+                if(!HandlingOfHazardousMaterials ){
+                    messagerError(jQuery("input[id^='Handling_x0020_of_x0020_Hazardou']"), arrErrorMessage[1]);
+                    valid = false;
+                }
+                if(!ComplyWithGovernmentalRegistration){
+                    messagerError(jQuery("input[id^='Comply_x0020_With_x0020_Governme']"), arrErrorMessage[1]);
+                    valid = false;
+                }
+
+            }
+        }
+        return valid;
+    }
+
+    function PreSaveItem(){
+        if (!validateData()) {
+            return false;
+        }
+        return true;
+    }
+
+    function messagerError(fieldName, messager) {
+        jQuery(fieldName).parent().find("span.ms-csrformvalidation").remove();
+        jQuery(fieldName).parent().append("<span class='ms-formvalidation ms-csrformvalidation'><span role='alert'>" + messager + "</span></span>");
+    }
+
+    function disableUserField(control) {
+        jQuery("div[title='Requester Name']").find('a').hide();
+        jQuery('div[title="Requester Name"]').find("*").prop('disabled',true);
+    }
+
+    function openLink2(type) {
+        var url = window.location.href;
+        var itemid = getCurrentItemId();
+        var link;
+        if (type == '3') {
+            link = url.substring(0, url.search("Lists")) + "Lists/InternationalCover/NewForm.aspx?ID=" + itemid;
+            openDialog(link, 'Invoice', function (result) {
+                if (result == '1') {
+                    ////do something in case click OK in dialog
+                    //getTestDetail2(itemid);
+                } else {
+                    ////do something in case click Cancel in dialog
+                }
+            });
+        } else if (type == '1') {
+            link = url.substring(0, url.search("Lists")) + "Lists/Cover/NewForm.aspx?ID=" + itemid;
+            openDialog(link, 'Cover Letter', function (result) {
+                if (result == '1') {
+                    ////do something in case click OK in dialog
+                    //getTestDetail2(itemid);
+                } else {
+                    ////do something in case click Cancel in dialog
+                }
+            });
+        } else if(type == '2'){
+            link = url.substring(0, url.search("Lists")) + "Lists/RSSDS/NewForm.aspx?ID=" + itemid;
+            openDialog(link, 'RSSDS', function (result) {
+                if (result == '1') {
+                    ////do something in case click OK in dialog
+                    //getTestDetail2(itemid);
+                } else {
+                    ////do something in case click Cancel in dialog
+                }
+            });
+        }
+    }
+</script>
+
+

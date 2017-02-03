@@ -26,7 +26,7 @@
     </QuerySpec>
   </SourceDefinition>
   <SharePointConnection>
-    <Web>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/</Web>
+    <Web>https://teamssv.dupont.com/sites/teams_dpm_pams_v21</Web>
     <List>Admin\Developer Keyword</List>
   </SharePointConnection>
   <JobOptions>

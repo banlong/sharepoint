@@ -1,0 +1,94 @@
+﻿<script language='javascript' src='../../_catalogs/masterpage/CustomByFPT/jquery-1.11.1.min.js'></script>
+<script language='javascript' src='../../_catalogs/masterpage/CustomByFPT/DuPont_JSLibrary.js'></script>
+<style type='text/css'>
+    .ms-formtable {
+        top: -10000px;
+        left: -10000px;
+        position: absolute;
+    }
+
+  
+</style>
+
+<div class="maintable" style="width:0px;height:0px;overflow:hidden;>
+    <span id="part1">
+        <table class="table_main" cellspacing='2' cellpadding='2' border="1">
+            <!--HTML HERE-->
+          
+            <!--HTML HERE-->
+        </table>
+        <table id="fptattachmenttable"></table>
+        <table cellpadding="0" cellspacing="0" id="fptformbuttons" style="margin-top: 7px;"></table>
+    </span>
+   
+
+
+
+</div>
+
+<script type='text/javascript'>
+    $(document).ready(function () {
+        if (GetUrlKeyValue("Type") !== "1") {
+            ExecuteOrDelayUntilScriptLoaded(fptinitform, "sp.js");
+        }
+        else {
+            jQuery('#workingonit').html('').hide();
+            var tdiv = jQuery('#WebPartWPQ2');
+            tdiv.css('width', 'auto');
+            tdiv.css('height', 'auto');
+            //tdiv.css('overflow','auto')
+        }
+
+    });
+    fptinitform = function () {
+        ////process attachment
+         try {
+            jQuery('#idAttachmentsRow').appendTo(jQuery('#fptattachmenttable'))
+        } catch (err) { }
+		
+        $('span.hillbillyForm').each(function () {
+            internalName = $(this).attr('data-internalName');
+            elem = $(this);
+            $('table.ms-formtable td').each(function () {
+                if (this.innerHTML.indexOf('FieldInternalName="' + internalName + '"') != -1) {
+                    jQuery(this).contents().appendTo(elem);
+                }
+            });
+        });
+
+        jQuery('table.ms-informationbar').insertBefore(jQuery('div.maintable'));
+        jQuery('table.ms-formtable').next().contents().appendTo(jQuery('#fptformbuttons'))
+        Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(Main);
+        jQuery('#tabs-container').show();
+        var tdiv = jQuery('.maintable');
+        tdiv.css('width', 'auto');
+        tdiv.css('height', 'auto');
+        //tdiv.css('overflow','auto')
+
+        jQuery('#tabs-container').show();
+        function Main() {
+            ////Custom JS here
+            
+            ////Custom JS here
+        }////////end main
+
+    };//End jQuery
+
+
+
+
+
+</script><html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:c5ddba9d9fff4eef9dbb6846e08177f0 msdt:dt="string">Public|ea3c3492-27e8-49ff-aa87-23e08b703bd6</mso:c5ddba9d9fff4eef9dbb6846e08177f0>
+<mso:d12837e9aeab4f91a93cdd9aefab344b msdt:dt="string">5 Years after Project Close|076c3c74-a1f6-46a4-a721-1b48f8af6b86</mso:d12837e9aeab4f91a93cdd9aefab344b>
+<mso:TaxCatchAll msdt:dt="string">17;#5 Years after Project Close|076c3c74-a1f6-46a4-a721-1b48f8af6b86;#5;#Public|ea3c3492-27e8-49ff-aa87-23e08b703bd6</mso:TaxCatchAll>
+<mso:_dlc_DocId msdt:dt="string">2Y63PJZ7SMSY-1160195613-116</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">42eae30f-19ba-43ed-970a-4bfe710320e0</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dupont.sharepoint.com/teams/teams_lotusnotesappinv/a2m/dpItar/_layouts/15/DocIdRedir.aspx?ID=2Y63PJZ7SMSY-1160195613-116, 2Y63PJZ7SMSY-1160195613-116</mso:_dlc_DocIdUrl>
+<mso:RCSExpiration msdt:dt="string">17;#5 Years after Project Close|076c3c74-a1f6-46a4-a721-1b48f8af6b86</mso:RCSExpiration>
+<mso:DISO msdt:dt="string">5;#Public|ea3c3492-27e8-49ff-aa87-23e08b703bd6</mso:DISO>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+<title>Template HTML</title></head>
