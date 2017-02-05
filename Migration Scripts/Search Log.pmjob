@@ -35,7 +35,7 @@
     </QuerySpec>
   </SourceDefinition>
   <SharePointConnection>
-    <Web>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/</Web>
+    <Web>https://teamssv.dupont.com/sites/teams_dpm_pams_v21</Web>
     <List>Search Log</List>
   </SharePointConnection>
   <JobOptions>
@@ -49,6 +49,7 @@
     </QueryOptions>
     <UserMappingOptions>
       <MappingFailureSubstitution>DefaultIdentity</MappingFailureSubstitution>
+      <UseMappingFailureSubstitutionForUserFields>true</UseMappingFailureSubstitutionForUserFields>
       <DefaultUserName>dupontnet\sb1654</DefaultUserName>
     </UserMappingOptions>
     <LinkConversionOptions />

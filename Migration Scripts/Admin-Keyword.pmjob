@@ -25,16 +25,17 @@
     </QuerySpec>
   </SourceDefinition>
   <SharePointConnection>
-    <Web>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/</Web>
+    <Web>https://teamssv.dupont.com/sites/teams_dpm_pams_v21</Web>
     <List>Admin/Keyword</List>
   </SharePointConnection>
   <JobOptions>
     <AutoCreateList>true</AutoCreateList>
     <AddListToQuickLaunch>true</AddListToQuickLaunch>
     <AutoCreateFields>true</AutoCreateFields>
-    <ClearListData>true</ClearListData>
+    <DuplicateDocumentHandling>Skip</DuplicateDocumentHandling>
     <PreserveIdentities>true</PreserveIdentities>
     <PreserveDates>true</PreserveDates>
+    <MaxRecords>200</MaxRecords>
     <QueryOptions xsi:type="NotesRuntimeQueryOptions">
       <DeleteMigratedDocuments>false</DeleteMigratedDocuments>
       <ExtractRecurrencePatterns>false</ExtractRecurrencePatterns>
@@ -71,13 +72,13 @@
     <Field Name="Keyword SBU" Type="Text" NotesItems="SBU" />
     <Field Name="Platform" Type="Text" NotesItems="Platform" />
     <Field Name="Keyword" Type="Text" NotesItems="Keyword" IsTitleField="true" />
-    <Field Name="Name" Type="Text" NotesItems="Keyword_1" />
+    <Field Name="Keyword 1" Type="Text" NotesItems="Keyword_1" />
     <Field Name="Keyword Comments" Type="Text" NotesItems="KeywordComments" />
     <Field Name="DocAuthor" Type="Text" NotesItems="DocAuthor" />
     <Field Name="Creator" Type="Text" NotesItems="Creator" />
     <Field Name="Folder" Type="Folder" />
     <Field Name="Group" Type="Calculated" Formula="=IF(LOWER([Keyword Name])=&quot;business&quot;,[Keyword Name],[Keyword Name]&amp;&quot;-&quot;&amp;[Keyword SBU])" />
-    <Field Name="Names" Type="Calculated" Formula="=IF(NOT([Keyword]= &quot;&quot;), [Keyword], [Name])" />
+    <Field Name="Names" Type="Calculated" Formula="=IF(NOT([Keyword]= &quot;&quot;), [Keyword], [Keyword 1])" />
     <Field Name="Title" Type="Text" NotesItems="Subject;Title" />
     <ViewsOverwriteExisting>false</ViewsOverwriteExisting>
     <View Name="By Keywords" IsDefault="true">
@@ -109,5 +110,5 @@
   <Mapping Destination="Keyword Comments" SourceValue="KeywordComments" />
   <Mapping Destination="Keyword Name" SourceValue="KeywordType" />
   <Mapping Destination="Keyword SBU" SourceValue="SBU" />
-  <Mapping Destination="Name" SourceValue="Keyword_1" />
+  <Mapping Destination="Keyword 1" SourceValue="Keyword_1" />
 </TransferJob>

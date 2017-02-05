@@ -24,7 +24,7 @@
     </QuerySpec>
   </SourceDefinition>
   <SharePointConnection>
-    <Web>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/</Web>
+    <Web>https://teamssv.dupont.com/sites/teams_dpm_pams_v21</Web>
     <List>CRIM Archive</List>
   </SharePointConnection>
   <JobOptions>
@@ -41,6 +41,7 @@
     </QueryOptions>
     <UserMappingOptions>
       <MappingFailureSubstitution>DefaultIdentity</MappingFailureSubstitution>
+      <UseMappingFailureSubstitutionForUserFields>true</UseMappingFailureSubstitutionForUserFields>
       <DefaultUserName>dupontnet\sb1654</DefaultUserName>
     </UserMappingOptions>
     <LinkConversionOptions />
@@ -79,7 +80,7 @@
     <Field Name="Date Archived" Type="DateTime" NotesItems="dArchivedDate" />
     <Field Name="Folder" Type="Folder" />
     <Field Name="Title" Type="Text" NotesItems="Subject;Title" />
-    <Field Name="Submit Years" Type="Calculated" Formula="=YEAR([TODAY])-YEAR(DATEVALUE([Application Filed Date]))" />
+    <Field Name="Submit Years" Type="Calculated" Formula="=IF([NOI Submitted Date]=&quot;&quot;,0,YEAR(TODAY())-YEAR(DATEVALUE([NOI Submitted Date])))&#xD;&#xA;" />
     <ViewsOverwriteExisting>false</ViewsOverwriteExisting>
     <View Name="Archived" IsDefault="true">
       <Column>Title (linked to item)</Column>

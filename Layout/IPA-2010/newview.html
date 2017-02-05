@@ -845,7 +845,22 @@
         //Change value in span
         var ids = ['From', 'NOI_x0020_Approval_x0020_Manager', 'Liaison','Sec_PatDocMgmtEditors', 'Attorney_x0020_of_x0020_Record'];
         for (var i = 0; i < ids.length; i++){
+            var objStr = "span[data-internalname='" + ids[i] + "']";
+            var txtStr = $(objStr).text();
+            var objId =  "span[data-internalname='" + ids[i] + "']";
+            $(objId).text(parseUsername(txtStr));
+        }
+    }
+
+    function formatDate(){
+        var ids = ['From', 'NOI_x0020_Approval_x0020_Manager', 'Liaison','Sec_PatDocMgmtEditors', 'Attorney_x0020_of_x0020_Record'];
+        for (var i = 0; i < ids.length; i++){
             var txtStr = $("span[data-internalname='From']").text();
+
+            //wrong conversion when field has no data
+            if(txtStr == "1/1/0001 12:00:00 AM"){
+                //return
+            }
             var objId =  "span[data-internalname='" + ids[i] + "']";
             $(objId).text(parseUsername(txtStr));
         }

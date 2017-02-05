@@ -321,16 +321,18 @@
     </QuerySpec>
   </SourceDefinition>
   <SharePointConnection>
-    <Web>https://teamssv.dupont.com/sites/teams_Kevlar_Expansion/temp_nghiep/</Web>
+    <Web>https://teamssv.dupont.com/sites/teams_dpm_pams_v21</Web>
     <List>Initiate Patent Application</List>
   </SharePointConnection>
   <JobOptions>
+    <AutoCreateList>true</AutoCreateList>
+    <AddListToQuickLaunch>true</AddListToQuickLaunch>
     <AutoCreateFields>true</AutoCreateFields>
-    <DuplicateDocumentHandling>CreateNewVersion</DuplicateDocumentHandling>
+    <DuplicateDocumentHandling>Skip</DuplicateDocumentHandling>
     <PreserveIdentities>true</PreserveIdentities>
     <PreserveDates>true</PreserveDates>
-    <MaxRecords>1</MaxRecords>
-    <SkipRecords>100</SkipRecords>
+    <MaxRecords>6</MaxRecords>
+    <SkipRecords>50</SkipRecords>
     <QueryOptions xsi:type="NotesRuntimeQueryOptions">
       <DeleteMigratedDocuments>false</DeleteMigratedDocuments>
       <ExtractRecurrencePatterns>false</ExtractRecurrencePatterns>
@@ -505,7 +507,7 @@
     <Field Name="CorrespattText" Type="Text" NotesItems="CorrespattText" MultiLine="true" />
     <Field Name="DateComposed" Type="Text" NotesItems="DateComposed" />
     <Field Name="DateSubmitted" Type="Text" NotesItems="DateSubmitted" />
-    <Field Name="dAttorney" Type="Text" NotesItems="dAttorney" />
+    <Field Name="Attorney" Type="Text" NotesItems="dAttorney" />
     <Field Name="dDocket Number" Type="Text" NotesItems="FANumber" />
     <Field Name="Descriptive Section" Type="Text" NotesItems="Descriptive_Section" />
     <Field Name="File Approved Date" Type="Text" NotesItems="dFileAdate" />
@@ -515,7 +517,7 @@
     <Field Name="ExampleattText" Type="Text" NotesItems="ExampleattText" MultiLine="true" />
     <Field Name="FlagEx" Type="Text" NotesItems="FlagEx" />
     <Field Name="Folder" Type="Folder" />
-    <Field Name="From" Type="Note" NotesItems="From" />
+    <Field Name="From" Type="Text" NotesItems="From" />
     <Field Name="Group B NOI Approval Manager" Type="Text" NotesItems="dSupervisor" />
     <Field Name="Mail" Type="Text" NotesItems="Mail" />
     <Field Name="MainclaimText" Type="Text" NotesItems="MainclaimText" MultiLine="true" />
@@ -554,10 +556,17 @@
     <Field Name="Actual Filing Date" Type="Text" />
     <Field Name="Priority Level" Type="Calculated" Formula="=IF([Priority]=&quot;High&quot;, &quot;A&quot;, IF([Priority]=&quot;Medium&quot;, &quot;B&quot;, IF([Priority]=&quot;Low&quot;, &quot;C&quot;, IF([Priority]=&quot;Hold&quot;, &quot;D&quot;, IF([Priority]=&quot;Drop&quot;, &quot;E&quot;, &quot;F&quot;)))))" />
     <Field Name="Filling Types" Type="Calculated" Formula="=IF([Filing Type]=&quot;&quot;, &quot;No Filling Type&quot;, [Filing Type])" />
-    <Field Name="Composed Year" Type="Calculated" Formula="=TEXT(YEAR(DATEVALUE([DateComposed])), &quot;yyyy&quot;)" />
-    <Field Name="Patten Year" Type="Calculated" Formula="=TEXT(YEAR(DATEVALUE([US Patent Issued Date])), &quot;yyyy&quot;)" />
+    <Field Name="Composed Year" Type="Calculated" Formula="=IF(ISERROR(TEXT(DATEVALUE(DateComposed),&quot;yyyy&quot;)),&quot;&quot; , TEXT(DATEVALUE(DateComposed),&quot;yyyy&quot;))" />
+    <Field Name="Patten Year" Type="Calculated" Formula="=IF(ISERROR(TEXT(DATEVALUE([US Patent Issued Date]),&quot;yyyy&quot;)),&quot;&quot; , TEXT(DATEVALUE([US Patent Issued Date]),&quot;yyyy&quot;))" />
     <Field Name="Business Value Level" Type="Calculated" Formula="=IF([Business Value]=&quot;&lt; $1mm&quot;, &quot;A&quot;, IF([Business Value]=&quot;$1mm to $5mm&quot;, &quot;B&quot;, IF([Business Value]=&quot;$5mm to $20mm&quot;, &quot;C&quot;, IF([Business Value]=&quot;$20mm to $40mm&quot;, &quot;D&quot;, &quot;E&quot;))))" />
     <Field Name="Platform" Type="Text" />
+    <Field Name="Filed Date" Type="Calculated" Formula="=IF(ISERROR(IF(TRIM([Actual Filing Date])=&quot;1/1/0001 12:00:00 AM&quot;,&quot;&quot;,TEXT(DATEVALUE(TRIM([Actual Filing Date])),&quot;mm/dd/yyyy&quot;))),&quot;&quot;, IF(TRIM([Actual Filing Date])=&quot;1/1/0001 12:00:00 AM&quot;,&quot;&quot;,TEXT(DATEVALUE(TRIM([Actual Filing Date])),&quot;mm/dd/yyyy&quot;)))" />
+    <Field Name="Author" Type="Calculated" Formula="=IF([Document Author]=&quot;&quot;,&quot;&quot;, MID([Document Author],4,SEARCH(&quot;/&quot;,[Document Author])-4))" />
+    <Field Name="Reader" Type="Calculated" Formula="=MID([Document Reader],4,SEARCH(&quot;/&quot;,[Document Reader])-4)" />
+    <Field Name="Author Name" Type="Calculated" Formula="=IF(ISERROR(IF(TRIM(From)=&quot;&quot;,&quot;&quot;,IF(SEARCH(&quot;/&quot;,TRIM(From))&lt;4,From,MID(TRIM(From),4,SEARCH(&quot;/&quot;,TRIM(From))-4)))),&quot;&quot;,IF(TRIM(From)=&quot;&quot;,&quot;&quot;,IF(SEARCH(&quot;/&quot;,TRIM(From))&lt;4,From,MID(TRIM(From),4,SEARCH(&quot;/&quot;,TRIM(From))-4))))" />
+    <Field Name="Display Attorney Name" Type="Calculated" Formula="=IF([Attorney]=&quot;&quot;, &quot;Attorney not specified&quot;, [Attorney])" />
+    <Field Name="Goal File Date" Type="Calculated" Formula="=IF(ISERROR(IF(TRIM([Goal Filing Date])=&quot;1/1/0001 12:00:00 AM&quot;,&quot;&quot;,TEXT(DATEVALUE(TRIM([Goal Filing Date])),&quot;mm/dd/yyyy&quot;))),&quot;&quot;, IF(TRIM([Goal Filing Date])=&quot;1/1/0001 12:00:00 AM&quot;,&quot;&quot;,TEXT(DATEVALUE(TRIM([Goal Filing Date])),&quot;mm/dd/yyyy&quot;)))" />
+    <Field Name="Contributor" Type="Calculated" Formula="=IF(ISERROR(IF([All Contributors]=&quot;&quot;,&quot;Contributor not specified&quot;,IF(SEARCH(&quot;/&quot;,[All Contributors])=0,[All Contributors],LEFT([All Contributors],SEARCH(&quot;/&quot;,[All Contributors])-1)))),&quot;Contributor not specified&quot;,IF([All Contributors]=&quot;&quot;,&quot;Contributor not specified&quot;,IF(SEARCH(&quot;/&quot;,[All Contributors])=0,[All Contributors],LEFT([All Contributors],SEARCH(&quot;/&quot;,[All Contributors])-1))))" />
     <ViewsOverwriteExisting>true</ViewsOverwriteExisting>
     <View Name="By Status" IsDefault="true">
       <Column>Title (linked to item)</Column>
@@ -592,11 +601,10 @@
       <Column>Business Value</Column>
       <Column>Priority</Column>
       <Column>Status</Column>
-      <Column>Street (Inventor 10)</Column>
-      <Column>Patent Liaison</Column>
       <Column>NOI Submitted Date</Column>
       <Column>Goal Filing Date</Column>
-      <Column>Attorney of Record</Column>
+      <Column>Patent Liaison</Column>
+      <Column>Attorney</Column>
       <OrderColumn1Name>Docket #</OrderColumn1Name>
       <OrderColumn1Ascending>true</OrderColumn1Ascending>
       <OrderColumn2Name>Business Value</OrderColumn2Name>
@@ -604,7 +612,7 @@
       <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
       <GroupByColumn1Name>AT_AL VAL</GroupByColumn1Name>
       <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
-      <GroupByColumn2Name>Document Author</GroupByColumn2Name>
+      <GroupByColumn2Name>Author</GroupByColumn2Name>
       <GroupByColumn2Ascending>true</GroupByColumn2Ascending>
       <ExpandGroups>false</ExpandGroups>
       <GroupsPerPage>100</GroupsPerPage>
@@ -618,18 +626,18 @@
     <View Name="By Attorney" IsDefault="false">
       <Column>Title (linked to item)</Column>
       <Column>Title of NOI</Column>
-      <Column>Goal Filing Date</Column>
+      <Column>Goal File Date</Column>
       <Column>Priority</Column>
       <Column>Filing Recommendation</Column>
       <Column>Status</Column>
       <Column>Author</Column>
-      <Column>Liaison</Column>
+      <Column>Patent Liaison</Column>
       <OrderColumn1Name>Docket #</OrderColumn1Name>
       <OrderColumn1Ascending>true</OrderColumn1Ascending>
       <OrderColumn2Name />
       <OrderColumn2Ascending>true</OrderColumn2Ascending>
       <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
-      <GroupByColumn1Name />
+      <GroupByColumn1Name>Attorney</GroupByColumn1Name>
       <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
       <GroupByColumn2Name />
       <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
@@ -649,9 +657,9 @@
       <Column>Priority</Column>
       <Column>Status</Column>
       <Column>NOI Submitted Date</Column>
-      <Column>Goal Filing Date</Column>
-      <Column>Liaison</Column>
-      <Column>Attorney of Record</Column>
+      <Column>Goal File Date</Column>
+      <Column>Patent Liaison</Column>
+      <Column>Attorney</Column>
       <OrderColumn1Name>Docket #</OrderColumn1Name>
       <OrderColumn1Ascending>true</OrderColumn1Ascending>
       <OrderColumn2Name>Business Value</OrderColumn2Name>
@@ -714,7 +722,7 @@
       <OrderColumn2Name>Business Value</OrderColumn2Name>
       <OrderColumn2Ascending>true</OrderColumn2Ascending>
       <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
-      <GroupByColumn1Name>All Contributors</GroupByColumn1Name>
+      <GroupByColumn1Name>Contributor</GroupByColumn1Name>
       <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
       <GroupByColumn2Name />
       <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
@@ -762,10 +770,10 @@
       <Column>Priority</Column>
       <Column>Status</Column>
       <Column>NOI Submitted Date</Column>
-      <Column>Goal Filing Date</Column>
-      <Column>Author</Column>
+      <Column>Goal File Date</Column>
+      <Column>Author Name</Column>
       <Column>Patent Liaison</Column>
-      <Column>Attorney of Record</Column>
+      <Column>Attorney</Column>
       <OrderColumn1Name>Docket #</OrderColumn1Name>
       <OrderColumn1Ascending>true</OrderColumn1Ascending>
       <OrderColumn2Name />
@@ -843,10 +851,10 @@
       <Column>Priority</Column>
       <Column>Status</Column>
       <Column>NOI Submitted Date</Column>
-      <Column>Goal Filing Date</Column>
-      <Column>Author</Column>
-      <Column>Liaison</Column>
-      <Column>Attorney of Record</Column>
+      <Column>Goal File Date</Column>
+      <Column>Author Name</Column>
+      <Column>Patent Liaison</Column>
+      <Column>Attorney</Column>
       <OrderColumn1Name>Docket #</OrderColumn1Name>
       <OrderColumn1Ascending>true</OrderColumn1Ascending>
       <OrderColumn2Name>Business Value</OrderColumn2Name>
@@ -897,10 +905,10 @@
       <Column>Filing Recommendation</Column>
       <Column>Status</Column>
       <Column>NOI Submitted Date</Column>
-      <Column>Goal Filing Date</Column>
-      <Column>Author</Column>
+      <Column>Goal File Date</Column>
+      <Column>Author Name</Column>
       <Column>Patent Liaison</Column>
-      <Column>Attorney of Record</Column>
+      <Column>Attorney</Column>
       <OrderColumn1Name>Docket #</OrderColumn1Name>
       <OrderColumn1Ascending>true</OrderColumn1Ascending>
       <OrderColumn2Name>Business Value</OrderColumn2Name>
@@ -926,10 +934,10 @@
       <Column>Business Value</Column>
       <Column>Status</Column>
       <Column>NOI Submitted Date</Column>
-      <Column>Goal Filing Date</Column>
-      <Column>Author</Column>
+      <Column>Goal File Date</Column>
+      <Column>Author Name</Column>
       <Column>Patent Liaison</Column>
-      <Column>Attorney of Record</Column>
+      <Column>Attorney</Column>
       <OrderColumn1Name>Priority Level</OrderColumn1Name>
       <OrderColumn1Ascending>true</OrderColumn1Ascending>
       <OrderColumn2Name>Business Value Level</OrderColumn2Name>
@@ -985,13 +993,13 @@
       <Column>Patent Liaison</Column>
       <Column>Attorney of Record</Column>
       <Column>File Approved Date</Column>
-      <OrderColumn1Name>Author</OrderColumn1Name>
+      <OrderColumn1Name>Title (linked to item)</OrderColumn1Name>
       <OrderColumn1Ascending>true</OrderColumn1Ascending>
       <OrderColumn2Name />
       <OrderColumn2Ascending>false</OrderColumn2Ascending>
       <SortOnlyBySpecifiedCriteria>false</SortOnlyBySpecifiedCriteria>
-      <GroupByColumn1Name>Actual Filing Date</GroupByColumn1Name>
-      <GroupByColumn1Ascending>true</GroupByColumn1Ascending>
+      <GroupByColumn1Name>Filed Date</GroupByColumn1Name>
+      <GroupByColumn1Ascending>false</GroupByColumn1Ascending>
       <GroupByColumn2Name />
       <GroupByColumn2Ascending>false</GroupByColumn2Ascending>
       <ExpandGroups>false</ExpandGroups>
@@ -1047,7 +1055,6 @@
   <Mapping Destination="CorrespattText" SourceValue="CorrespattText" />
   <Mapping Destination="DateComposed" SourceValue="DateComposed" />
   <Mapping Destination="DateSubmitted" SourceValue="DateSubmitted" />
-  <Mapping Destination="dAttorney" SourceValue="dAttorney" />
   <Mapping Destination="Docket Number" SourceValue="dFANumber" />
   <Mapping Destination="Attachments" SourceValue="DiffpriorartAttachments" />
   <Mapping Destination="Attachments" SourceValue="DiffpriorartEmbeddedObjects" />
@@ -1258,4 +1265,5 @@
   <Mapping Destination="Goal Filing Date" SourceValue="FileGdate" />
   <Mapping Destination="Transfer SBU Date" SourceValue="TransferSBUDate" />
   <Mapping Destination="Actual Filing Date" SourceValue="FileAdate" />
+  <Mapping Destination="Attorney" SourceValue="dAttorney" />
 </TransferJob>
